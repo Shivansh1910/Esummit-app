@@ -8,3 +8,4 @@ export const ESUMMIT_GET_TAGS_AND_REMINDERS = 'getTagAndReminder';
 export const ESUMMIT_CREATE_OTP = 'createOtp';
 export const ESUMMIT_VERIFY_OTP = 'verifyOtp';
 export const ESUMMIT_USER_DETAIL = 'userDetail';
+export const ESUMMIT_SPONSORS = 'sponsors';

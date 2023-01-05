@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {Footer, Navbar} from '../../components/shared';
+import {Footer} from '../../components/shared';
 
 export const Maps = () => {
   const origin = {latitude: 37.3318456, longitude: -122.0296002};
@@ -13,7 +13,6 @@ export const Maps = () => {
 
   return (
     <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
-      <Navbar navigation={navigation} />
       <Footer navigation={navigation} />
     </LinearGradient>
   );

@@ -5,7 +5,6 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Button} from 'react-native-paper';
 import {ProfileSection} from '../../components/profile';
-import {Navbar} from '../../components/shared';
 import {useProfileStore} from '../../store/profile-store';
 
 export const Profile = () => {
@@ -23,8 +22,6 @@ export const Profile = () => {
 
   return (
     <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
-      <Navbar navigation={navigation} />
-
       <ProfileSection name={name} email={email} image={image as string} />
 
       <TouchableOpacity>

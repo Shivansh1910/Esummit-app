@@ -5,7 +5,7 @@ import {View, StyleSheet, Text, Image, ScrollView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {ActivityIndicator, FAB, SegmentedButtons} from 'react-native-paper';
 import {useToast} from 'react-native-toast-notifications';
-import {Footer, Navbar} from '../../components/shared';
+import {Footer} from '../../components/shared';
 import {
   useSetReminderMutation,
   useSetTagMutation,
@@ -64,7 +64,6 @@ export const Event = ({route}) => {
 
   return (
     <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
-      <Navbar navigation={navigation} />
       {isLoading ? (
         <ActivityIndicator
           animating={true}

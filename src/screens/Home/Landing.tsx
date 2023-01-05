@@ -20,7 +20,7 @@ import {
   RadioButton,
 } from 'react-native-paper';
 import { Event, Highlight } from '../../components/home';
-import { Footer, Navbar } from '../../components/shared';
+import { Footer } from '../../components/shared';
 import LiveSvg from '../../components/svgs/live';
 import { useEvent } from '../../hooks/query/events-query';
 import { useEventStore } from '../../store/events-store';
@@ -89,8 +89,6 @@ export const Landing = () => {
   return (
     <>
       <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
-        <Navbar navigation={navigation} />
-
         <Portal>
           <Modal
             visible={visible}

@@ -12,7 +12,7 @@ import {
   PdfComponent,
   Schedule,
 } from '../../components/others';
-import {Footer, Navbar} from '../../components/shared';
+import {Footer} from '../../components/shared';
 
 export const More = () => {
   const [visible, setVisible] = React.useState(false);
@@ -35,7 +35,6 @@ export const More = () => {
   return (
     <SafeAreaView>
       <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
-        <Navbar navigation={navigation} />
         <ScrollView>
           <Portal>
             <Modal
@@ -54,7 +53,7 @@ export const More = () => {
           <Follow />
 
           <View style={styles.content1}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('Sponsors' as never)}>
               <Text style={styles.follow}>SPONSORS</Text>
             </TouchableOpacity>
           </View>

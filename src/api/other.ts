@@ -56,3 +56,22 @@ export const getSchedule = async () =>{
         }
     }
 }
+
+export const getSponsors = async () =>{
+    try{
+        const response = await fetch(`${BASE_URL}/sponsors/`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        const data = await response.json();
+        return data;
+    }
+    catch(err){
+        return {
+            success: false,
+            error: err,
+        }
+    }
+}

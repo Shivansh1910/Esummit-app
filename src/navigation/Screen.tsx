@@ -6,12 +6,13 @@ import {Otp, SignIn} from '../screens/AuthScreen';
 import {HomePage} from '../screens/Home';
 import {Maps} from '../screens/Map';
 import {Profile} from '../screens/Profile';
-import {More} from '../screens/Other';
+import {More, Sponsors} from '../screens/Other';
 import {Event} from '../screens/Event';
 import {useProfileStore} from '../store/profile-store';
 import {useUserDetailMutation} from '../hooks/mutation/user-action-mutation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
+import { Navbar } from '../components/shared';
 
 const Stack = createStackNavigator();
 
@@ -62,18 +63,7 @@ export default function AppScreen() {
           open: TransitionSpecs.TransitionIOSSpec,
           close: TransitionSpecs.TransitionIOSSpec,
         },
-        headerStyle: {
-          backgroundColor: '#141415',
-          elevation: 0,
-          shadowOpacity: 0,
-        },
-        headerTintColor: '#00D1BC',
-        headerTitleStyle: {
-          fontFamily: 'Satoshi-Black',
-          fontSize: 22,
-          lineHeight: 30,
-          letterSpacing: 0.5,
-        },
+        header: () => <Navbar navigation={navigation} />,
       }}>
       <Stack.Screen
         name="SignIn"
@@ -92,37 +82,26 @@ export default function AppScreen() {
       <Stack.Screen
         name="Home"
         component={HomePage}
-        options={{
-          headerShown: false,
-        }}
       />
       <Stack.Screen
         name="Profile"
         component={Profile}
-        options={{
-          headerShown: false,
-        }}
       />
       <Stack.Screen
         name="Map"
         component={Maps}
-        options={{
-          headerShown: false,
-        }}
       />
       <Stack.Screen
         name="More"
         component={More}
-        options={{
-          headerShown: false,
-        }}
       />
       <Stack.Screen
         name="Event"
         component={Event}
-        options={{
-          headerShown: false,
-        }}
+      />
+      <Stack.Screen
+        name="Sponsors"
+        component={Sponsors}
       />
     </Stack.Navigator>
   );

@@ -31,3 +31,11 @@ export interface IScheduleData {
     description: string,
     id:number
 }
+
+export interface ISponsorsData {
+    name: string,
+    link: string,
+    image: string,
+    id: string,
+    tag: string,
+}
