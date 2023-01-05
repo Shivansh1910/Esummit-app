@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {Button} from 'react-native-paper';
 import {ProfileSection} from '../../components/profile';
 import {Navbar} from '../../components/shared';
-import {useProfileStore} from '../../store/profile';
+import {useProfileStore} from '../../store/profile-store';
 
 export const Profile = () => {
   const name = useProfileStore(state => state.name);

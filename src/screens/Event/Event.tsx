@@ -1,9 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {View, StyleSheet, Text, Image, ScrollView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {FAB, SegmentedButtons} from 'react-native-paper';
+import {ActivityIndicator, FAB, SegmentedButtons} from 'react-native-paper';
 import {useToast} from 'react-native-toast-notifications';
 import {Footer, Navbar} from '../../components/shared';
 import {
@@ -11,8 +11,8 @@ import {
   useSetTagMutation,
 } from '../../hooks/mutation/user-action-mutation';
 import {useEventById} from '../../hooks/query/events-query';
-import { useGetTagsAndReminder } from '../../hooks/query/user-query';
-import {useProfileStore} from '../../store/profile';
+import {useGetTagsAndReminder} from '../../hooks/query/user-query';
+import {useProfileStore} from '../../store/profile-store';
 
 export const Event = ({route}) => {
   const {data: EventData, isLoading} = useEventById(route.params.id);
@@ -22,7 +22,8 @@ export const Event = ({route}) => {
 
   const email = useProfileStore(state => state.email);
 
-  const {data: ReminderAndTagData, isLoading: ReminderAndTagLoading} = useGetTagsAndReminder(email, route.params.id);
+  const {data: ReminderAndTagData, isLoading: ReminderAndTagLoading} =
+    useGetTagsAndReminder(email, route.params.id);
 
   const {mutateAsync: setReminder} = useSetReminderMutation();
 
@@ -36,9 +37,8 @@ export const Event = ({route}) => {
       if (ReminderAndTagData?.data.tag) {
         setValue(ReminderAndTagData?.data.tag);
       }
-        setIsNotified(ReminderAndTagData?.data.reminders || false);   
+      setIsNotified(ReminderAndTagData?.data.reminders || false);
     }
-    
   }, [ReminderAndTagLoading]);
 
   const handleNotify = async () => {
@@ -66,7 +66,12 @@ export const Event = ({route}) => {
     <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
       <Navbar navigation={navigation} />
       {isLoading ? (
-        <Text>Loading...</Text>
+        <ActivityIndicator
+          animating={true}
+          color="#4E8FB4"
+          size="large"
+          style={{marginTop: 20}}
+        />
       ) : (
         <ScrollView>
           <Text style={styles.name}>{EventData?.data.name}</Text>
@@ -123,8 +128,8 @@ export const Event = ({route}) => {
           right: 0,
           bottom: 60,
         }}
-        icon={isNotified ? "bell-off" : "bell-badge"}
-        label={isNotified? "We will notify you" : "Notify Me"}
+        icon={isNotified ? 'bell-off' : 'bell-badge'}
+        label={isNotified ? 'We will notify you' : 'Notify Me'}
         onPress={handleNotify}
       />
       <Footer navigation={navigation} />

@@ -1,12 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {useToast} from 'react-native-toast-notifications';
-import {Button, OtpBox} from '../../components/form';
+import {OtpBox} from '../../components/form';
 import Logo from '../../components/svgs/logo';
 import {useCreateOtpMutation} from '../../hooks/mutation/user-action-mutation';
-import {useProfileStore} from '../../store/profile';
+import {useProfileStore} from '../../store/profile-store';
 
 const TIMEOUT = 60 * 5;
 
@@ -22,8 +21,11 @@ export const OTPScreen = () => {
   const handleResend = () => {
     setTimer(TIMEOUT);
     CreateOtp({email}).then(data => {
-      console.log(data);
-      toast.show('OTP has been resent to your email', {type: 'success'});
+      if (data.success) {
+        toast.show('OTP has been resent to your email', {type: 'success'});
+      } else {
+        toast.show('Some error has occured. Try again later', {type: 'danger'});
+      }
     });
   };
 
@@ -61,10 +63,7 @@ export const OTPScreen = () => {
 
         <Text style={styles.subheading2}>Enter OTP</Text>
 
-        <OtpBox
-          length={4}
-          handleResend={handleResend}
-        />
+        <OtpBox length={4} handleResend={handleResend} />
       </View>
     </View>
   );

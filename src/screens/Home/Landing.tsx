@@ -1,38 +1,36 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useEffect, useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   StyleSheet,
   Text,
   TouchableOpacity,
+  RefreshControl,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 import PagerView from 'react-native-pager-view';
 import {
   ActivityIndicator,
   Button,
-  Divider,
   FAB,
   List,
-  Menu,
   Modal,
   Portal,
   RadioButton,
 } from 'react-native-paper';
-import {Event, Highlight} from '../../components/home';
-import {Footer, Navbar} from '../../components/shared';
+import { Event, Highlight } from '../../components/home';
+import { Footer, Navbar } from '../../components/shared';
 import LiveSvg from '../../components/svgs/live';
-import {useEvent} from '../../hooks/query/events-query';
+import { useEvent } from '../../hooks/query/events-query';
+import { useEventStore } from '../../store/events-store';
 
 export const Landing = () => {
-  const {data: EventData, isLoading} = useEvent();
+  const { data: EventData, isLoading, refetch } = useEvent();
 
   const [visible, setVisible] = useState(false);
 
   const hideModal = () => setVisible(false);
-
-  const [value, setValue] = React.useState('first');
 
   const navigation = useNavigation();
 
@@ -44,8 +42,15 @@ export const Landing = () => {
   const [filterDay, setFilterDay] = useState('');
   const [filterVenue, setFilterVenue] = useState('');
 
+  const onGoingEvents = useEventStore(state => state.onGoing);
+  const upcommingEvents = useEventStore(state => state.upcoming);
+  const completedEvents = useEventStore(state => state.completed);
+  const setOnGoingEvents = useEventStore(state => state.setOnGoing);
+  const setUpcommingEvents = useEventStore(state => state.setUpcoming);
+  const setCompletedEvents = useEventStore(state => state.setCompleted);
+
   useEffect(() => {
-    EventData?.data.other.forEach(item => {
+    EventData?.data?.other.forEach(item => {
       if (!categories.includes(item.category)) {
         setCategories([...categories, item.category]);
       }
@@ -55,8 +60,20 @@ export const Landing = () => {
       if (!venues.includes(item.venue)) {
         setVenues([...venues, item.venue]);
       }
+
+      if (
+        new Date(item.startTime) < new Date() &&
+        new Date(item.endTime) > new Date()
+      ) {
+        setOnGoingEvents([...onGoingEvents, item]);
+      } else if (new Date(item.startTime) > new Date()) {
+        setUpcommingEvents([...upcommingEvents, item]);
+      } else if (new Date(item.endTime) < new Date()) {
+        setCompletedEvents([...completedEvents, item]);
+      }
     });
-    EventData?.data.highlights.forEach(item => {
+
+    EventData?.data?.highlights.forEach(item => {
       if (!categories.includes(item.category)) {
         setCategories([...categories, item.category]);
       }
@@ -87,7 +104,8 @@ export const Landing = () => {
                   {categories.map((item, index) => {
                     return (
                       <TouchableOpacity
-                      key={index} onPress={() => setFilterCategory(item)}>
+                        key={index}
+                        onPress={() => setFilterCategory(item)}>
                         <View
                           style={{
                             backgroundColor: 'black',
@@ -111,8 +129,9 @@ export const Landing = () => {
                   value={filterDay}>
                   {days.map((item, index) => {
                     return (
-                      <TouchableOpacity 
-                      key={index} onPress={() => setFilterDay(item)}>
+                      <TouchableOpacity
+                        key={index}
+                        onPress={() => setFilterDay(item)}>
                         <View
                           key={index}
                           style={{
@@ -138,7 +157,8 @@ export const Landing = () => {
                   {venues.map((item, index) => {
                     return (
                       <TouchableOpacity
-                      key={index} onPress={() => setFilterVenue(item)}>
+                        key={index}
+                        onPress={() => setFilterVenue(item)}>
                         <View
                           key={index}
                           style={{
@@ -156,7 +176,13 @@ export const Landing = () => {
               </View>
             </List.Accordion>
 
-            <View style={{flexDirection: "row", justifyContent: 'flex-end', paddingRight: 10, paddingVertical: 5}}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                paddingRight: 10,
+                paddingVertical: 5,
+              }}>
               <Button mode="contained">Reset</Button>
               <Button mode="contained">Done</Button>
             </View>
@@ -168,10 +194,20 @@ export const Landing = () => {
             animating={true}
             color="#4E8FB4"
             size="large"
-            style={{marginTop: 20}}
+            style={{ marginTop: 20 }}
           />
         ) : (
-          <ScrollView style={{marginBottom: 60}}>
+          <ScrollView
+            style={{ marginBottom: 60 }}
+            showsVerticalScrollIndicator={false}
+            refreshControl={
+              <RefreshControl
+                refreshing={isLoading}
+                onRefresh={() => {
+                  refetch();
+                }}
+              />
+            }>
             <View style={styles.section}>
               <Text style={styles.heading}>HIGHLIGHT SESSIONS</Text>
 
@@ -188,22 +224,21 @@ export const Landing = () => {
                 ))}
               </PagerView>
             </View>
-            <View style={styles.section}>
-              <View
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Text style={[styles.heading, {alignSelf: 'center'}]}>
-                  ONGOING EVENTS
-                </Text>
-                <LiveSvg />
-              </View>
-              <View style={styles.events}>
-                {EventData?.data?.other
-                  .filter(
-                    item =>
-                      new Date(item.startTime) < new Date() &&
-                      new Date(item.endTime) > new Date() ,
-                  )
-                  .map((item, index) => (
+
+            {onGoingEvents.length > 0 && (
+              <View style={styles.section}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <Text style={[styles.heading, { alignSelf: 'center' }]}>
+                    ONGOING EVENTS
+                  </Text>
+                  <LiveSvg />
+                </View>
+                <View style={styles.events}>
+                  {onGoingEvents.map((item, index) => (
                     <Event
                       key={index}
                       id={item.id}
@@ -216,14 +251,15 @@ export const Landing = () => {
                       navigation={navigation}
                     />
                   ))}
+                </View>
               </View>
-            </View>
-            <View style={styles.section}>
-              <Text style={styles.heading}>UPCOMING EVENTS</Text>
-              <View style={styles.events}>
-                {EventData?.data?.other
-                  .filter(item => new Date(item.startTime) > new Date())
-                  .map((item, index) => (
+            )}
+
+            {upcommingEvents.length > 0 && (
+              <View style={styles.section}>
+                <Text style={styles.heading}>UPCOMING EVENTS</Text>
+                <View style={styles.events}>
+                  {upcommingEvents.map((item, index) => (
                     <Event
                       key={index}
                       id={item.id}
@@ -236,8 +272,30 @@ export const Landing = () => {
                       navigation={navigation}
                     />
                   ))}
+                </View>
               </View>
-            </View>
+            )}
+
+            {completedEvents.length > 0 && (
+              <View style={styles.section}>
+                <Text style={styles.heading}>COMPLETED EVENTS</Text>
+                <View style={styles.events}>
+                  {completedEvents.map((item, index) => (
+                    <Event
+                      key={index}
+                      id={item.id}
+                      url={item.image}
+                      event={item.name}
+                      description={item.description}
+                      venue={item.venue}
+                      startTime={item.startTime}
+                      endTime={item.endTime}
+                      navigation={navigation}
+                    />
+                  ))}
+                </View>
+              </View>
+            )}
           </ScrollView>
         )}
         <FAB

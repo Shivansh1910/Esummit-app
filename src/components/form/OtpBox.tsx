@@ -11,7 +11,7 @@ import {
 import {useToast} from 'react-native-toast-notifications';
 import {Button} from '.';
 import {useVerifyOtpMutation} from '../../hooks/mutation/user-action-mutation';
-import {useProfileStore} from '../../store/profile';
+import {useProfileStore} from '../../store/profile-store';
 
 interface OtpBoxProps {
   length: number;

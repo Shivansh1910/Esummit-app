@@ -8,18 +8,17 @@ import {Maps} from '../screens/Map';
 import {Profile} from '../screens/Profile';
 import {More} from '../screens/Other';
 import {Event} from '../screens/Event';
-import {useProfileStore} from '../store/profile';
+import {useProfileStore} from '../store/profile-store';
 import {useUserDetailMutation} from '../hooks/mutation/user-action-mutation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 
 export default function AppScreen() {
-
   const navigation = useNavigation();
 
-  const setProfile = useProfileStore((state) => state.setProfile);
+  const setProfile = useProfileStore(state => state.setProfile);
 
   const {mutateAsync: autoLogin} = useUserDetailMutation();
 
@@ -27,7 +26,7 @@ export default function AppScreen() {
     const email = await AsyncStorage.getItem('email');
     if (email !== null) {
       console.log(email);
-      autoLogin({email}).then((res) => {
+      autoLogin({email}).then(res => {
         console.log(res);
         setProfile({
           email: email,
@@ -38,8 +37,7 @@ export default function AppScreen() {
         });
         navigation.navigate('Home' as never);
       });
-    } 
-    
+    }
   };
 
   useEffect(() => {
@@ -48,6 +46,7 @@ export default function AppScreen() {
 
   return (
     <Stack.Navigator
+      initialRouteName="Home"
       screenOptions={{
         headerShown: true,
         gestureEnabled: true,

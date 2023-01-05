@@ -35,22 +35,26 @@ export default function AppNavigation() {
 
   return (
     <PaperProvider>
-      <ToastProvider
-        placement={'top'}
-        duration={2000}
-        textStyle={{ fontFamily: 'Montserrat-Bold', fontSize: 12, color: '#fff' }}
-        animationType={'slide-in'}
-        successColor={'#00812F'}
-        dangerColor={'#D10000'}>
-        <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <ToastProvider
+          placement={'top'}
+          duration={2000}
+          textStyle={{
+            fontFamily: 'Montserrat-Bold',
+            fontSize: 12,
+            color: '#fff',
+          }}
+          animationType={'slide-in'}
+          successColor={'#00812F'}
+          dangerColor={'#D10000'}>
           <NavigationContainer>
             <SafeAreaProvider>
               <StatusBar barStyle={'light-content'} backgroundColor="#141415" />
               <AppScreen />
             </SafeAreaProvider>
           </NavigationContainer>
-        </QueryClientProvider>
-      </ToastProvider>
+        </ToastProvider>
+      </QueryClientProvider>
     </PaperProvider>
   );
 }
