@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
+import { getTime } from '../../utils/helper';
 
 interface IEventBoxProps {
   id: string;
@@ -22,14 +23,15 @@ interface IEventBoxProps {
 export const EventBox = (props: IEventBoxProps) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={()=>props.navigation.navigate('Event', {id: props.id} )}>
+      <TouchableOpacity
+        onPress={() => props.navigation.navigate('Event', { id: props.id })}>
         <Image
-          source={{uri: props.url}}
+          source={{ uri: props.url }}
           resizeMode={'contain'}
           style={styles.image}
         />
         <View style={styles.flag}>
-          <Text style={styles.flagText}>12:00 PM - 1:00 PM</Text>
+          <Text style={styles.flagText}>{getTime(props.startTime)} - {getTime(props.endTime)}</Text>
         </View>
 
         <View style={styles.content}>
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   flag: {
-    width: 77,
+    width: 80,
     backgroundColor: '#5EBCF1',
     paddingVertical: 4,
     paddingHorizontal: 6,
