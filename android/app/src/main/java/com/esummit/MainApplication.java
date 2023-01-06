@@ -14,7 +14,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
-import io.invertase.firebase.perf.ReactNativeFirebasePerfPackage;
 import io.invertase.firebase.analytics.ReactNativeFirebaseAnalyticsPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 
