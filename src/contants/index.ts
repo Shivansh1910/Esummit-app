@@ -1,2 +1,2 @@
-export { Validator } from "./regex";
-export { Social } from "./social";
+export { Validator } from './regex';
+export { Social } from './social';

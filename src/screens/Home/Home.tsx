@@ -27,7 +27,7 @@ import { useEvent } from '../../hooks/query/events-query';
 import { useEventStore } from '../../store/events-store';
 import { filterData } from '../../utils/helper';
 
-export const Landing = () => {
+export const Home = () => {
   const { data: EventData, isLoading, refetch } = useEvent();
 
   const [visible, setVisible] = useState(false);

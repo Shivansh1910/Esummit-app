@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {useToast} from 'react-native-toast-notifications';
-import {OtpBox} from '../../components/form';
+import { useToast } from 'react-native-toast-notifications';
+import { OtpBox } from '../../components/form';
 import Logo from '../../components/svgs/logo';
-import {useCreateOtpMutation} from '../../hooks/mutation/user-action-mutation';
-import {useProfileStore} from '../../store/profile-store';
+import { useCreateOtpMutation } from '../../hooks/mutation/user-action-mutation';
+import { useProfileStore } from '../../store/profile-store';
 
 const TIMEOUT = 60 * 5;
 
@@ -14,17 +14,19 @@ export const OTPScreen = () => {
 
   const email = useProfileStore(state => state.email);
 
-  const {mutateAsync: CreateOtp} = useCreateOtpMutation();
+  const { mutateAsync: CreateOtp } = useCreateOtpMutation();
 
   const toast = useToast();
 
   const handleResend = () => {
     setTimer(TIMEOUT);
-    CreateOtp({email}).then(data => {
+    CreateOtp({ email }).then(data => {
       if (data.success) {
-        toast.show('OTP has been resent to your email', {type: 'success'});
+        toast.show('OTP has been resent to your email', { type: 'success' });
       } else {
-        toast.show('Some error has occured. Try again later', {type: 'danger'});
+        toast.show('Some error has occured. Try again later', {
+          type: 'danger',
+        });
       }
     });
   };
@@ -43,7 +45,7 @@ export const OTPScreen = () => {
     <View style={styles.container}>
       <LinearGradient
         colors={['#BBD4E2', '#CBDEE9']}
-        style={{height: 214, alignItems: 'center', paddingTop: 100}}>
+        style={{ height: 214, alignItems: 'center', paddingTop: 100 }}>
         <Logo width={334} height={76} />
       </LinearGradient>
 

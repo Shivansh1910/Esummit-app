@@ -1,13 +1,13 @@
-import {useRoute} from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import React from 'react';
 
-import {View, StyleSheet, Text, Image} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { View, StyleSheet, Text, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import CrossSvg from '../svgs/cross';
 import EcellSvg from '../svgs/ecell';
 import UserSvg from '../svgs/user';
 
-export const Navbar = ({navigation}) => {
+export const Navbar = ({ navigation }) => {
   const route = useRoute();
 
   const handleClick = () => {
@@ -16,7 +16,7 @@ export const Navbar = ({navigation}) => {
     } else {
       navigation.navigate('Profile');
     }
-  }
+  };
 
   return (
     <View style={styles.container}>

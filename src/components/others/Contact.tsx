@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Linking} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import {ActivityIndicator, List} from 'react-native-paper';
-import {useContact} from '../../hooks/query/other-query';
-import {SingleContact} from './SingleContact';
+import { ActivityIndicator, List } from 'react-native-paper';
+import { useContact } from '../../hooks/query/other-query';
+import { SingleContact } from './SingleContact';
 
 export const Contact = () => {
-  const {data: ContactData, isLoading} = useContact();
+  const { data: ContactData, isLoading } = useContact();
 
   return (
     <View style={styles.content1}>
@@ -21,7 +21,7 @@ export const Contact = () => {
               animating={true}
               color="#4E8FB4"
               size="small"
-              style={{marginTop: 20}}
+              style={{ marginTop: 20 }}
             />
           ) : (
             ContactData?.data.map(contact => (

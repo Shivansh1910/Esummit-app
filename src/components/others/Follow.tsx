@@ -1,7 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Linking} from 'react-native';
-import {Avatar, List} from 'react-native-paper';
-import {Social} from '../../contants';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
+import { Avatar } from 'react-native-paper';
+import { Social } from '../../contants';
 
 export const Follow = () => {
   return (

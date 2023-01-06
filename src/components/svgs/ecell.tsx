@@ -1,9 +1,23 @@
 import React from 'react';
-import Svg, {Rect, Path, Defs, Pattern, Use, Image} from 'react-native-svg';
+import Svg, { Path, Defs, Pattern, Use, Image } from 'react-native-svg';
 
-const EcellSvg = () => {
+interface IEcellSvgProps {
+  width?: number;
+  height?: number;
+  style?: any;
+}
+
+const EcellSvg = (props: IEcellSvgProps) => {
+  const width = !!props.width ? props.width : 45;
+  const height = !!props.height ? props.height : 43;
+
   return (
-    <Svg width={45} height={43} fill="none">
+    <Svg
+      width={width}
+      height={height}
+      viewBox="0 0 45 43"
+      fill="none"
+      style={props.style}>
       <Path fill="url(#a)" d="M0 0h45v43H0z" />
       <Defs>
         <Pattern

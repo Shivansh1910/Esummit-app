@@ -1,2 +1,2 @@
-export {SignInScreen as SignIn} from './SignIn'
-export {OTPScreen as Otp} from './OTP'
+export { SignInScreen as SignIn } from './SignIn';
+export { OTPScreen as Otp } from './OTP';

@@ -1,11 +1,8 @@
 import * as React from 'react';
-import Svg, {Path, Defs, Pattern, Use, Image} from 'react-native-svg';
+import Svg, { Path, Defs, Pattern, Use, Image } from 'react-native-svg';
 
 const CrossSvg = () => (
-  <Svg
-    width={22}
-    height={22}
-    fill="none">
+  <Svg width={22} height={22} fill="none">
     <Path fill="url(#a)" d="M0 0h22v22H0z" />
     <Defs>
       <Pattern

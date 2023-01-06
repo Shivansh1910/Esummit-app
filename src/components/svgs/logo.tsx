@@ -1,15 +1,15 @@
 import * as React from 'react';
-import Svg, {Rect, Defs, Pattern, Use, Image} from 'react-native-svg';
+import Svg, { Rect, Defs, Pattern, Use, Image } from 'react-native-svg';
 
 interface SvgProps {
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   style?: any;
 }
 const LogoSvg = (props: SvgProps) => (
   <Svg
-    width={props.width | 334}
-    height={props.height | 76}
+    width={!!props.width ? props.width : 334}
+    height={!!props.height ? props.height : 76}
     viewBox="0 0 334 76"
     fill="none"
     style={props.style}>

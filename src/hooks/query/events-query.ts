@@ -1,7 +1,10 @@
-import {useQuery} from 'react-query';
-import {getEvent, getEventById} from '../../api/events';
-import {ESUMMIT_EVENTS} from '../../contants/query-keys';
-import {IEventByIdResponse, IEventResponse} from '../../types/api/events.types';
+import { useQuery } from 'react-query';
+import { getEvent, getEventById } from '../../api/events';
+import { ESUMMIT_EVENTS } from '../../contants/query-keys';
+import {
+  IEventByIdResponse,
+  IEventResponse,
+} from '../../types/api/events.types';
 
 export const useEvent = () =>
   useQuery<IEventResponse, Error, IEventResponse>({

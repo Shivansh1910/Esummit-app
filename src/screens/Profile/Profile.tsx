@@ -1,11 +1,11 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {Button} from 'react-native-paper';
-import {ProfileSection} from '../../components/profile';
-import {useProfileStore} from '../../store/profile-store';
+import { Button } from 'react-native-paper';
+import { ProfileSection } from '../../components/profile';
+import { useProfileStore } from '../../store/profile-store';
 
 export const Profile = () => {
   const name = useProfileStore(state => state.name);
@@ -15,10 +15,10 @@ export const Profile = () => {
 
   const navigation = useNavigation();
 
-  const handleLogout = async() => {
+  const handleLogout = async () => {
     await AsyncStorage.removeItem('email');
     navigation.navigate('SignIn' as never);
-  }
+  };
 
   return (
     <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
