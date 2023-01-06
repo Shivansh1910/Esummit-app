@@ -13,6 +13,7 @@ import PagerView from 'react-native-pager-view';
 import {
   ActivityIndicator,
   Button,
+  Divider,
   FAB,
   List,
   Modal,
@@ -24,6 +25,7 @@ import { Footer } from '../../components/shared';
 import LiveSvg from '../../components/svgs/live';
 import { useEvent } from '../../hooks/query/events-query';
 import { useEventStore } from '../../store/events-store';
+import { filterData } from '../../utils/helper';
 
 export const Landing = () => {
   const { data: EventData, isLoading, refetch } = useEvent();
@@ -86,6 +88,12 @@ export const Landing = () => {
     });
   }, [EventData]);
 
+  const handleResetModal = async () => {
+    setFilterCategory('');
+    setFilterDay('');
+    setFilterVenue('');
+  }
+
   return (
     <>
       <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
@@ -94,7 +102,7 @@ export const Landing = () => {
             visible={visible}
             onDismiss={hideModal}
             contentContainerStyle={styles.containerStyle}>
-            <List.Accordion title="Categories">
+            <List.Accordion title="Categories" style={styles.accordion} titleStyle={styles.accordionTitle}>
               <View>
                 <RadioButton.Group
                   onValueChange={newValue => setFilterCategory(newValue)}
@@ -103,15 +111,16 @@ export const Landing = () => {
                     return (
                       <TouchableOpacity
                         key={index}
-                        onPress={() => setFilterCategory(item)}>
-                        <View
-                          style={{
-                            backgroundColor: 'black',
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                          }}>
+                        onPress={() => {
+                          if (filterCategory === item) {
+                            setFilterCategory('');
+                          } else {
+                            setFilterCategory(item);
+                          }
+                        }}>
+                        <View style={styles.itemList}>
                           <RadioButton value={item} />
-                          <Text>{item}</Text>
+                          <Text style={styles.itemText}>{item}</Text>
                         </View>
                       </TouchableOpacity>
                     );
@@ -120,7 +129,9 @@ export const Landing = () => {
               </View>
             </List.Accordion>
 
-            <List.Accordion title="Days">
+            <Divider style={styles.divider}/>
+
+            <List.Accordion title="Days" style={styles.accordion} titleStyle={styles.accordionTitle}>
               <View>
                 <RadioButton.Group
                   onValueChange={newValue => setFilterDay(newValue)}
@@ -129,16 +140,16 @@ export const Landing = () => {
                     return (
                       <TouchableOpacity
                         key={index}
-                        onPress={() => setFilterDay(item)}>
-                        <View
-                          key={index}
-                          style={{
-                            backgroundColor: 'black',
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                          }}>
+                        onPress={() => {
+                          if (filterDay === item) {
+                            setFilterDay('');
+                          } else {
+                            setFilterDay(item);
+                          }
+                        }}>
+                        <View style={styles.itemList}>
                           <RadioButton value={item} />
-                          <Text>Day {item}</Text>
+                          <Text style={styles.itemText}>Day {item}</Text>
                         </View>
                       </TouchableOpacity>
                     );
@@ -147,7 +158,9 @@ export const Landing = () => {
               </View>
             </List.Accordion>
 
-            <List.Accordion title="Venue">
+            <Divider style={styles.divider}/>
+
+            <List.Accordion title="Venue" style={styles.accordion} titleStyle={styles.accordionTitle}>
               <View>
                 <RadioButton.Group
                   onValueChange={newValue => setFilterVenue(newValue)}
@@ -156,16 +169,16 @@ export const Landing = () => {
                     return (
                       <TouchableOpacity
                         key={index}
-                        onPress={() => setFilterVenue(item)}>
-                        <View
-                          key={index}
-                          style={{
-                            backgroundColor: 'black',
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                          }}>
+                        onPress={() => {
+                          if (filterVenue === item) {
+                            setFilterVenue('');
+                          } else {
+                            setFilterVenue(item);
+                          }
+                        }}>
+                        <View style={styles.itemList}>
                           <RadioButton value={item} />
-                          <Text>{item}</Text>
+                          <Text style={styles.itemText}>{item}</Text>
                         </View>
                       </TouchableOpacity>
                     );
@@ -175,14 +188,9 @@ export const Landing = () => {
             </List.Accordion>
 
             <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'flex-end',
-                paddingRight: 10,
-                paddingVertical: 5,
-              }}>
-              <Button mode="contained">Reset</Button>
-              <Button mode="contained">Done</Button>
+              style={styles.modalFooter}>
+              <Button mode="contained" onPress={handleResetModal}>Reset</Button>
+              <Button mode="contained" onPress={hideModal}>Done</Button>
             </View>
           </Modal>
         </Portal>
@@ -236,7 +244,12 @@ export const Landing = () => {
                   <LiveSvg />
                 </View>
                 <View style={styles.events}>
-                  {onGoingEvents.map((item, index) => (
+                  {filterData(
+                    onGoingEvents,
+                    filterCategory,
+                    filterDay,
+                    filterVenue,
+                  ).map((item, index) => (
                     <Event
                       key={index}
                       id={item.id}
@@ -257,7 +270,12 @@ export const Landing = () => {
               <View style={styles.section}>
                 <Text style={styles.heading}>UPCOMING EVENTS</Text>
                 <View style={styles.events}>
-                  {upcommingEvents.map((item, index) => (
+                  {filterData(
+                    upcommingEvents,
+                    filterCategory,
+                    filterDay,
+                    filterVenue,
+                  ).map((item, index) => (
                     <Event
                       key={index}
                       id={item.id}
@@ -278,7 +296,12 @@ export const Landing = () => {
               <View style={styles.section}>
                 <Text style={styles.heading}>COMPLETED EVENTS</Text>
                 <View style={styles.events}>
-                  {completedEvents.map((item, index) => (
+                  {filterData(
+                    completedEvents,
+                    filterCategory,
+                    filterDay,
+                    filterVenue,
+                  ).map((item, index) => (
                     <Event
                       key={index}
                       id={item.id}
@@ -315,10 +338,11 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   containerStyle: {
-    backgroundColor: 'white',
-
+    backgroundColor: '#BBD4E2',
     width: '70%',
     alignSelf: 'center',
+    padding: 10,
+    borderRadius: 10,
   },
   section: {
     paddingTop: 5,
@@ -338,6 +362,37 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     paddingTop: 20,
+  },
+  itemList: {
+    backgroundColor: '#FFFFFF',
+    flexDirection: 'row',
+    alignItems: 'center',
+    height: 50,
+    borderBottomWidth: 1,
+    borderBottomColor: 'grey',
+  },
+  accordion:{
+    backgroundColor: "#DCE9F0",
+  },
+  accordionTitle:{
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 16,
+    textTransform: 'uppercase',
+    color: '#141415',
+  },
+  divider:{
+    height: 3,
+  },
+  modalFooter:{
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    paddingRight: 10,
+    paddingTop: 10,
+  },
+  itemText:{
+    fontFamily: 'Montserrat-Medium',
+    fontSize: 14,
+    textTransform: 'uppercase',
   },
   fab: {
     position: 'absolute',
