@@ -92,7 +92,7 @@ export const Landing = () => {
     setFilterCategory('');
     setFilterDay('');
     setFilterVenue('');
-  }
+  };
 
   return (
     <>
@@ -102,7 +102,10 @@ export const Landing = () => {
             visible={visible}
             onDismiss={hideModal}
             contentContainerStyle={styles.containerStyle}>
-            <List.Accordion title="Categories" style={styles.accordion} titleStyle={styles.accordionTitle}>
+            <List.Accordion
+              title="Categories"
+              style={styles.accordion}
+              titleStyle={styles.accordionTitle}>
               <View>
                 <RadioButton.Group
                   onValueChange={newValue => setFilterCategory(newValue)}
@@ -129,9 +132,12 @@ export const Landing = () => {
               </View>
             </List.Accordion>
 
-            <Divider style={styles.divider}/>
+            <Divider style={styles.divider} />
 
-            <List.Accordion title="Days" style={styles.accordion} titleStyle={styles.accordionTitle}>
+            <List.Accordion
+              title="Days"
+              style={styles.accordion}
+              titleStyle={styles.accordionTitle}>
               <View>
                 <RadioButton.Group
                   onValueChange={newValue => setFilterDay(newValue)}
@@ -158,9 +164,12 @@ export const Landing = () => {
               </View>
             </List.Accordion>
 
-            <Divider style={styles.divider}/>
+            <Divider style={styles.divider} />
 
-            <List.Accordion title="Venue" style={styles.accordion} titleStyle={styles.accordionTitle}>
+            <List.Accordion
+              title="Venue"
+              style={styles.accordion}
+              titleStyle={styles.accordionTitle}>
               <View>
                 <RadioButton.Group
                   onValueChange={newValue => setFilterVenue(newValue)}
@@ -187,10 +196,13 @@ export const Landing = () => {
               </View>
             </List.Accordion>
 
-            <View
-              style={styles.modalFooter}>
-              <Button mode="contained" onPress={handleResetModal}>Reset</Button>
-              <Button mode="contained" onPress={hideModal}>Done</Button>
+            <View style={styles.modalFooter}>
+              <Button mode="contained" onPress={handleResetModal}>
+                Reset
+              </Button>
+              <Button mode="contained" onPress={hideModal}>
+                Done
+              </Button>
             </View>
           </Modal>
         </Portal>
@@ -371,25 +383,25 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: 'grey',
   },
-  accordion:{
-    backgroundColor: "#DCE9F0",
+  accordion: {
+    backgroundColor: '#DCE9F0',
   },
-  accordionTitle:{
+  accordionTitle: {
     fontFamily: 'Montserrat-Bold',
     fontSize: 16,
     textTransform: 'uppercase',
     color: '#141415',
   },
-  divider:{
+  divider: {
     height: 3,
   },
-  modalFooter:{
+  modalFooter: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     paddingRight: 10,
     paddingTop: 10,
   },
-  itemText:{
+  itemText: {
     fontFamily: 'Montserrat-Medium',
     fontSize: 14,
     textTransform: 'uppercase',
