@@ -14,7 +14,7 @@
       android:allowBackup="false"
       android:theme="@style/AppTheme">
 
-      <meta-data  android:name="com.dieam.reactnativepushnotification.notification_foreground" android:value="false"/>
+      <meta-data  android:name="com.dieam.reactnativepushnotification.notification_foreground" android:value="true"/>
 
       <meta-data  android:name="com.dieam.reactnativepushnotification.notification_color" android:resource="@color/white"/>
 
