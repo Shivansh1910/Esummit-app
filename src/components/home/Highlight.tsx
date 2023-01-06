@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   alt: {
-    fontFamily: 'Montserrat-ExtraBold',
+    fontFamily: 'Montserrat-Bold',
     fontSize: 12,
     lineHeight: 15,
     color: '#FFFFFF',

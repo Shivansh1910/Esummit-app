@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 7,
     lineHeight: 9,
-    fontFamily: 'Montserrat-ExtraBold',
+    fontFamily: 'Montserrat-Bold',
     color: '#fff',
   },
   image: {

@@ -27,7 +27,7 @@ export const Footer = ({navigation}) => {
           isActive={route.name == 'Map'}
           style={{alignSelf: 'center'}}
         />
-        <Text style={styles.text}>Maps</Text>
+        <Text style={styles.text}>Locations</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.tabs}
