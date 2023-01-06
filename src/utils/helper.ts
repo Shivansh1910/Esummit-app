@@ -1,3 +1,5 @@
+import { Platform } from "react-native";
+
 export const getTime = (time: Date | undefined) => {
   if (!time) return '';
   return new Date(time).toLocaleString('en-US', {
@@ -36,3 +38,14 @@ export const filterData = (
       }
     });
 };
+
+export const mapUrl = (latitude: string, longitude: string) => {
+  const scheme = Platform.select({ ios: 'maps:0,0?q=', android: 'geo:0,0?q=' });
+  const latLng = `${latitude},${longitude}`;
+  const label = 'Custom Label';
+  const url = Platform.select({
+    ios: `${scheme}${label}@${latLng}`,
+    android: `${scheme}${latLng}(${label})`,
+  });
+  return url;
+}

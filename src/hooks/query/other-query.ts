@@ -1,16 +1,24 @@
 import { useQuery } from 'react-query';
-import { getContact, getFaq, getSchedule, getSponsors } from '../../api/other';
+import {
+  getContact,
+  getFaq,
+  getSchedule,
+  getSponsors,
+  getVenues,
+} from '../../api/other';
 import {
   ESUMMIT_CONTACT,
   ESUMMIT_FAQ,
   ESUMMIT_SCHEDULE,
   ESUMMIT_SPONSORS,
+  ESUMMIT_VENUES,
 } from '../../contants/query-keys';
 import {
   IContactResponse,
   IFaqResponse,
   IScheduleResponse,
   ISponsorsData,
+  IVenuesData,
 } from '../../types/api/others.types';
 
 export const useContact = () =>
@@ -35,4 +43,10 @@ export const useSponsors = () =>
   useQuery<ISponsorsData[], Error, ISponsorsData[]>({
     queryKey: [ESUMMIT_SPONSORS],
     queryFn: () => getSponsors(),
+  });
+
+export const useVenues = () =>
+  useQuery<IVenuesData[], Error, IVenuesData[]>({
+    queryKey: [ESUMMIT_VENUES],
+    queryFn: () => getVenues(),
   });
