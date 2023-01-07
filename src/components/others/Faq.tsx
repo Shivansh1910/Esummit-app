@@ -1,10 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Linking} from 'react-native';
-import {ActivityIndicator, List} from 'react-native-paper';
-import {useFaq} from '../../hooks/query/other-query';
+import { StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, List } from 'react-native-paper';
+import { useFaq } from '../../hooks/query/other-query';
 
 export const Faq = () => {
-  const {data: FaqData, isLoading} = useFaq();
+  const { data: FaqData, isLoading } = useFaq();
 
   return (
     <View style={styles.content}>
@@ -15,7 +15,7 @@ export const Faq = () => {
           animating={true}
           color="#4E8FB4"
           size="small"
-          style={{marginTop: 20}}
+          style={{ marginTop: 20 }}
         />
       ) : (
         FaqData?.data.map((faq, index) => (

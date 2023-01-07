@@ -1,8 +1,14 @@
 import React from 'react';
 
-import {StyleSheet, Text, View, TouchableOpacity, Linking} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
 
-import {Avatar} from 'react-native-paper';
+import { Avatar } from 'react-native-paper';
 
 interface ISingleContactProps {
   name: string;
@@ -14,18 +20,18 @@ interface ISingleContactProps {
 export const SingleContact = (props: ISingleContactProps) => {
   return (
     <View style={styles.container}>
-      <View style={{flexDirection: 'row'}}>
+      <View style={{ flexDirection: 'row' }}>
         <Avatar.Image
           size={45}
           source={{
             uri: props.image,
           }}
         />
-        <Text style={[styles.center, {paddingHorizontal: 10}, styles.name]}>
+        <Text style={[styles.center, { paddingHorizontal: 10 }, styles.name]}>
           {props.name}
         </Text>
       </View>
-      <View style={{flexDirection: 'row'}}>
+      <View style={{ flexDirection: 'row' }}>
         <TouchableOpacity
           style={styles.center}
           onPress={() => Linking.openURL(`tel:${props.phone}`)}>
@@ -52,11 +58,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginHorizontal: 5,
   },
-  name:{
+  name: {
     fontFamily: 'Montserrat-Bold',
     fontSize: 15,
     lineHeight: 18,
     color: '#000000',
     textTransform: 'capitalize',
-  }
+  },
 });

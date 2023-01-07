@@ -25,7 +25,9 @@ const store: StateCreator<IEventStore> = set => ({
   completed: [],
   setHighlights: (highlights: IEventData[]) => {
     set(state => ({
-      highlights: [...new Map(highlights.map(item => [item.id, item])).values()],
+      highlights: [
+        ...new Map(highlights.map(item => [item.id, item])).values(),
+      ],
     }));
   },
   setOnGoing: (data: IEventData[]) => {

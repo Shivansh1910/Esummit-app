@@ -1,2 +1,2 @@
-export {More} from './More';
-export {Sponsors} from './Sponsors';
+export { More } from './More';
+export { Sponsors } from './Sponsors';

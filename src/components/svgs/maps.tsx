@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Svg, {Rect, Path, Defs, Pattern, Use, Image} from 'react-native-svg';
+import Svg, { Rect, Defs, Pattern, Use, Image } from 'react-native-svg';
 
 interface IMapsMenuSvgProps {
   isActive: boolean;

@@ -1,33 +1,33 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useEffect, useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
 
-import {View, StyleSheet, Text, Image, ScrollView} from 'react-native';
+import { View, StyleSheet, Text, Image, ScrollView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {ActivityIndicator, FAB, SegmentedButtons} from 'react-native-paper';
-import {useToast} from 'react-native-toast-notifications';
-import {Footer} from '../../components/shared';
+import { ActivityIndicator, FAB, SegmentedButtons } from 'react-native-paper';
+import { useToast } from 'react-native-toast-notifications';
+import { Footer } from '../../components/shared';
 import {
   useSetReminderMutation,
   useSetTagMutation,
 } from '../../hooks/mutation/user-action-mutation';
-import {useEventById} from '../../hooks/query/events-query';
-import {useGetTagsAndReminder} from '../../hooks/query/user-query';
-import {useProfileStore} from '../../store/profile-store';
+import { useEventById } from '../../hooks/query/events-query';
+import { useGetTagsAndReminder } from '../../hooks/query/user-query';
+import { useProfileStore } from '../../store/profile-store';
 
-export const Event = ({route}) => {
-  const {data: EventData, isLoading} = useEventById(route.params.id);
+export const Event = ({ route }) => {
+  const { data: EventData, isLoading } = useEventById(route.params.id);
 
   const [value, setValue] = useState('');
   const [isNotified, setIsNotified] = useState(false);
 
   const email = useProfileStore(state => state.email);
 
-  const {data: ReminderAndTagData, isLoading: ReminderAndTagLoading} =
+  const { data: ReminderAndTagData, isLoading: ReminderAndTagLoading } =
     useGetTagsAndReminder(email, route.params.id);
 
-  const {mutateAsync: setReminder} = useSetReminderMutation();
+  const { mutateAsync: setReminder } = useSetReminderMutation();
 
-  const {mutateAsync: setTag} = useSetTagMutation();
+  const { mutateAsync: setTag } = useSetTagMutation();
 
   const navigation = useNavigation();
   const toast = useToast();
@@ -42,7 +42,7 @@ export const Event = ({route}) => {
   }, [ReminderAndTagLoading]);
 
   const handleNotify = async () => {
-    setReminder({id: route.params.id, email: email}).then(data => {
+    setReminder({ id: route.params.id, email: email }).then(data => {
       if (data.success) {
         toast.show('We will notify 15 minutes before the event', {
           type: 'success',
@@ -57,7 +57,7 @@ export const Event = ({route}) => {
 
   const handleTag = async (val: string) => {
     setValue(val);
-    setTag({id: route.params.id, email: email, tag: val}).then(data => {
+    setTag({ id: route.params.id, email: email, tag: val }).then(data => {
       console.log('Tagged', data);
     });
   };
@@ -69,20 +69,20 @@ export const Event = ({route}) => {
           animating={true}
           color="#4E8FB4"
           size="large"
-          style={{marginTop: 20}}
+          style={{ marginTop: 20 }}
         />
       ) : (
         <ScrollView>
           <Text style={styles.name}>{EventData?.data.name}</Text>
           <Image
-            source={{uri: EventData?.data.image}}
+            source={{ uri: EventData?.data.image }}
             resizeMode={'contain'}
-            style={{width: 200, height: 200, alignSelf: 'center'}}
+            style={{ width: 200, height: 200, alignSelf: 'center' }}
           />
           <SegmentedButtons
             value={value}
             onValueChange={handleTag}
-            style={{paddingVertical: 10}}
+            style={{ paddingVertical: 10 }}
             buttons={[
               {
                 value: 'interested',
@@ -99,21 +99,23 @@ export const Event = ({route}) => {
             ]}
           />
 
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             <Text style={styles.heading2}>Venue : </Text>
-            <Text style={[styles.heading2, {fontFamily: 'Montserrat-Medium'}]}>
+            <Text
+              style={[styles.heading2, { fontFamily: 'Montserrat-Medium' }]}>
               {EventData?.data.venue}
             </Text>
           </View>
 
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             <Text style={styles.heading2}>Event On : </Text>
-            <Text style={[styles.heading2, {fontFamily: 'Montserrat-Medium'}]}>
+            <Text
+              style={[styles.heading2, { fontFamily: 'Montserrat-Medium' }]}>
               Day {EventData?.data.day}
             </Text>
           </View>
 
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             <Text style={styles.description}>
               {EventData?.data.description}
             </Text>

@@ -1,13 +1,13 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {useToast} from 'react-native-toast-notifications';
-import {TextInput} from '../../components/form';
+import { useToast } from 'react-native-toast-notifications';
+import { TextInput } from '../../components/form';
 import Logo from '../../components/svgs/logo';
-import {Validator} from '../../contants';
-import {useCreateOtpMutation} from '../../hooks/mutation/user-action-mutation';
-import {useProfileStore} from '../../store/profile-store';
+import { Validator } from '../../contants';
+import { useCreateOtpMutation } from '../../hooks/mutation/user-action-mutation';
+import { useProfileStore } from '../../store/profile-store';
 
 export const SignInScreen = () => {
   const email = useProfileStore(state => state.email);
@@ -15,17 +15,19 @@ export const SignInScreen = () => {
 
   const toast = useToast();
 
-  const {mutateAsync: CreateOtp} = useCreateOtpMutation();
+  const { mutateAsync: CreateOtp } = useCreateOtpMutation();
 
   const navigation = useNavigation();
 
   const handleSubmit = () => {
-    CreateOtp({email}).then(data => {
+    CreateOtp({ email }).then(data => {
       if (data.success) {
-        toast.show('OTP sent to your email', {type: 'success'});
+        toast.show('OTP sent to your email', { type: 'success' });
         navigation.navigate('Otp' as never);
       } else {
-        toast.show('Some error has occured. Try again later', {type: 'danger'});
+        toast.show('Some error has occured. Try again later', {
+          type: 'danger',
+        });
       }
     });
   };
@@ -34,7 +36,7 @@ export const SignInScreen = () => {
     <View style={styles.container}>
       <LinearGradient
         colors={['#BBD4E2', '#CBDEE9']}
-        style={{height: 214, alignItems: 'center', paddingTop: 100}}>
+        style={{ height: 214, alignItems: 'center', paddingTop: 100 }}>
         <Logo width={334} height={76} />
       </LinearGradient>
 

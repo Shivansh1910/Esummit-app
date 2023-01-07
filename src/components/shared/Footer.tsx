@@ -1,12 +1,12 @@
 import React from 'react';
 
-import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import EventMenuSvg from '../svgs/events';
 import MapsMenuSvg from '../svgs/maps';
 import MoreMenuSvg from '../svgs/more';
-import {useNavigation, useRoute} from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
-export const Footer = ({navigation}) => {
+export const Footer = ({ navigation }) => {
   const route = useRoute();
 
   return (
@@ -16,7 +16,7 @@ export const Footer = ({navigation}) => {
         onPress={() => navigation.navigate('Home')}>
         <EventMenuSvg
           isActive={route.name == 'Home'}
-          style={{alignSelf: 'center'}}
+          style={{ alignSelf: 'center' }}
         />
         <Text style={styles.text}>Events</Text>
       </TouchableOpacity>
@@ -25,7 +25,7 @@ export const Footer = ({navigation}) => {
         onPress={() => navigation.navigate('Map')}>
         <MapsMenuSvg
           isActive={route.name == 'Map'}
-          style={{alignSelf: 'center'}}
+          style={{ alignSelf: 'center' }}
         />
         <Text style={styles.text}>Locations</Text>
       </TouchableOpacity>
@@ -34,7 +34,7 @@ export const Footer = ({navigation}) => {
         onPress={() => navigation.navigate('More')}>
         <MoreMenuSvg
           isActive={route.name == 'More'}
-          style={{alignSelf: 'center'}}
+          style={{ alignSelf: 'center' }}
         />
         <Text style={styles.text}>More</Text>
       </TouchableOpacity>

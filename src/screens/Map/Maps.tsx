@@ -13,7 +13,6 @@ import { Footer } from '../../components/shared';
 import { useVenues } from '../../hooks/query/other-query';
 
 export const Maps = () => {
-
   const navigation = useNavigation();
 
   const { data: Venues, isLoading } = useVenues();
@@ -52,11 +51,11 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
   },
-  title:{
+  title: {
     fontFamily: 'Montserrat-Bold',
     fontSize: 20,
     color: '#000000',
     paddingVertical: 10,
     paddingHorizontal: 20,
-  }
+  },
 });

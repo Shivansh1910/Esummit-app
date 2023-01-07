@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Svg, {Rect, Circle, Path} from 'react-native-svg';
+import Svg, { Rect, Circle, Path } from 'react-native-svg';
 
 const LiveSvg = () => {
   return (

@@ -32,7 +32,6 @@ export const SingleSponsor = (props: ISingleSponsorProps) => {
             height: 100,
             borderRadius: 5,
           }}
-          
         />
         <Text style={styles.sponsor}>{props.name}</Text>
       </View>
@@ -45,7 +44,7 @@ const styles = StyleSheet.create({
     margin: 10,
 
     alignItems: 'center',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   sponsor: {
     fontSize: 14,

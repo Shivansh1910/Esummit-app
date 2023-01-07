@@ -1,4 +1,4 @@
-import {BASE_URL} from './base';
+import { BASE_URL } from './base';
 
 export const setReminder = async (id: string, email: string) => {
   try {

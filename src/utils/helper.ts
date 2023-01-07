@@ -1,4 +1,4 @@
-import { Platform } from "react-native";
+import { Platform } from 'react-native';
 
 export const getTime = (time: Date | undefined) => {
   if (!time) return '';
@@ -48,4 +48,4 @@ export const mapUrl = (latitude: string, longitude: string) => {
     android: `${scheme}${latLng}(${label})`,
   });
   return url;
-}
+};

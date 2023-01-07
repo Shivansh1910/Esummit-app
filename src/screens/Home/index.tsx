@@ -1,1 +1,1 @@
-export {Landing as HomePage} from './Landing';
+export { Home as HomePage } from './Home';

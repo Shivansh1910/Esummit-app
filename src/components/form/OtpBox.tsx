@@ -1,17 +1,18 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import {
   CodeField,
   Cursor,
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
-import {useToast} from 'react-native-toast-notifications';
-import {Button} from '.';
-import {useVerifyOtpMutation} from '../../hooks/mutation/user-action-mutation';
-import {useProfileStore} from '../../store/profile-store';
+import { useToast } from 'react-native-toast-notifications';
+import { Button } from '.';
+import { FLOW_STAGES } from '../../contants';
+import { useVerifyOtpMutation } from '../../hooks/mutation/user-action-mutation';
+import { useFlowStore } from '../../store/flow-store';
+import { useProfileStore } from '../../store/profile-store';
 
 interface OtpBoxProps {
   length: number;
@@ -20,7 +21,7 @@ interface OtpBoxProps {
 
 export const OtpBox = (props: OtpBoxProps) => {
   const [value, setValue] = useState('');
-  const ref = useBlurOnFulfill({value, cellCount: props.length});
+  const ref = useBlurOnFulfill({ value, cellCount: props.length });
   const [prop, getCellOnLayoutHandler] = useClearByFocusCell({
     value,
     setValue,
@@ -30,18 +31,17 @@ export const OtpBox = (props: OtpBoxProps) => {
 
   const toast = useToast();
 
-  const {mutateAsync: verifyOtpData} = useVerifyOtpMutation();
+  const { mutateAsync: verifyOtpData } = useVerifyOtpMutation();
 
   const email = useProfileStore(state => state.email);
-
-  const navigation = useNavigation();
+  const setFlow = useFlowStore(state => state.setFlow);
 
   const handleVerify = async () => {
-    verifyOtpData({email, value}).then(async res => {
+    verifyOtpData({ email, value }).then(async res => {
       if (!res.success) {
-        toast.show(res.data.error, {type: 'danger'});
+        toast.show(res.data.error, { type: 'danger' });
       } else {
-        toast.show('OTP verified successfully', {type: 'success'});
+        toast.show('OTP verified successfully', { type: 'success' });
         await AsyncStorage.setItem('email', email);
         if (res.data.isGuest) {
           setProfile({
@@ -60,7 +60,7 @@ export const OtpBox = (props: OtpBoxProps) => {
             isSignedIn: true,
           });
         }
-        navigation.navigate('Home' as never)
+        setFlow(FLOW_STAGES.MAIN);
       }
     });
   };
@@ -76,7 +76,7 @@ export const OtpBox = (props: OtpBoxProps) => {
           rootStyle={styles.codeFiledRoot}
           keyboardType="number-pad"
           textContentType="oneTimeCode"
-          renderCell={({index, symbol, isFocused}) => (
+          renderCell={({ index, symbol, isFocused }) => (
             <Text
               key={index}
               style={[styles.cell]}
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
-  codeFiledRoot: {marginTop: 20},
+  codeFiledRoot: { marginTop: 20 },
   cell: {
     backgroundColor: '#DAEFFC',
     width: 54,

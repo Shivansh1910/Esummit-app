@@ -1,8 +1,8 @@
-import React, {PropsWithChildren} from 'react';
-import {StyleSheet} from 'react-native';
+import React, { PropsWithChildren } from 'react';
+import { StyleSheet } from 'react-native';
 import Pdf from 'react-native-pdf';
 
-export const PdfComponent: React.FC<PropsWithChildren<{url: string}>> = ({
+export const PdfComponent: React.FC<PropsWithChildren<{ url: string }>> = ({
   url,
 }) => {
   const source = {
