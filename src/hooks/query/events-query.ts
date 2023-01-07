@@ -10,6 +10,10 @@ export const useEvent = () =>
   useQuery<IEventResponse, Error, IEventResponse>({
     queryKey: [ESUMMIT_EVENTS],
     queryFn: () => getEvent(),
+    refetchInterval: 1000 * 60 * 2,
+    refetchOnMount: true,
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
   });
 
 export const useEventById = (id: string) =>

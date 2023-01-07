@@ -11,11 +11,14 @@ import { Event } from '../screens/Event';
 import { useNavigation } from '@react-navigation/native';
 import { Navbar } from '../components/shared';
 import { SplashPage } from '../screens/Splash';
+import { useFlowStore } from '../store/flow-store';
+import { FLOW_STAGES } from '../contants';
 
 const Stack = createStackNavigator();
 
 export default function AppScreen() {
   const navigation = useNavigation();
+  const flow = useFlowStore(state => state.flow);
 
   return (
     <Stack.Navigator
@@ -36,34 +39,41 @@ export default function AppScreen() {
         },
         header: () => <Navbar navigation={navigation} />,
       }}>
-      <Stack.Screen
-        name="Splash"
-        component={SplashPage}
-        options={{
-          headerShown: false,
-        }}
-      />
-
-      <Stack.Screen
-        name="SignIn"
-        component={SignIn}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="Otp"
-        component={Otp}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen name="Home" component={HomePage} />
-      <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="Map" component={Maps} />
-      <Stack.Screen name="More" component={More} />
-      <Stack.Screen name="Event" component={Event} />
-      <Stack.Screen name="Sponsors" component={Sponsors} />
+      {flow == FLOW_STAGES.SPLASH ? (
+        <Stack.Screen
+          name="Splash"
+          component={SplashPage}
+          options={{
+            headerShown: false,
+          }}
+        />
+      ) : flow == FLOW_STAGES.AUTH ? (
+        <>
+          <Stack.Screen
+            name="SignIn"
+            component={SignIn}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Otp"
+            component={Otp}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </>
+      ) : (
+        <>
+          <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Map" component={Maps} />
+          <Stack.Screen name="More" component={More} />
+          <Stack.Screen name="Event" component={Event} />
+          <Stack.Screen name="Sponsors" component={Sponsors} />
+        </>
+      )}
     </Stack.Navigator>
   );
 }

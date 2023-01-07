@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-
-import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useUserDetailMutation } from '../../hooks/mutation/user-action-mutation';
@@ -8,9 +6,11 @@ import { useProfileStore } from '../../store/profile-store';
 import LinearGradient from 'react-native-linear-gradient';
 import LogoSvg from '../../components/svgs/logo';
 import EcellSvg from '../../components/svgs/ecell';
+import { useFlowStore } from '../../store/flow-store';
+import { FLOW_STAGES } from '../../contants';
 
 export const Splash = () => {
-  const navigation = useNavigation();
+  const setFlow = useFlowStore(state => state.setFlow);
 
   const setProfile = useProfileStore(state => state.setProfile);
 
@@ -29,10 +29,10 @@ export const Splash = () => {
           pass: 'Not Purchased',
           isSignedIn: true,
         });
-        navigation.navigate('Home' as never);
+        setFlow(FLOW_STAGES.MAIN);
       });
     } else {
-      navigation.navigate('SignIn' as never);
+      setFlow(FLOW_STAGES.AUTH);
     }
   };
 
