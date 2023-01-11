@@ -45,6 +45,14 @@ export interface IVerifyOtpResponse {
   };
 }
 
+export interface IMarkAttendanceResponse {
+  success: boolean;
+  data: {
+    email: string;
+    isRegistered: boolean;
+  };
+}
+
 export interface ErrorResponse {
   success: boolean;
   error: any;

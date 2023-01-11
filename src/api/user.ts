@@ -130,3 +130,24 @@ export const userDetail = async (email: string) => {
     };
   }
 };
+
+export const markAttendance = async (email: string) => {
+  try {
+    const response = await fetch(`${BASE_URL}/markAttendance/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return {
+      success: false,
+      error: err,
+    };
+  }
+};

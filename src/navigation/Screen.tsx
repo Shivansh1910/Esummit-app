@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { TransitionSpecs } from '@react-navigation/stack';
 import { Otp, SignIn } from '../screens/AuthScreen';
 import { HomePage } from '../screens/Home';
 import { Maps } from '../screens/Map';
-import { Profile } from '../screens/Profile';
+import { Profile, QRCode } from '../screens/Profile';
 import { More, Sponsors } from '../screens/Other';
 import { Event } from '../screens/Event';
 import { useNavigation } from '@react-navigation/native';
@@ -72,6 +72,7 @@ export default function AppScreen() {
           <Stack.Screen name="More" component={More} />
           <Stack.Screen name="Event" component={Event} />
           <Stack.Screen name="Sponsors" component={Sponsors} />
+          <Stack.Screen name="QRCode" component={QRCode} />
         </>
       )}
     </Stack.Navigator>

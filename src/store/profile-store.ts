@@ -5,6 +5,7 @@ interface IProfileStates {
   name: string;
   email: string;
   pass: string;
+  qrcode: string;
   isSignedIn: boolean;
 }
 
@@ -13,6 +14,7 @@ interface IProfileMethods {
   setName: (name: string) => void;
   setEmail: (email: string) => void;
   setPass: (pass: string) => void;
+  setQRCode: (qrcode: string) => void;
   setIsSignedIn: (isSignedIn: boolean) => void;
   reset: () => void;
 }
@@ -24,16 +26,19 @@ const store: StateCreator<IProfileStore> = set => ({
   name: '',
   email: '',
   pass: '',
+  qrcode: '',
   isSignedIn: true,
   setProfile: (profile: Partial<IProfileStates>) => set(profile),
   setName: (name: string) => set({ name }),
   setEmail: (email: string) => set({ email }),
   setPass: (pass: string) => set({ pass }),
+  setQRCode: (qrcode: string) => set({ qrcode }),
   reset: () =>
     set({
       image: null,
       name: '',
       email: '',
+      qrcode: '',
       pass: '',
     }),
   setIsSignedIn: (isSignedIn: boolean) => set({ isSignedIn }),
