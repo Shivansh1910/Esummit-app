@@ -14,6 +14,7 @@ import {
   Barcode,
 } from 'vision-camera-code-scanner';
 import { ScanResult } from '../../components/profile';
+import { Validator } from '../../contants';
 
 export const QRCode = () => {
   const [hasPermission, setHasPermission] = useState(false);
@@ -57,7 +58,11 @@ export const QRCode = () => {
   }, []);
 
   return (
-    <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
+    <LinearGradient
+      colors={['#1F292F', '#000000']}
+      useAngle
+      angle={-128.06}
+      style={styles.container}>
       <View
         style={[
           styles.section,
@@ -80,8 +85,8 @@ export const QRCode = () => {
         )}
       </View>
       <View style={styles.section}>
-        <Text style={{ color: 'black', fontSize: 20 }}>Status</Text>
-        {attendee ? (
+        <Text style={{ color: 'white', fontSize: 20 }}>Status</Text>
+        {attendee && Validator.email.test(attendee) ? (
           <ScanResult email={attendee} />
         ) : (
           <Text style={{ color: 'red', fontSize: 25, textAlign: 'center' }}>

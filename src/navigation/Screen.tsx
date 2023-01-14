@@ -13,12 +13,14 @@ import { Navbar } from '../components/shared';
 import { SplashPage } from '../screens/Splash';
 import { useFlowStore } from '../store/flow-store';
 import { FLOW_STAGES } from '../contants';
+import { useProfileStore } from '../store/profile-store';
 
 const Stack = createStackNavigator();
 
 export default function AppScreen() {
   const navigation = useNavigation();
   const flow = useFlowStore(state => state.flow);
+  const isAdmin = useProfileStore(state => state.isAdmin);
 
   return (
     <Stack.Navigator
@@ -38,6 +40,7 @@ export default function AppScreen() {
           close: TransitionSpecs.TransitionIOSSpec,
         },
         header: () => <Navbar navigation={navigation} />,
+        // headerTransparent: true,
       }}>
       {flow == FLOW_STAGES.SPLASH ? (
         <Stack.Screen
@@ -67,14 +70,21 @@ export default function AppScreen() {
       ) : (
         <>
           <Stack.Screen name="Home" component={HomePage} />
-          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen
+            name="Profile"
+            component={Profile}
+            options={{
+              headerShown: true,
+            }}
+          />
           <Stack.Screen name="Map" component={Maps} />
           <Stack.Screen name="More" component={More} />
           <Stack.Screen name="Event" component={Event} />
           <Stack.Screen name="Sponsors" component={Sponsors} />
-          <Stack.Screen name="QRCode" component={QRCode} />
         </>
       )}
+
+      {isAdmin && <Stack.Screen name="QRCode" component={QRCode} />}
     </Stack.Navigator>
   );
 }

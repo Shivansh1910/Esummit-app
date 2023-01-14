@@ -1,9 +1,20 @@
 import * as React from 'react';
 import Svg, { Rect, Circle, Path } from 'react-native-svg';
 
-const LiveSvg = () => {
+interface ILiveSvgProps {
+  width?: number;
+  height?: number;
+  style?: any;
+}
+
+const LiveSvg = (props: ILiveSvgProps) => {
   return (
-    <Svg width={50} height={34} viewBox="0 0 50 34" fill="none">
+    <Svg
+      width={props.width ? props.width : 50}
+      height={props.height ? props.height : 34}
+      viewBox="0 0 50 34"
+      fill="none"
+      style={props.style}>
       <Rect y={7} width={50} height={21} rx={2} fill="#D10000" />
       <Circle cx={9} cy={17} r={4} fill="white" />
       <Path

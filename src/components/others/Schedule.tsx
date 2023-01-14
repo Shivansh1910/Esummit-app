@@ -28,7 +28,14 @@ export const Schedule = (props: IScheduleProps) => {
         title="OVERALL SCHEDULE"
         style={styles.accordion1}
         titleStyle={styles.accordionTitle1}
-        id={1}>
+        id={1}
+        right={props => (
+          <List.Icon
+            {...props}
+            icon={props.isExpanded ? 'chevron-up' : 'chevron-down'}
+            color="#FFFFFF"
+          />
+        )}>
         {isLoading ? (
           <ActivityIndicator
             animating={true}
@@ -37,20 +44,24 @@ export const Schedule = (props: IScheduleProps) => {
             style={{ marginTop: 20 }}
           />
         ) : (
-          ScheduleData?.data.map((schedule, index) => (
-            <View key={index}>
-              <TouchableOpacity
-                onPress={() => handleOpen(schedule.file)}
-                style={{
-                  flexDirection: 'row',
-                  paddingHorizontal: 20,
-                  paddingVertical: 10,
-                }}>
-                <Avatar.Icon icon="file" size={30} />
-                <Text style={styles.accordionAnswersText}>{schedule.name}</Text>
-              </TouchableOpacity>
-            </View>
-          ))
+          <View style={{ backgroundColor: '#222324' }}>
+            {ScheduleData?.data.map((schedule, index) => (
+              <View key={index}>
+                <TouchableOpacity
+                  onPress={() => handleOpen(schedule.file)}
+                  style={{
+                    flexDirection: 'row',
+                    paddingHorizontal: 20,
+                    paddingVertical: 10,
+                  }}>
+                  <Avatar.Icon icon="file" size={30} />
+                  <Text style={styles.accordionAnswersText}>
+                    {schedule.name}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            ))}
+          </View>
         )}
       </List.Accordion>
     </View>
@@ -58,26 +69,26 @@ export const Schedule = (props: IScheduleProps) => {
 };
 
 const styles = StyleSheet.create({
-  content1: {
-    borderBottomWidth: 1,
-    borderColor: '#4E8FB4',
-  },
   accordion1: {
-    backgroundColor: '#F4F8FA',
+    backgroundColor: '#161616',
+  },
+  content1: {
+    backgroundColor: '#161616',
   },
   accordionTitle1: {
-    color: '#000000',
+    color: '#FFFFFF',
     fontFamily: 'Montserrat-Bold',
     fontSize: 15,
     lineHeight: 18,
   },
   accordionAnswersText: {
-    fontFamily: 'Montserrat-Medium',
-    fontSize: 12,
-    lineHeight: 15,
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 15,
+    lineHeight: 18,
     paddingVertical: 9,
     paddingHorizontal: 22,
     textAlign: 'justify',
-    color: '#000000',
+    color: '#D3D3D3',
+    textTransform: 'capitalize',
   },
 });

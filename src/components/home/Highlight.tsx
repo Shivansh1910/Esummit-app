@@ -1,20 +1,23 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import LiveSvg from '../svgs/live';
 
 interface IHighlightBoxProps {
   url: string;
   alt: string;
   index: number;
   length: number;
+  isLive?: boolean;
 }
 
 export const HighlightBox = (props: IHighlightBoxProps) => (
   <View style={styles.container}>
     <Image
-      source={{uri: props.url}}
+      source={{ uri: props.url }}
       resizeMode={'contain'}
       style={styles.image}
     />
+    {props.isLive && <LiveSvg style={{position:'absolute', top:10, right:10}}/>}
     <View style={styles.content}>
       <Text style={styles.alt}>{props.alt}</Text>
       <View style={styles.dots}>
@@ -27,7 +30,7 @@ export const HighlightBox = (props: IHighlightBoxProps) => (
                 style={{
                   color: props.index == index ? '#fff' : '#D9D9D9',
                   marginHorizontal: 8,
-                  fontSize: 10
+                  fontSize: 10,
                 }}>
                 {'\u2B24'}
               </Text>
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
   },
-  content:{
+  content: {
     position: 'absolute',
     bottom: 22,
     left: 14,

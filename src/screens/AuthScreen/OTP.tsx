@@ -44,9 +44,11 @@ export const OTPScreen = () => {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={['#BBD4E2', '#CBDEE9']}
+        colors={['#223139', '#161616']}
+        useAngle={true}
+        angle={-88.84}
         style={{ height: 214, alignItems: 'center', paddingTop: 100 }}>
-        <Logo width={334} height={76} />
+        <Logo width={287} height={60} />
       </LinearGradient>
 
       <View style={styles.section}>
@@ -79,25 +81,27 @@ const styles = StyleSheet.create({
   },
   section: {
     padding: 20,
+    backgroundColor: '#161616',
+    height:'100%'
   },
   heading: {
     fontFamily: 'Montserrat-Bold',
     fontSize: 23,
     lineHeight: 28,
-    color: '#000000',
+    color: '#FFFFFF',
     textTransform: 'uppercase',
   },
   subheading: {
     fontFamily: 'Montserrat-Regular',
     fontSize: 14,
     lineHeight: 17,
-    color: '#666666',
+    color: '#A2A2A2',
   },
   subheading2: {
     fontFamily: 'Montserrat-Regular',
     fontSize: 14,
     lineHeight: 17,
-    color: '#666666',
+    color: '#A2A2A2',
     textTransform: 'capitalize',
     paddingTop: 20,
     paddingBottom: 10,

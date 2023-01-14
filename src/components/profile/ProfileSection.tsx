@@ -32,14 +32,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
     lineHeight: 24,
-    color: '#000000',
+    color: '#FFFFFF',
     textTransform: 'capitalize',
   },
   email: {
     fontSize: 15,
     fontFamily: 'Montserrat-Regular',
     lineHeight: 18,
-    color: '#000000',
+    color: '#FFFFFF',
+    opacity: 0.6,
     textTransform: 'lowercase',
   },
 });

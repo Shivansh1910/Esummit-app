@@ -5,6 +5,7 @@ import { View, StyleSheet, Text, Image, ScrollView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { ActivityIndicator, FAB, SegmentedButtons } from 'react-native-paper';
 import { useToast } from 'react-native-toast-notifications';
+import { SegmentButton } from '../../components/form';
 import { Footer } from '../../components/shared';
 import {
   useSetReminderMutation,
@@ -63,7 +64,11 @@ export const Event = ({ route }) => {
   };
 
   return (
-    <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
+    <LinearGradient
+      colors={['#1F292F', '#000000']}
+      useAngle
+      angle={-128.06}
+      style={styles.container}>
       {isLoading ? (
         <ActivityIndicator
           animating={true}
@@ -72,31 +77,18 @@ export const Event = ({ route }) => {
           style={{ marginTop: 20 }}
         />
       ) : (
-        <ScrollView>
+        <ScrollView style={{ paddingHorizontal: 20 }}>
           <Text style={styles.name}>{EventData?.data.name}</Text>
           <Image
             source={{ uri: EventData?.data.image }}
             resizeMode={'contain'}
             style={{ width: 200, height: 200, alignSelf: 'center' }}
           />
-          <SegmentedButtons
+
+          <SegmentButton
             value={value}
             onValueChange={handleTag}
-            style={{ paddingVertical: 10 }}
-            buttons={[
-              {
-                value: 'interested',
-                label: 'Intrested',
-              },
-              {
-                value: 'going',
-                label: 'Going',
-              },
-              {
-                value: 'not going',
-                label: 'Not Going',
-              },
-            ]}
+            buttons={['interested', 'going', 'not going']}
           />
 
           <View style={{ flexDirection: 'row' }}>
@@ -148,19 +140,19 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 10,
     fontFamily: 'Montserrat-Bold',
-    color: '#000000',
+    color: '#FFFFFF',
   },
   heading2: {
     fontSize: 16,
     fontFamily: 'Montserrat-Bold',
-    color: '#000000',
+    color: '#FFFFFF',
     textTransform: 'uppercase',
     paddingVertical: 3,
   },
   description: {
     fontSize: 14,
     fontFamily: 'Montserrat-Medium',
-    color: '#000000',
+    color: '#FFFFFF',
     borderTopColor: '#787878',
     width: '100%',
     borderTopWidth: 2,

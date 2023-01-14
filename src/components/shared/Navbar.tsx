@@ -3,6 +3,7 @@ import React from 'react';
 
 import { View, StyleSheet, Text, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import LinearGradient from 'react-native-linear-gradient';
 import CrossSvg from '../svgs/cross';
 import EcellSvg from '../svgs/ecell';
 import UserSvg from '../svgs/user';
@@ -19,14 +20,18 @@ export const Navbar = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      colors={['#13181C', '#21292F']}
+      useAngle
+      angle={90}
+      style={styles.container}>
       <TouchableOpacity>
-        <EcellSvg />
+        <EcellSvg height={54} width={51.35} />
       </TouchableOpacity>
       <TouchableOpacity onPress={handleClick}>
         {route.name === 'Profile' ? <CrossSvg /> : <UserSvg />}
       </TouchableOpacity>
-    </View>
+   </LinearGradient> 
   );
 };
 
@@ -38,6 +43,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#BBD4E2',
+    // backgroundColor: '#1B2124',
   },
 });

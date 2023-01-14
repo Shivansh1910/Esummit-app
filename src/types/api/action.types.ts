@@ -50,6 +50,7 @@ export interface IMarkAttendanceResponse {
   data: {
     email: string;
     isRegistered: boolean;
+    pass_name: string;
   };
 }
 

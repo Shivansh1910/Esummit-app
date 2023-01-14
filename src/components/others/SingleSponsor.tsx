@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 16,
     paddingTop: 4,
-    color: '#000',
+    color: '#D3D3D3',
     fontFamily: 'Montserrat-Bold',
     textTransform: 'uppercase',
     textAlign: 'center',

@@ -25,7 +25,14 @@ export const Faq = () => {
               style={styles.accordion}
               titleStyle={styles.accordionTitle}
               titleNumberOfLines={3}
-              id={1}>
+              id={1}
+              right={props => (
+                <List.Icon
+                  {...props}
+                  icon={props.isExpanded ? 'chevron-up' : 'chevron-down'}
+                  color="#FFFFFF"
+                />
+              )}>
               <View style={styles.accordionAnswer}>
                 <Text style={styles.accordionAnswersText}>{faq.answer}</Text>
               </View>
@@ -48,13 +55,14 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   title: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: '#000000',
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: '700',
+    color: '#FFFFFF',
     fontFamily: 'Montserrat-Medium',
   },
   accordion: {
-    backgroundColor: '#4E8FB4',
+    backgroundColor: '#222324',
   },
   accordionTitle: {
     color: '#FFFFFF',
@@ -64,8 +72,9 @@ const styles = StyleSheet.create({
   },
   accordionAnswer: {
     borderWidth: 1,
-    borderColor: '#4E8FB4',
+    borderColor: '#222324',
     borderRadius: 3,
+    backgroundColor: '#222324',
   },
   accordionAnswersText: {
     fontFamily: 'Montserrat-Regular',
@@ -73,7 +82,7 @@ const styles = StyleSheet.create({
     lineHeight: 15,
     paddingVertical: 9,
     paddingHorizontal: 22,
+    color: '#D3D3D3',
     textAlign: 'justify',
-    color: '#595E60',
   },
 });

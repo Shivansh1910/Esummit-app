@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
-import { Modal, Portal } from 'react-native-paper';
+import { Divider, List, Modal, Portal } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   Contact,
@@ -34,7 +34,7 @@ export const More = () => {
 
   return (
     <SafeAreaView>
-      <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
+    <LinearGradient colors={['#1F292F', '#000000']} useAngle angle={-128.06} style={styles.container}>
         <ScrollView>
           <Portal>
             <Modal
@@ -46,24 +46,42 @@ export const More = () => {
           </Portal>
 
           <Faq />
+
           <Schedule open={showModal} setSchedule={setSource} />
 
+          <Divider style={styles.divider} />
           <Contact />
-
-          <Follow />
+          <Divider style={styles.divider} />
 
           <View style={styles.content1}>
             <TouchableOpacity
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                paddingRight: 16,
+              }}
               onPress={() => navigation.navigate('Sponsors' as never)}>
               <Text style={styles.follow}>SPONSORS</Text>
+              <List.Icon icon="chevron-right" color="#FFFFFF" />
             </TouchableOpacity>
           </View>
+          <Divider style={styles.divider} />
 
           <View style={styles.content1}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                paddingRight: 16,
+              }}>
               <Text style={styles.follow}>About Us</Text>
+              <List.Icon icon="chevron-right" color="#FFFFFF" />
             </TouchableOpacity>
           </View>
+          <Divider style={styles.divider} />
+
+          <Follow />
+          <Divider style={styles.divider} />
         </ScrollView>
       </LinearGradient>
 
@@ -78,16 +96,20 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
   },
   content1: {
-    borderBottomWidth: 1,
-    borderColor: '#4E8FB4',
+    backgroundColor: '#161616',
   },
   follow: {
-    backgroundColor: '#F4F8FA',
-    color: '#000000',
+    color: '#FFFFFF',
     fontFamily: 'Montserrat-Bold',
     fontSize: 15,
     lineHeight: 18,
     paddingHorizontal: 15,
     paddingVertical: 20,
+  },
+  divider: {
+    height: 1,
+    width: '90%',
+    alignSelf: 'center',
+    backgroundColor: '#3D3C3C',
   },
 });
