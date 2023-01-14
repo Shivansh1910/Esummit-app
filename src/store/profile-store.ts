@@ -7,6 +7,7 @@ interface IProfileStates {
   pass: string;
   qrcode: string;
   isSignedIn: boolean;
+  isAdmin: boolean;
 }
 
 interface IProfileMethods {
@@ -16,6 +17,7 @@ interface IProfileMethods {
   setPass: (pass: string) => void;
   setQRCode: (qrcode: string) => void;
   setIsSignedIn: (isSignedIn: boolean) => void;
+  setIsAdmin : (isAdmin : boolean) => void;
   reset: () => void;
 }
 
@@ -28,11 +30,13 @@ const store: StateCreator<IProfileStore> = set => ({
   pass: '',
   qrcode: '',
   isSignedIn: true,
+  isAdmin: false,
   setProfile: (profile: Partial<IProfileStates>) => set(profile),
   setName: (name: string) => set({ name }),
   setEmail: (email: string) => set({ email }),
   setPass: (pass: string) => set({ pass }),
   setQRCode: (qrcode: string) => set({ qrcode }),
+  setIsAdmin : (isAdmin : boolean) => set({ isAdmin }),
   reset: () =>
     set({
       image: null,
@@ -40,6 +44,7 @@ const store: StateCreator<IProfileStore> = set => ({
       email: '',
       qrcode: '',
       pass: '',
+      isAdmin: false,
     }),
   setIsSignedIn: (isSignedIn: boolean) => set({ isSignedIn }),
 });

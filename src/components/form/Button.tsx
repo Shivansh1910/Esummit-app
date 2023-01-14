@@ -15,9 +15,9 @@ export const ButtonBox = (props: IButtonProps) => {
       <Button
         mode="contained"
         style={styles.button}
-        buttonColor={props.isDisabled ? '#A3D8F7' : '#46B1EE'}
+        buttonColor={props.isDisabled ? '#2E6382' : '#46B1EE'}
         onPress={!props.isDisabled && props.onPress}>
-        <Text style={styles.buttonText}>{props.title}</Text>
+        <Text style={[styles.buttonText, {color: props.isDisabled ? '#96B1C0': '#FFFFFF'}]}>{props.title}</Text>
       </Button>
     </View>
   );

@@ -7,7 +7,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import LogoSvg from '../../components/svgs/logo';
 import EcellSvg from '../../components/svgs/ecell';
 import { useFlowStore } from '../../store/flow-store';
-import { FLOW_STAGES } from '../../contants';
+import { ADMIN_EMAIL, FLOW_STAGES } from '../../contants';
 
 export const Splash = () => {
   const setFlow = useFlowStore(state => state.setFlow);
@@ -19,18 +19,34 @@ export const Splash = () => {
   const AutoLogin = async () => {
     const email = await AsyncStorage.getItem('email');
     if (email !== null) {
-      console.log(email);
-      autoLogin({ email }).then(res => {
-        console.log(res);
+      if (email == ADMIN_EMAIL) {
         setProfile({
           email: email,
           image: 'https://2k21.s3.ap-south-1.amazonaws.com/Ellipse+8.png',
-          name: 'Guest User',
+          name: 'Admin User',
           pass: 'Not Purchased',
           isSignedIn: true,
+          isAdmin: true,
         });
         setFlow(FLOW_STAGES.MAIN);
-      });
+      } else {
+        autoLogin({ email }).then(res => {
+          if (res.success) {
+            setProfile({
+              email: email,
+              image: 'https://2k21.s3.ap-south-1.amazonaws.com/Ellipse+8.png',
+              name: res.data.isGuest ? 'Guest User' : res.data.user.name,
+              pass: res.data.isGuest
+                ? 'Not Purchased'
+                : res.data.user.pass_name,
+              isSignedIn: true,
+            });
+            setFlow(FLOW_STAGES.MAIN);
+          } else {
+            setFlow(FLOW_STAGES.AUTH);
+          }
+        });
+      }
     } else {
       setFlow(FLOW_STAGES.AUTH);
     }
@@ -41,11 +57,11 @@ export const Splash = () => {
   }, []);
 
   return (
-    <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
+    <LinearGradient colors={['#2C4553', '#000000']} style={styles.container}>
       <LogoSvg />
       <View style={styles.section}>
         <Text style={styles.text}>from</Text>
-        <EcellSvg width={87} height={100.5} />
+        <EcellSvg width={85.6} height={90} />
       </View>
     </LinearGradient>
   );
@@ -60,10 +76,10 @@ const styles = StyleSheet.create({
   section: {
     alignItems: 'center',
     position: 'absolute',
-    bottom: 57,
+    bottom: 28,
   },
   text: {
-    color: '#203541',
+    color: '#FFFFFF',
     fontFamily: 'Montserrat-Regular',
     fontSize: 20,
     lineHeight: 24,

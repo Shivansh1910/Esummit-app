@@ -18,7 +18,7 @@ export const Maps = () => {
   const { data: Venues, isLoading } = useVenues();
 
   return (
-    <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
+    <LinearGradient colors={['#1F292F', '#000000']} useAngle angle={-128.06} style={styles.container}>
       {isLoading ? (
         <ActivityIndicator
           animating={true}
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'Montserrat-Bold',
     fontSize: 20,
-    color: '#000000',
+    color: '#FFFFFF',
     paddingVertical: 10,
     paddingHorizontal: 20,
   },

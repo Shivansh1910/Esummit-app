@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity,
   RefreshControl,
+  Dimensions,
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
@@ -22,6 +23,7 @@ import {
 } from 'react-native-paper';
 import { Event, Highlight } from '../../components/home';
 import { Footer } from '../../components/shared';
+import FilterSvg from '../../components/svgs/filter';
 import LiveSvg from '../../components/svgs/live';
 import { useEvent } from '../../hooks/query/events-query';
 import { useEventStore } from '../../store/events-store';
@@ -33,6 +35,7 @@ export const Home = () => {
   const [visible, setVisible] = useState(false);
 
   const hideModal = () => setVisible(false);
+  const showModal = () => setVisible(true);
 
   const navigation = useNavigation();
 
@@ -41,7 +44,7 @@ export const Home = () => {
   const [venues, setVenues] = useState<string[]>([]);
 
   const [filterCategory, setFilterCategory] = useState('');
-  const [filterDay, setFilterDay] = useState('');
+  const [filterDay, setFilterDay] = useState<string[]>(['1', '2']);
   const [filterVenue, setFilterVenue] = useState('');
 
   const onGoingEvents = useEventStore(state => state.onGoing);
@@ -52,6 +55,7 @@ export const Home = () => {
   const setCompletedEvents = useEventStore(state => state.setCompleted);
 
   useEffect(() => {
+    const timeNow = new Date();
     EventData?.data?.other.forEach(item => {
       if (!categories.includes(item.category)) {
         setCategories([...categories, item.category]);
@@ -64,14 +68,14 @@ export const Home = () => {
       }
 
       if (
-        new Date(item.startTime) < new Date() &&
-        new Date(item.endTime) > new Date()
+        new Date(item.startTime) < timeNow &&
+        new Date(item.endTime) > timeNow
       ) {
-        setOnGoingEvents([...onGoingEvents, item]);
-      } else if (new Date(item.startTime) > new Date()) {
-        setUpcommingEvents([...upcommingEvents, item]);
-      } else if (new Date(item.endTime) < new Date()) {
-        setCompletedEvents([...completedEvents, item]);
+        setOnGoingEvents(item);
+      } else if (new Date(item.startTime) > timeNow) {
+        setUpcommingEvents(item);
+      } else if (new Date(item.endTime) < timeNow) {
+        setCompletedEvents(item);
       }
     });
 
@@ -90,258 +94,258 @@ export const Home = () => {
 
   const handleResetModal = async () => {
     setFilterCategory('');
-    setFilterDay('');
+    setFilterDay(['1', '2']);
     setFilterVenue('');
   };
 
+  const handleDayFilter = day => {
+    if (filterDay.includes(day)) {
+      setFilterDay(filterDay.filter(item => item !== day));
+    } else {
+      setFilterDay([...filterDay, day]);
+    }
+  };
+
   return (
-    <>
-      <LinearGradient colors={['#BBD4E2', '#FFFFFF']} style={styles.container}>
-        <Portal>
-          <Modal
-            visible={visible}
-            onDismiss={hideModal}
-            contentContainerStyle={styles.containerStyle}>
-            <List.Accordion
-              title="Categories"
-              style={styles.accordion}
-              titleStyle={styles.accordionTitle}>
-              <View>
-                <RadioButton.Group
-                  onValueChange={newValue => setFilterCategory(newValue)}
-                  value={filterCategory}>
-                  {categories.map((item, index) => {
-                    return (
-                      <TouchableOpacity
-                        key={index}
-                        onPress={() => {
-                          if (filterCategory === item) {
-                            setFilterCategory('');
-                          } else {
-                            setFilterCategory(item);
-                          }
-                        }}>
-                        <View style={styles.itemList}>
-                          <RadioButton value={item} />
-                          <Text style={styles.itemText}>{item}</Text>
-                        </View>
-                      </TouchableOpacity>
-                    );
-                  })}
-                </RadioButton.Group>
-              </View>
-            </List.Accordion>
-
-            <Divider style={styles.divider} />
-
-            <List.Accordion
-              title="Days"
-              style={styles.accordion}
-              titleStyle={styles.accordionTitle}>
-              <View>
-                <RadioButton.Group
-                  onValueChange={newValue => setFilterDay(newValue)}
-                  value={filterDay}>
-                  {days.map((item, index) => {
-                    return (
-                      <TouchableOpacity
-                        key={index}
-                        onPress={() => {
-                          if (filterDay === item) {
-                            setFilterDay('');
-                          } else {
-                            setFilterDay(item);
-                          }
-                        }}>
-                        <View style={styles.itemList}>
-                          <RadioButton value={item} />
-                          <Text style={styles.itemText}>Day {item}</Text>
-                        </View>
-                      </TouchableOpacity>
-                    );
-                  })}
-                </RadioButton.Group>
-              </View>
-            </List.Accordion>
-
-            <Divider style={styles.divider} />
-
-            <List.Accordion
-              title="Venue"
-              style={styles.accordion}
-              titleStyle={styles.accordionTitle}>
-              <View>
-                <RadioButton.Group
-                  onValueChange={newValue => setFilterVenue(newValue)}
-                  value={filterVenue}>
-                  {venues.map((item, index) => {
-                    return (
-                      <TouchableOpacity
-                        key={index}
-                        onPress={() => {
-                          if (filterVenue === item) {
-                            setFilterVenue('');
-                          } else {
-                            setFilterVenue(item);
-                          }
-                        }}>
-                        <View style={styles.itemList}>
-                          <RadioButton value={item} />
-                          <Text style={styles.itemText}>{item}</Text>
-                        </View>
-                      </TouchableOpacity>
-                    );
-                  })}
-                </RadioButton.Group>
-              </View>
-            </List.Accordion>
-
-            <View style={styles.modalFooter}>
-              <Button mode="contained" onPress={handleResetModal}>
-                Reset
-              </Button>
-              <Button mode="contained" onPress={hideModal}>
-                Done
-              </Button>
+    <LinearGradient colors={['#1F292F', '#000000']} useAngle angle={-128.06} style={styles.container}>
+      <Portal>
+        <Modal
+          visible={visible}
+          onDismiss={hideModal}
+          contentContainerStyle={styles.containerStyle}>
+          <List.Accordion
+            title="Categories"
+            style={styles.accordion}
+            titleStyle={styles.accordionTitle}>
+            <View>
+              <RadioButton.Group
+                onValueChange={newValue => setFilterCategory(newValue)}
+                value={filterCategory}>
+                {categories.map((item, index) => {
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      onPress={() => {
+                        if (filterCategory === item) {
+                          setFilterCategory('');
+                        } else {
+                          setFilterCategory(item);
+                        }
+                      }}>
+                      <View style={styles.itemList}>
+                        <RadioButton value={item} />
+                        <Text style={styles.itemText}>{item}</Text>
+                      </View>
+                    </TouchableOpacity>
+                  );
+                })}
+              </RadioButton.Group>
             </View>
-          </Modal>
-        </Portal>
+          </List.Accordion>
 
-        {isLoading ? (
-          <ActivityIndicator
-            animating={true}
-            color="#4E8FB4"
-            size="large"
-            style={{ marginTop: 20 }}
-          />
-        ) : (
-          <ScrollView
-            style={{ marginBottom: 60 }}
-            showsVerticalScrollIndicator={false}
-            refreshControl={
-              <RefreshControl
-                refreshing={isLoading}
-                onRefresh={() => {
-                  refetch();
-                }}
-              />
-            }>
-            <View style={styles.section}>
-              <Text style={styles.heading}>HIGHLIGHT SESSIONS</Text>
+          <Divider style={styles.divider} />
 
-              <PagerView style={styles.pagerView} initialPage={0}>
-                {EventData?.data?.highlights.map((item, index) => (
-                  <View key={index}>
-                    <Highlight
-                      url={item.image}
-                      alt={item.name}
-                      index={index}
-                      length={EventData?.data.highlights.length}
-                    />
-                  </View>
-                ))}
-              </PagerView>
+          <List.Accordion
+            title="Venue"
+            style={styles.accordion}
+            titleStyle={styles.accordionTitle}>
+            <View>
+              <RadioButton.Group
+                onValueChange={newValue => setFilterVenue(newValue)}
+                value={filterVenue}>
+                {venues.map((item, index) => {
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      onPress={() => {
+                        if (filterVenue === item) {
+                          setFilterVenue('');
+                        } else {
+                          setFilterVenue(item);
+                        }
+                      }}>
+                      <View style={styles.itemList}>
+                        <RadioButton value={item} />
+                        <Text style={styles.itemText}>{item}</Text>
+                      </View>
+                    </TouchableOpacity>
+                  );
+                })}
+              </RadioButton.Group>
             </View>
+          </List.Accordion>
 
-            {onGoingEvents.length > 0 && (
-              <View style={styles.section}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                  }}>
-                  <Text style={[styles.heading, { alignSelf: 'center' }]}>
-                    ONGOING EVENTS
-                  </Text>
-                  <LiveSvg />
-                </View>
-                <View style={styles.events}>
-                  {filterData(
-                    onGoingEvents,
-                    filterCategory,
-                    filterDay,
-                    filterVenue,
-                  ).map((item, index) => (
-                    <Event
-                      key={index}
-                      id={item.id}
-                      url={item.image}
-                      event={item.name}
-                      description={item.description}
-                      venue={item.venue}
-                      startTime={item.startTime}
-                      endTime={item.endTime}
-                      navigation={navigation}
-                    />
-                  ))}
-                </View>
-              </View>
-            )}
+          <View style={styles.modalFooter}>
+            <Button mode="contained" onPress={handleResetModal}>
+              Reset
+            </Button>
+            <Button mode="contained" onPress={hideModal}>
+              Done
+            </Button>
+          </View>
+        </Modal>
+      </Portal>
 
-            {upcommingEvents.length > 0 && (
-              <View style={styles.section}>
-                <Text style={styles.heading}>UPCOMING EVENTS</Text>
-                <View style={styles.events}>
-                  {filterData(
-                    upcommingEvents,
-                    filterCategory,
-                    filterDay,
-                    filterVenue,
-                  ).map((item, index) => (
-                    <Event
-                      key={index}
-                      id={item.id}
-                      url={item.image}
-                      event={item.name}
-                      description={item.description}
-                      venue={item.venue}
-                      startTime={item.startTime}
-                      endTime={item.endTime}
-                      navigation={navigation}
-                    />
-                  ))}
-                </View>
-              </View>
-            )}
-
-            {completedEvents.length > 0 && (
-              <View style={styles.section}>
-                <Text style={styles.heading}>COMPLETED EVENTS</Text>
-                <View style={styles.events}>
-                  {filterData(
-                    completedEvents,
-                    filterCategory,
-                    filterDay,
-                    filterVenue,
-                  ).map((item, index) => (
-                    <Event
-                      key={index}
-                      id={item.id}
-                      url={item.image}
-                      event={item.name}
-                      description={item.description}
-                      venue={item.venue}
-                      startTime={item.startTime}
-                      endTime={item.endTime}
-                      navigation={navigation}
-                    />
-                  ))}
-                </View>
-              </View>
-            )}
-          </ScrollView>
-        )}
-        <FAB
-          icon="filter"
-          style={styles.fab}
-          onPress={() => {
-            setVisible(true);
-          }}
+      {isLoading ? (
+        <ActivityIndicator
+          animating={true}
+          color="#4E8FB4"
+          size="large"
+          style={{ marginTop: 20 }}
         />
+      ) : (
+        <ScrollView
+          style={{ marginBottom: 60 }}
+          showsVerticalScrollIndicator={false}
+          refreshControl={
+            <RefreshControl
+              refreshing={isLoading}
+              onRefresh={() => {
+                refetch();
+              }}
+            />
+          }>
+          <View style={styles.section}>
+            <Text style={styles.heading}>HIGHLIGHT SESSIONS</Text>
 
-        <Footer navigation={navigation} />
-      </LinearGradient>
-    </>
+            <PagerView style={styles.pagerView} initialPage={0}>
+              {EventData?.data?.highlights.map((item, index) => (
+                <View key={index}>
+                  <Highlight
+                    url={item.image}
+                    alt={item.name}
+                    index={index}
+                    length={EventData?.data.highlights.length}
+                    isLive={
+                      new Date(item.startTime) < new Date() &&
+                      new Date(item.endTime) > new Date()
+                    }
+                  />
+                </View>
+              ))}
+            </PagerView>
+          </View>
+
+          {onGoingEvents.length > 0 && (
+            <View style={styles.section}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}>
+                <Text style={[styles.heading, { alignSelf: 'center' }]}>
+                  ONGOING EVENTS
+                </Text>
+                <TouchableOpacity onPress={showModal}>
+                  <FilterSvg />
+                </TouchableOpacity>
+              </View>
+              <View style={styles.events}>
+                {filterData(
+                  onGoingEvents,
+                  filterCategory,
+                  filterDay,
+                  filterVenue,
+                ).map((item, index) => (
+                  <Event
+                    key={index}
+                    id={item.id}
+                    url={item.image}
+                    event={item.name}
+                    description={item.description}
+                    venue={item.venue}
+                    startTime={item.startTime}
+                    endTime={item.endTime}
+                    navigation={navigation}
+                  />
+                ))}
+              </View>
+            </View>
+          )}
+
+          {upcommingEvents.length > 0 && (
+            <View style={styles.section}>
+              <Text style={styles.heading}>UPCOMING EVENTS</Text>
+              <View style={styles.events}>
+                {filterData(
+                  upcommingEvents,
+                  filterCategory,
+                  filterDay,
+                  filterVenue,
+                ).map((item, index) => (
+                  <Event
+                    key={index}
+                    id={item.id}
+                    url={item.image}
+                    event={item.name}
+                    description={item.description}
+                    venue={item.venue}
+                    startTime={item.startTime}
+                    endTime={item.endTime}
+                    navigation={navigation}
+                  />
+                ))}
+              </View>
+            </View>
+          )}
+
+          {completedEvents.length > 0 && (
+            <View style={styles.section}>
+              <Text style={styles.heading}>COMPLETED EVENTS</Text>
+              <View style={styles.events}>
+                {filterData(
+                  completedEvents,
+                  filterCategory,
+                  filterDay,
+                  filterVenue,
+                ).map((item, index) => (
+                  <Event
+                    key={index}
+                    id={item.id}
+                    url={item.image}
+                    event={item.name}
+                    description={item.description}
+                    venue={item.venue}
+                    startTime={item.startTime}
+                    endTime={item.endTime}
+                    navigation={navigation}
+                  />
+                ))}
+              </View>
+            </View>
+          )}
+        </ScrollView>
+      )}
+
+      <View style={styles.fab}>
+        <TouchableOpacity
+          style={[
+            styles.fabButton,
+            {
+              backgroundColor: filterDay.includes('1')
+                ? '#46B1EE'
+                : 'transparent',
+            },
+          ]}
+          onPress={() => handleDayFilter('1')}>
+          <Text style={styles.fabButtonText}>Day 1</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[
+            styles.fabButton,
+            {
+              backgroundColor: filterDay.includes('2')
+                ? '#46B1EE'
+                : 'transparent',
+            },
+          ]}
+          onPress={() => handleDayFilter('2')}>
+          <Text style={styles.fabButtonText}>Day 2</Text>
+        </TouchableOpacity>
+      </View>
+
+      <Footer navigation={navigation} />
+    </LinearGradient>
   );
 };
 
@@ -364,7 +368,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     fontSize: 20,
     lineHeight: 24,
-    color: '#000000',
+    color: '#FFFFFF',
   },
   pagerView: {
     height: 180,
@@ -408,7 +412,30 @@ const styles = StyleSheet.create({
   },
   fab: {
     position: 'absolute',
-    bottom: 70,
-    right: 10,
+    left: Dimensions.get('window').width - 58,
+    top: '45%',
+    transform: [{ rotate: '270deg' }],
+    flexDirection: 'row',
+    backgroundColor: '#161616',
+  },
+  fabButton: {
+    backgroundColor: '#46B1EE',
+    borderColor: '#46B1EE',
+    borderTopWidth: 1,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+    borderRadius: 0,
+    marginHorizontal: 2,
+    alignItems: 'center',
+  },
+  fabButtonText: {
+    color: '#FFFFFF',
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 10,
+    lineHeight: 12,
+    paddingHorizontal: 8,
+    paddingVertical: 10,
   },
 });

@@ -17,7 +17,7 @@ export const Follow = () => {
       <View
         style={{
           flexDirection: 'row',
-          backgroundColor: '#F4F8FA',
+          backgroundColor: '#161616',
           justifyContent: 'space-between',
           paddingHorizontal: 20,
           paddingBottom: 15,
@@ -61,10 +61,10 @@ const styles = StyleSheet.create({
   content1: {
     borderBottomWidth: 1,
     borderColor: '#4E8FB4',
+    backgroundColor: '#161616',
   },
   follow: {
-    backgroundColor: '#F4F8FA',
-    color: '#000000',
+    color: '#FFFFFF',
     fontFamily: 'Montserrat-Bold',
     fontSize: 15,
     lineHeight: 18,

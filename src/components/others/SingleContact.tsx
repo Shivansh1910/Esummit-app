@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     fontSize: 15,
     lineHeight: 18,
-    color: '#000000',
+    color: '#D3D3D3',
     textTransform: 'capitalize',
   },
 });

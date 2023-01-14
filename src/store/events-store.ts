@@ -10,9 +10,9 @@ interface IEventStates {
 
 interface IEventMethods {
   setHighlights: (highlights: IEventData[]) => void;
-  setOnGoing: (data: IEventData[]) => void;
-  setUpcoming: (data: IEventData[]) => void;
-  setCompleted: (data: IEventData[]) => void;
+  setOnGoing: (data: IEventData) => void;
+  setUpcoming: (data: IEventData) => void;
+  setCompleted: (data: IEventData) => void;
   reset: () => void;
 }
 
@@ -30,19 +30,19 @@ const store: StateCreator<IEventStore> = set => ({
       ],
     }));
   },
-  setOnGoing: (data: IEventData[]) => {
+  setOnGoing: (data: IEventData) => {
     set(state => ({
-      onGoing: [...new Map(data.map(item => [item.id, item])).values()],
+      onGoing: [...state.onGoing.filter(item => item.id !== data.id), data],
     }));
   },
-  setUpcoming: (data: IEventData[]) => {
+  setUpcoming: (data: IEventData) => {
     set(state => ({
-      upcoming: [...new Map(data.map(item => [item.id, item])).values()],
+      upcoming: [...state.upcoming.filter(item => item.id !== data.id), data],
     }));
   },
-  setCompleted: (data: IEventData[]) => {
+  setCompleted: (data: IEventData) => {
     set(state => ({
-      completed: [...new Map(data.map(item => [item.id, item])).values()],
+      completed: [...state.completed.filter(item => item.id !== data.id), data],
     }));
   },
   reset: () =>

@@ -3,7 +3,6 @@ import React from 'react';
 import Svg, { Rect, Defs, Pattern, Use, Image } from 'react-native-svg';
 
 interface IMapsMenuSvgProps {
-  isActive: boolean;
   style?: any;
 }
 
@@ -16,7 +15,7 @@ const MapsMenuSvg = (props: IMapsMenuSvgProps) => {
       fill="none"
       style={props.style}>
       <Rect
-        opacity={props.isActive ? 1 : 0.8}
+        opacity={1}
         width={28}
         height={28}
         fill="url(#pattern0)"

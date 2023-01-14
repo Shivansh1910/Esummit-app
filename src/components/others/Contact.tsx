@@ -14,7 +14,14 @@ export const Contact = () => {
         title="EMERGENCY CONTACTS"
         style={styles.accordion1}
         titleStyle={styles.accordionTitle1}
-        id={1}>
+        id={1}
+        right={props => (
+          <List.Icon
+            {...props}
+            icon={props.isExpanded ? 'chevron-up' : 'chevron-down'}
+            color="#FFFFFF"
+          />
+        )}>
         <View style={styles.accordionAnswer}>
           {isLoading ? (
             <ActivityIndicator
@@ -41,22 +48,21 @@ export const Contact = () => {
 };
 
 const styles = StyleSheet.create({
-  content1: {
-    borderBottomWidth: 1,
-    borderColor: '#4E8FB4',
-  },
   accordion1: {
-    backgroundColor: '#F4F8FA',
+    backgroundColor: '#161616',
+  },
+  content1: {
+    backgroundColor: '#222324',
   },
   accordionTitle1: {
-    color: '#000000',
+    color: '#FFFFFF',
     fontFamily: 'Montserrat-Bold',
     fontSize: 15,
     lineHeight: 18,
   },
   accordionAnswer: {
     borderWidth: 1,
-    borderColor: '#4E8FB4',
+    borderColor: '#161616',
     borderRadius: 3,
   },
 });

@@ -65,13 +65,24 @@ export const OtpBox = (props: OtpBoxProps) => {
     });
   };
 
+  const [isValid, setValid] = useState(false);
+
+  const handleTextChange = text => {
+    if (text.length === props.length) {
+      setValid(true);
+    } else {
+      setValid(false);
+    }
+    setValue(text);
+  };
+
   return (
     <>
       <View style={styles.container}>
         <CodeField
           ref={ref}
           value={value}
-          onChangeText={setValue}
+          onChangeText={handleTextChange}
           cellCount={props.length}
           rootStyle={styles.codeFiledRoot}
           keyboardType="number-pad"
@@ -90,7 +101,11 @@ export const OtpBox = (props: OtpBoxProps) => {
         <TouchableOpacity onPress={props.handleResend}>
           <Text style={styles.resend}>Resend OTP</Text>
         </TouchableOpacity>
-        <Button title="Verify and Continue" onPress={handleVerify} />
+        <Button
+          title="Verify and Continue"
+          isDisabled={!isValid}
+          onPress={handleVerify}
+        />
       </View>
     </>
   );
@@ -103,7 +118,7 @@ const styles = StyleSheet.create({
   },
   codeFiledRoot: { marginTop: 20 },
   cell: {
-    backgroundColor: '#DAEFFC',
+    backgroundColor: '#1F2122',
     width: 54,
     height: 71,
     textAlign: 'center',
@@ -111,7 +126,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     fontSize: 30,
     lineHeight: 37,
-    color: '#000000',
+    color: '#FFFFFF',
     marginHorizontal: 17,
     paddingTop: 15,
   },
