@@ -1,0 +1,33 @@
+name: Build iOS
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+        
+    - name: Install node modules
+      run: yarn
+      
+    - run: xcode-select -p
+    - run: pod install
+      working-directory: ios
+      name: Install pod dependencies
+    - name: Build iOS (debug)
+      run: "xcodebuild -workspace ios/Esummit.xcworkspace -scheme Esummit clean archive -sdk iphoneos -configuration Debug -UseModernBuildSystem=NO -archivePath $PWD/Esummit CODE_SIGNING_ALLOWED=NO"
+      
+      
+      
+      
+      
+      
