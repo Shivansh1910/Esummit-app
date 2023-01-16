@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00B12DA3E1BF4BD893EA33D9 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 89162BE18B8844908F343095 /* fb.png */; };
 		00E356F31AD99517003FC87E /* EsummitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* EsummitTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-Esummit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Esummit.a */; };
+		122FC72E92CC42CF9D520D79 /* yt.png in Resources */ = {isa = PBXBuildFile; fileRef = E53AAC7F367C46BD99ADC0CA /* yt.png */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		198C52CB38094E95B200E3AB /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B73342851E43F68E2CFCD3 /* profile.png */; };
+		3FA544004701408EA50E0DE4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731590B94AE34ED3A2A546C0 /* Montserrat-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-Esummit-EsummitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Esummit-EsummitTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		E7079908A24D4F33B08AF70C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B6495716A46A69C9A5D1C /* Montserrat-Bold.ttf */; };
-		FC735CDEBE764E4296EA7448 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41CC1EF1610443269B0DA41B /* Montserrat-Medium.ttf */; };
-		3FA544004701408EA50E0DE4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731590B94AE34ED3A2A546C0 /* Montserrat-Regular.ttf */; };
 		B8881F9901C6424F9A576F60 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DA401FB5B6487E8F407308 /* logo.png */; };
-		198C52CB38094E95B200E3AB /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B73342851E43F68E2CFCD3 /* profile.png */; };
-		00B12DA3E1BF4BD893EA33D9 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 89162BE18B8844908F343095 /* fb.png */; };
-		EDE8F1D95852478F90BF8E30 /* insta.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BCCF1D8AD04E3BB84368C5 /* insta.png */; };
 		CD7EE29B18824876BA6CA3CF /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = 177515CC61884C45A62C28CE /* linkedin.png */; };
+		E7079908A24D4F33B08AF70C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B6495716A46A69C9A5D1C /* Montserrat-Bold.ttf */; };
+		EDE8F1D95852478F90BF8E30 /* insta.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BCCF1D8AD04E3BB84368C5 /* insta.png */; };
 		F5B150183D5E4551B96AD0E7 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F618372BE7474A9A54CBB7 /* twitter.png */; };
-		122FC72E92CC42CF9D520D79 /* yt.png in Resources */ = {isa = PBXBuildFile; fileRef = E53AAC7F367C46BD99ADC0CA /* yt.png */; };
+		FC735CDEBE764E4296EA7448 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41CC1EF1610443269B0DA41B /* Montserrat-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00B73342851E43F68E2CFCD3 /* profile.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = profile.png; path = ../src/assets/images/profile.png; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* EsummitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EsummitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* EsummitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EsummitTests.m; sourceTree = "<group>"; };
@@ -46,24 +47,32 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Esummit/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Esummit/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Esummit/main.m; sourceTree = "<group>"; };
+		177515CC61884C45A62C28CE /* linkedin.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = linkedin.png; path = ../src/assets/images/linkedin.png; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Esummit-EsummitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Esummit-EsummitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		367B6495716A46A69C9A5D1C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Esummit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit.debug.xcconfig"; path = "Target Support Files/Pods-Esummit/Pods-Esummit.debug.xcconfig"; sourceTree = "<group>"; };
+		41CC1EF1610443269B0DA41B /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../src/assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		518759E703954405A07BA997 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = ../src/assets/fonts/FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Esummit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit.release.xcconfig"; path = "Target Support Files/Pods-Esummit/Pods-Esummit.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Esummit-EsummitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit-EsummitTests.debug.xcconfig"; path = "Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Esummit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Esummit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60BB4FC8EF50478EB066E0F3 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = ../src/assets/fonts/Ionicons.ttf; sourceTree = "<group>"; };
+		731590B94AE34ED3A2A546C0 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Esummit/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87351CE313AC4694ABA88E5A /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = ../src/assets/fonts/SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		89162BE18B8844908F343095 /* fb.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = fb.png; path = ../src/assets/images/fb.png; sourceTree = "<group>"; };
+		894E8121103E40BC83927F6B /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = ../src/assets/fonts/AntDesign.ttf; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Esummit-EsummitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit-EsummitTests.release.xcconfig"; path = "Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests.release.xcconfig"; sourceTree = "<group>"; };
+		904EA6CA0CC340E38BEDD503 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = ../src/assets/fonts/FontAwesome.ttf; sourceTree = "<group>"; };
+		B4BCCF1D8AD04E3BB84368C5 /* insta.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = insta.png; path = ../src/assets/images/insta.png; sourceTree = "<group>"; };
+		C7FF9134596746E19DE72320 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = ../src/assets/fonts/FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		CB51A2E50A0748B99C50CFDE /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = ../src/assets/fonts/Entypo.ttf; sourceTree = "<group>"; };
+		DA709D5E151F44C89BB591FD /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = ../src/assets/fonts/Octicons.ttf; sourceTree = "<group>"; };
+		E2545800261A4206B5BB6018 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = ../src/assets/fonts/Feather.ttf; sourceTree = "<group>"; };
+		E53AAC7F367C46BD99ADC0CA /* yt.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = yt.png; path = ../src/assets/images/yt.png; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		367B6495716A46A69C9A5D1C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		41CC1EF1610443269B0DA41B /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; name = "Montserrat-Medium.ttf"; path = "../src/assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		731590B94AE34ED3A2A546C0 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F7DA401FB5B6487E8F407308 /* logo.png */ = {isa = PBXFileReference; name = "logo.png"; path = "../src/assets/images/logo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		00B73342851E43F68E2CFCD3 /* profile.png */ = {isa = PBXFileReference; name = "profile.png"; path = "../src/assets/images/profile.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		89162BE18B8844908F343095 /* fb.png */ = {isa = PBXFileReference; name = "fb.png"; path = "../src/assets/images/fb.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B4BCCF1D8AD04E3BB84368C5 /* insta.png */ = {isa = PBXFileReference; name = "insta.png"; path = "../src/assets/images/insta.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		177515CC61884C45A62C28CE /* linkedin.png */ = {isa = PBXFileReference; name = "linkedin.png"; path = "../src/assets/images/linkedin.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F3F618372BE7474A9A54CBB7 /* twitter.png */ = {isa = PBXFileReference; name = "twitter.png"; path = "../src/assets/images/twitter.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E53AAC7F367C46BD99ADC0CA /* yt.png */ = {isa = PBXFileReference; name = "yt.png"; path = "../src/assets/images/yt.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F3F618372BE7474A9A54CBB7 /* twitter.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = twitter.png; path = ../src/assets/images/twitter.png; sourceTree = "<group>"; };
+		F7DA401FB5B6487E8F407308 /* logo.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = logo.png; path = ../src/assets/images/logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +123,32 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = Esummit;
+			sourceTree = "<group>";
+		};
+		1451C958714A427AAFFA6FD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				367B6495716A46A69C9A5D1C /* Montserrat-Bold.ttf */,
+				41CC1EF1610443269B0DA41B /* Montserrat-Medium.ttf */,
+				731590B94AE34ED3A2A546C0 /* Montserrat-Regular.ttf */,
+				F7DA401FB5B6487E8F407308 /* logo.png */,
+				00B73342851E43F68E2CFCD3 /* profile.png */,
+				89162BE18B8844908F343095 /* fb.png */,
+				B4BCCF1D8AD04E3BB84368C5 /* insta.png */,
+				177515CC61884C45A62C28CE /* linkedin.png */,
+				F3F618372BE7474A9A54CBB7 /* twitter.png */,
+				E53AAC7F367C46BD99ADC0CA /* yt.png */,
+				894E8121103E40BC83927F6B /* AntDesign.ttf */,
+				CB51A2E50A0748B99C50CFDE /* Entypo.ttf */,
+				E2545800261A4206B5BB6018 /* Feather.ttf */,
+				904EA6CA0CC340E38BEDD503 /* FontAwesome.ttf */,
+				C7FF9134596746E19DE72320 /* FontAwesome5_Brands.ttf */,
+				518759E703954405A07BA997 /* FontAwesome5_Regular.ttf */,
+				60BB4FC8EF50478EB066E0F3 /* Ionicons.ttf */,
+				DA709D5E151F44C89BB591FD /* Octicons.ttf */,
+				87351CE313AC4694ABA88E5A /* SimpleLineIcons.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -168,24 +203,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		1451C958714A427AAFFA6FD5 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				367B6495716A46A69C9A5D1C /* Montserrat-Bold.ttf */,
-				41CC1EF1610443269B0DA41B /* Montserrat-Medium.ttf */,
-				731590B94AE34ED3A2A546C0 /* Montserrat-Regular.ttf */,
-				F7DA401FB5B6487E8F407308 /* logo.png */,
-				00B73342851E43F68E2CFCD3 /* profile.png */,
-				89162BE18B8844908F343095 /* fb.png */,
-				B4BCCF1D8AD04E3BB84368C5 /* insta.png */,
-				177515CC61884C45A62C28CE /* linkedin.png */,
-				F3F618372BE7474A9A54CBB7 /* twitter.png */,
-				E53AAC7F367C46BD99ADC0CA /* yt.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -611,7 +628,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -645,6 +662,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -682,7 +700,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -708,6 +726,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

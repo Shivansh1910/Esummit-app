@@ -32,7 +32,7 @@ export default function AppNavigation() {
           dangerColor={'#D10000'}>
           <NavigationContainer>
             <SafeAreaProvider>
-              <StatusBar barStyle={'light-content'} backgroundColor="#141415" />
+              <StatusBar barStyle={'light-content'} backgroundColor="#141415" hidden />
               <AppScreen />
             </SafeAreaProvider>
           </NavigationContainer>
