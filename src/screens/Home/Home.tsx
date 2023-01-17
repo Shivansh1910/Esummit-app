@@ -107,7 +107,11 @@ export const Home = () => {
   };
 
   return (
-    <LinearGradient colors={['#1F292F', '#000000']} useAngle angle={-128.06} style={styles.container}>
+    <LinearGradient
+      colors={['#1F292F', '#000000']}
+      useAngle
+      angle={-128.06}
+      style={styles.container}>
       <Portal>
         <Modal
           visible={visible}
@@ -232,6 +236,7 @@ export const Home = () => {
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
+                  alignItems: 'center',
                 }}>
                 <Text style={[styles.heading, { alignSelf: 'center' }]}>
                   ONGOING EVENTS
@@ -265,7 +270,17 @@ export const Home = () => {
 
           {upcommingEvents.length > 0 && (
             <View style={styles.section}>
-              <Text style={styles.heading}>UPCOMING EVENTS</Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
+                <Text style={styles.heading}>UPCOMING EVENTS</Text>
+                <TouchableOpacity onPress={showModal}>
+                  <FilterSvg />
+                </TouchableOpacity>
+              </View>
               <View style={styles.events}>
                 {filterData(
                   upcommingEvents,
@@ -291,7 +306,17 @@ export const Home = () => {
 
           {completedEvents.length > 0 && (
             <View style={styles.section}>
-              <Text style={styles.heading}>COMPLETED EVENTS</Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
+                <Text style={styles.heading}>COMPLETED EVENTS</Text>
+                <TouchableOpacity onPress={showModal}>
+                  <FilterSvg />
+                </TouchableOpacity>
+              </View>
               <View style={styles.events}>
                 {filterData(
                   completedEvents,

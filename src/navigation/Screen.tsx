@@ -28,10 +28,17 @@ export default function AppScreen() {
         headerShown: true,
         gestureEnabled: true,
         gestureDirection: 'horizontal',
-        cardStyleInterpolator: ({ current: { progress } }) => {
+        cardStyleInterpolator: ({ current, layouts }) => {
           return {
             cardStyle: {
-              opacity: progress,
+              transform: [
+                {
+                  translateX: current.progress.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [layouts.screen.width, 0],
+                  }),
+                },
+              ],
             },
           };
         },
@@ -40,7 +47,6 @@ export default function AppScreen() {
           close: TransitionSpecs.TransitionIOSSpec,
         },
         header: () => <Navbar navigation={navigation} />,
-        // headerTransparent: true,
       }}>
       {flow == FLOW_STAGES.SPLASH ? (
         <Stack.Screen
