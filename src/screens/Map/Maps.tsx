@@ -1,7 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   ActivityIndicator,
+  RefreshControl,
   ScrollView,
   StyleSheet,
   Text,
@@ -15,10 +16,28 @@ import { useVenues } from '../../hooks/query/other-query';
 export const Maps = () => {
   const navigation = useNavigation();
 
-  const { data: Venues, isLoading } = useVenues();
+  const { data: Venues, isLoading, refetch } = useVenues();
+
+  const mapsData = useMemo(() => {
+    return Venues?.map((item, index) => {
+      return (
+        <Location
+          key={index}
+          name={item.name}
+          image={item.image}
+          latitude={item.latitude}
+          longitude={item.longitude}
+        />
+      );
+    });
+  }, [Venues]);
 
   return (
-    <LinearGradient colors={['#1F292F', '#000000']} useAngle angle={-128.06} style={styles.container}>
+    <LinearGradient
+      colors={['#1F292F', '#000000']}
+      useAngle
+      angle={-128.06}
+      style={styles.container}>
       {isLoading ? (
         <ActivityIndicator
           animating={true}
@@ -27,19 +46,18 @@ export const Maps = () => {
           style={{ marginTop: 20 }}
         />
       ) : (
-        <ScrollView>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          refreshControl={
+            <RefreshControl
+              refreshing={isLoading}
+              onRefresh={() => {
+                refetch();
+              }}
+            />
+          }>
           <Text style={styles.title}>Venues</Text>
-          {Venues?.map((item, index) => {
-            return (
-              <Location
-                key={index}
-                name={item.name}
-                image={item.image}
-                latitude={item.latitude}
-                longitude={item.longitude}
-              />
-            );
-          })}
+          {mapsData}
         </ScrollView>
       )}
       <Footer navigation={navigation} />

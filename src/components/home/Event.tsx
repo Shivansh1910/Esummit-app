@@ -22,32 +22,33 @@ interface IEventBoxProps {
 
 export const EventBox = (props: IEventBoxProps) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => props.navigation.navigate('Event', { id: props.id })}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => props.navigation.navigate('Event', { id: props.id })}>
+      <View style={styles.container}>
         <Image
           source={{ uri: props.url }}
           resizeMode={'contain'}
           style={styles.image}
         />
         <View style={styles.flag}>
-          <Text style={styles.flagText}>{getTime(props.startTime)} - {getTime(props.endTime)}</Text>
+          <Text style={styles.flagText}>
+            {getTime(props.startTime)} - {getTime(props.endTime)}
+          </Text>
         </View>
 
         <View style={styles.content}>
           <Text style={styles.event}>{props.event}</Text>
           <Text style={styles.venue}>Venue : {props.venue}</Text>
         </View>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    width: '50%',
-    alignItems: 'center',
-    paddingBottom: 10,
+    paddingVertical:5
   },
   flag: {
     width: 80,

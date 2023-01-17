@@ -3,15 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {
-  Avatar,
-  Button,
-  Divider,
-  IconButton,
-  List,
-  Modal,
-  Portal,
-} from 'react-native-paper';
+import { Button, Divider, List, Modal, Portal } from 'react-native-paper';
 import { ProfileSection } from '../../components/profile';
 import { useProfileStore } from '../../store/profile-store';
 import Icon from 'react-native-vector-icons/MaterialIcons';
