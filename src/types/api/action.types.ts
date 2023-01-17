@@ -48,9 +48,19 @@ export interface IVerifyOtpResponse {
 export interface IMarkAttendanceResponse {
   success: boolean;
   data: {
+    id: string;
+    isKitCollected: boolean;
     email: string;
     isRegistered: boolean;
     pass_name: string;
+  };
+}
+
+export interface IKitResponse {
+  success: boolean;
+  data: {
+    email: string;
+    isKitCollected: boolean;
   };
 }
 
