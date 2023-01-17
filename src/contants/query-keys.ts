@@ -11,3 +11,4 @@ export const ESUMMIT_USER_DETAIL = 'userDetail';
 export const ESUMMIT_SPONSORS = 'sponsors';
 export const ESUMMIT_VENUES = 'venues';
 export const ESUMMIT_MARK_ATTENDANCE = 'attendance';
+export const ESUMMIT_DISTRIBUTE_KIT = 'distributeKit';

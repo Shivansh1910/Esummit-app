@@ -1,6 +1,7 @@
 import { useMutation, UseMutationResult } from 'react-query';
 import {
   createOtp,
+  distributeKit,
   setReminder,
   setTag,
   userDetail,
@@ -8,6 +9,7 @@ import {
 } from '../../api/user';
 import {
   ESUMMIT_CREATE_OTP,
+  ESUMMIT_DISTRIBUTE_KIT,
   ESUMMIT_SET_REMINDER,
   ESUMMIT_SET_TAG,
   ESUMMIT_USER_DETAIL,
@@ -16,6 +18,7 @@ import {
 import {
   ErrorResponse,
   ICreateOtpResponse,
+  IKitResponse,
   ISetReminderResponse,
   ISetTagResponse,
   IVerifyOtpResponse,
@@ -86,5 +89,16 @@ export const useUserDetailMutation = (): UseMutationResult<
   return useMutation<IVerifyOtpResponse, ErrorResponse, { email: string }>({
     mutationKey: [ESUMMIT_USER_DETAIL],
     mutationFn: async ({ email }) => userDetail(email),
+  });
+};
+
+export const useDistributeKitMutation = (): UseMutationResult<
+  IKitResponse,
+  ErrorResponse,
+  { attendanceId: string | undefined }
+> => {
+  return useMutation<IKitResponse, ErrorResponse, { attendanceId: string | undefined }>({
+    mutationKey: [ESUMMIT_DISTRIBUTE_KIT],
+    mutationFn: async ({ attendanceId }) => distributeKit(attendanceId),
   });
 };

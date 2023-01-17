@@ -151,3 +151,24 @@ export const markAttendance = async (email: string) => {
     };
   }
 };
+
+export const distributeKit = async (attendanceId: string | undefined) => {
+  try {
+    const response = await fetch(`${BASE_URL}/kit/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        attendanceId: attendanceId,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return {
+      success: false,
+      error: err,
+    };
+  }
+};

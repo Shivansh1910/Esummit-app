@@ -22,19 +22,17 @@ export const QRCode = () => {
   const device = devices.back;
 
   const [attendee, setAttendee] = useState<string>();
-  const [isLoading, setIsLoading] = useState(false);
-  const [scaned, setScaned] = useState<string[]>([]);
 
   const handleScan = async (codes: Barcode[]) => {
-    setIsLoading(true);
     if (codes.length > 0) {
       const code = codes[0].displayValue as string;
       setAttendee(code);
-    } else {
-      setAttendee(undefined);
-      setIsLoading(false);
-    }
+    } 
   };
+
+  const onClose = async () => {
+    setAttendee(undefined)
+  }
 
   const frameProcessor = useFrameProcessor(frame => {
     'worklet';
@@ -51,10 +49,6 @@ export const QRCode = () => {
 
   useEffect(() => {
     checkPermission();
-
-    return () => {
-      setScaned([]);
-    };
   }, []);
 
   return (
@@ -63,6 +57,7 @@ export const QRCode = () => {
       useAngle
       angle={-128.06}
       style={styles.container}>
+        <></>
       <View
         style={[
           styles.section,
@@ -76,7 +71,7 @@ export const QRCode = () => {
             <Camera
               style={StyleSheet.absoluteFill}
               device={device}
-              isActive={true}
+              isActive={!attendee}
               frameProcessor={frameProcessor}
               frameProcessorFps={5}
             />
@@ -87,7 +82,7 @@ export const QRCode = () => {
       <View style={styles.section}>
         <Text style={{ color: 'white', fontSize: 20 }}>Status</Text>
         {attendee && Validator.email.test(attendee) ? (
-          <ScanResult email={attendee} />
+          <ScanResult email={attendee} close={onClose}/>
         ) : (
           <Text style={{ color: 'red', fontSize: 25, textAlign: 'center' }}>
             Please Scan the QR Code
