@@ -1,8 +1,8 @@
-import { BASE_URL } from './base';
+import { PRODUCTION_BASE_URL } from './base';
 
 export const getContact = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/contact/`, {
+    const response = await fetch(`${PRODUCTION_BASE_URL}/contact/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ export const getContact = async () => {
 
 export const getFaq = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/faq/`, {
+    const response = await fetch(`${PRODUCTION_BASE_URL}/faq/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ export const getFaq = async () => {
 
 export const getSchedule = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/schedule/`, {
+    const response = await fetch(`${PRODUCTION_BASE_URL}/schedule/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ export const getSchedule = async () => {
 
 export const getSponsors = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/sponsors/`, {
+    const response = await fetch(`${PRODUCTION_BASE_URL}/sponsors/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ export const getSponsors = async () => {
 
 export const getVenues = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/venues/`, {
+    const response = await fetch(`${PRODUCTION_BASE_URL}/venues/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

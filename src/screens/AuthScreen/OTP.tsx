@@ -42,7 +42,7 @@ export const OTPScreen = () => {
   }, [timer]);
 
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <LinearGradient
         colors={['#223139', '#161616']}
         useAngle={true}
@@ -69,7 +69,7 @@ export const OTPScreen = () => {
 
         <OtpBox length={4} handleResend={handleResend} />
       </View>
-    </ScrollView>
+    </View>
   );
 };
 

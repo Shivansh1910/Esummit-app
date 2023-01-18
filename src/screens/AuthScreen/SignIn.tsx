@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useToast } from 'react-native-toast-notifications';
 import { TextInput } from '../../components/form';
@@ -51,7 +51,7 @@ export const SignInScreen = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <LinearGradient
         colors={['#223139', '#161616']}
         useAngle={true}
@@ -72,7 +72,7 @@ export const SignInScreen = () => {
           onSubmit={handleSubmit}
         />
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFFFF',
     width: '100%',
-    height: '100%',
+    height: Dimensions.get('window').height,
   },
   section: {
     padding: 20,
