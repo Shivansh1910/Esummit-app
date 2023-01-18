@@ -17,6 +17,15 @@ export interface ISetTagResponse {
   };
 }
 
+export interface ITagOfEventResponse {
+  success: boolean;
+  data: {
+    email: string;
+    event: IEventData;
+    tag: string;
+  };
+}
+
 export interface IGetTagsAndReminder {
   success: boolean;
   data: {

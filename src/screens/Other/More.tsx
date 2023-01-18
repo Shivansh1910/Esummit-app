@@ -1,10 +1,15 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 import { Divider, List, Modal, Portal } from 'react-native-paper';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   Contact,
   Faq,
@@ -13,6 +18,7 @@ import {
   Schedule,
 } from '../../components/others';
 import { Footer } from '../../components/shared';
+import CrossSvg from '../../components/svgs/cross';
 
 export const More = () => {
   const [visible, setVisible] = React.useState(false);
@@ -23,24 +29,29 @@ export const More = () => {
   };
   const hideModal = () => setVisible(false);
 
-  const containerStyle = {
-    backgroundColor: 'white',
-    padding: 20,
-    height: '80%',
-    width: '100%',
-  };
-
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView>
-    <LinearGradient colors={['#1F292F', '#000000']} useAngle angle={-128.06} style={styles.container}>
+    <>
+      <LinearGradient
+        colors={['#1F292F', '#000000']}
+        useAngle
+        angle={-128.06}
+        style={styles.container}>
         <ScrollView>
           <Portal>
             <Modal
               visible={visible}
               onDismiss={hideModal}
-              contentContainerStyle={containerStyle}>
+              contentContainerStyle={styles.containerStyle}>
+              <TouchableOpacity
+                style={{
+                  alignItems: 'flex-end',
+                  marginVertical: 15,
+                }}
+                onPress={hideModal}>
+                <CrossSvg />
+              </TouchableOpacity>
               <PdfComponent url={source} />
             </Modal>
           </Portal>
@@ -84,9 +95,8 @@ export const More = () => {
           <Divider style={styles.divider} />
         </ScrollView>
       </LinearGradient>
-
       <Footer navigation={navigation} />
-    </SafeAreaView>
+    </>
   );
 };
 
@@ -111,5 +121,16 @@ const styles = StyleSheet.create({
     width: '90%',
     alignSelf: 'center',
     backgroundColor: '#3D3C3C',
+  },
+  containerStyle: {
+    backgroundColor: '#1F2122',
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+    alignSelf: 'center',
+    height:
+      Dimensions.get('window').height > Dimensions.get('window').width
+        ? '75%'
+        : '80%',
+    width: '90%',
   },
 });

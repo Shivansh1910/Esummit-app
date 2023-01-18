@@ -5,6 +5,10 @@ export interface IEventResponse {
     other: IEventData[];
   };
 }
+export interface IEventNameResponse {
+  success: boolean;
+  data: { name: string }[];
+}
 
 export interface IEventByIdResponse {
   success: boolean;

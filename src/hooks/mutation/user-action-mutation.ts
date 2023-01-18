@@ -2,6 +2,7 @@ import { useMutation, UseMutationResult } from 'react-query';
 import {
   createOtp,
   distributeKit,
+  markEventAttendance,
   setReminder,
   setTag,
   userDetail,
@@ -10,6 +11,7 @@ import {
 import {
   ESUMMIT_CREATE_OTP,
   ESUMMIT_DISTRIBUTE_KIT,
+  ESUMMIT_EVENT_MARK_ATTENDANCE,
   ESUMMIT_SET_REMINDER,
   ESUMMIT_SET_TAG,
   ESUMMIT_USER_DETAIL,
@@ -97,8 +99,27 @@ export const useDistributeKitMutation = (): UseMutationResult<
   ErrorResponse,
   { attendanceId: string | undefined }
 > => {
-  return useMutation<IKitResponse, ErrorResponse, { attendanceId: string | undefined }>({
+  return useMutation<
+    IKitResponse,
+    ErrorResponse,
+    { attendanceId: string | undefined }
+  >({
     mutationKey: [ESUMMIT_DISTRIBUTE_KIT],
     mutationFn: async ({ attendanceId }) => distributeKit(attendanceId),
+  });
+};
+
+export const useMarkEventAttendanceMutation = (): UseMutationResult<
+  IKitResponse,
+  ErrorResponse,
+  { event: string; email: string }
+> => {
+  return useMutation<
+    IKitResponse,
+    ErrorResponse,
+    { event: string; email: string }
+  >({
+    mutationKey: [ESUMMIT_EVENT_MARK_ATTENDANCE, ],
+    mutationFn: async ({ email, event }) => markEventAttendance(email, event),
   });
 };

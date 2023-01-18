@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useToast } from 'react-native-toast-notifications';
 import { OtpBox } from '../../components/form';
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   section: {
     padding: 20,
     backgroundColor: '#161616',
-    height:'100%'
+    height: '100%',
   },
   heading: {
     fontFamily: 'Montserrat-Bold',

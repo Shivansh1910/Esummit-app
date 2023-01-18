@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useToast } from 'react-native-toast-notifications';
 import { TextInput } from '../../components/form';
@@ -80,12 +80,12 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFFFF',
     width: '100%',
-    height: '100%',
+    height: Dimensions.get('window').height,
   },
   section: {
     padding: 20,
     backgroundColor: '#161616',
-    height:'100%'
+    height: '100%',
   },
   heading: {
     fontFamily: 'Montserrat-Bold',
