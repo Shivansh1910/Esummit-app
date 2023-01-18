@@ -53,3 +53,22 @@ export const getEventsName = async () => {
     };
   }
 };
+
+export const getCoordinates = async (venue: string) => {
+  try {
+    const response = await fetch(`${PRODUCTION_BASE_URL}/getCoordinates/${venue}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (err) {
+    return {
+      success: false,
+      error: err,
+    };
+  }
+};

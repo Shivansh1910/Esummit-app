@@ -104,6 +104,15 @@ export const Profile = () => {
       <Divider style={styles.divider} />
 
       <TouchableOpacity
+        onPress={() => navigation.navigate('TimeTable' as never)}>
+        <View style={[styles.section, { justifyContent: 'space-between' }]}>
+          <Text style={styles.text}>My Schedule </Text>
+          <List.Icon icon="chevron-right" color="#FFF" />
+        </View>
+      </TouchableOpacity>
+      <Divider style={styles.divider} />
+
+      <TouchableOpacity
         onPress={() => {
           setVisible(true);
         }}>
@@ -183,7 +192,7 @@ const styles = StyleSheet.create({
   },
   containerStyle: {
     backgroundColor: 'transparent',
-    width: '70%',
+    width: 300,
     alignSelf: 'center',
     padding: 10,
     borderRadius: 10,

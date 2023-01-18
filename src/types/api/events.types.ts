@@ -9,6 +9,10 @@ export interface IEventNameResponse {
   success: boolean;
   data: { name: string }[];
 }
+export interface IGetCoordinatesResponse {
+  success: boolean;
+  data: { latitude: string, longitude:string };
+}
 
 export interface IEventByIdResponse {
   success: boolean;

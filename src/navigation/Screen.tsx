@@ -5,7 +5,7 @@ import { TransitionSpecs } from '@react-navigation/stack';
 import { Otp, SignIn } from '../screens/AuthScreen';
 import { HomePage } from '../screens/Home';
 import { Maps } from '../screens/Map';
-import { Profile, QRCode } from '../screens/Profile';
+import { Profile, QRCode, TimeTable } from '../screens/Profile';
 import { More, Sponsors } from '../screens/Other';
 import { Event } from '../screens/Event';
 import { useNavigation } from '@react-navigation/native';
@@ -28,17 +28,10 @@ export default function AppScreen() {
         headerShown: true,
         gestureEnabled: true,
         gestureDirection: 'horizontal',
-        cardStyleInterpolator: ({ current, layouts }) => {
+        cardStyleInterpolator: ({ current: { progress } }) => {
           return {
             cardStyle: {
-              transform: [
-                {
-                  translateX: current.progress.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [layouts.screen.width, 0],
-                  }),
-                },
-              ],
+              opacity: progress,
             },
           };
         },
@@ -87,6 +80,7 @@ export default function AppScreen() {
           <Stack.Screen name="More" component={More} />
           <Stack.Screen name="Event" component={Event} />
           <Stack.Screen name="Sponsors" component={Sponsors} />
+          <Stack.Screen name="TimeTable" component={TimeTable} />
         </>
       )}
 
