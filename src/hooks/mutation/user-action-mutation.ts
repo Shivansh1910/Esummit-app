@@ -8,6 +8,7 @@ import {
   userDetail,
   verifyOtp,
 } from '../../api/user';
+import {getCoordinates} from '../../api/events';
 import {
   ESUMMIT_CREATE_OTP,
   ESUMMIT_DISTRIBUTE_KIT,
@@ -15,6 +16,7 @@ import {
   ESUMMIT_SET_REMINDER,
   ESUMMIT_SET_TAG,
   ESUMMIT_USER_DETAIL,
+  ESUMMIT_VENUE_COORDINATES,
   ESUMMIT_VERIFY_OTP,
 } from '../../contants/query-keys';
 import {
@@ -25,6 +27,7 @@ import {
   ISetTagResponse,
   IVerifyOtpResponse,
 } from '../../types/api/action.types';
+import { IGetCoordinatesResponse } from '../../types/api/events.types';
 
 export const useSetReminderMutation = (): UseMutationResult<
   ISetReminderResponse,
@@ -119,7 +122,20 @@ export const useMarkEventAttendanceMutation = (): UseMutationResult<
     ErrorResponse,
     { event: string; email: string }
   >({
-    mutationKey: [ESUMMIT_EVENT_MARK_ATTENDANCE, ],
+    mutationKey: [ESUMMIT_EVENT_MARK_ATTENDANCE],
     mutationFn: async ({ email, event }) => markEventAttendance(email, event),
   });
+};
+
+export const useGetCoordinatesMutation = (): UseMutationResult<
+  IGetCoordinatesResponse,
+  ErrorResponse,
+  { venue: string }
+> => {
+  return useMutation<IGetCoordinatesResponse, ErrorResponse, { venue: string }>(
+    {
+      mutationKey: [ESUMMIT_VENUE_COORDINATES],
+      mutationFn: async ({ venue }) => getCoordinates(venue),
+    },
+  );
 };

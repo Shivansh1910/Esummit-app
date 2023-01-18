@@ -1,10 +1,15 @@
 import { useQuery } from 'react-query';
 import { getEvent, getEventById, getEventsName } from '../../api/events';
-import { ESUMMIT_EVENTS, ESUMMIT_EVENT_NAME } from '../../contants/query-keys';
+import {
+  ESUMMIT_EVENTS,
+  ESUMMIT_EVENT_NAME,
+  ESUMMIT_VENUE_COORDINATES,
+} from '../../contants/query-keys';
 import {
   IEventByIdResponse,
   IEventNameResponse,
   IEventResponse,
+  IGetCoordinatesResponse,
 } from '../../types/api/events.types';
 
 export const useEvent = () =>

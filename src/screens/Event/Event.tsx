@@ -1,19 +1,29 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 
-import { View, StyleSheet, Text, Image, ScrollView } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { ActivityIndicator, FAB, SegmentedButtons } from 'react-native-paper';
 import { useToast } from 'react-native-toast-notifications';
 import { SegmentButton } from '../../components/form';
 import { Footer } from '../../components/shared';
 import {
+  useGetCoordinatesMutation,
   useSetReminderMutation,
   useSetTagMutation,
 } from '../../hooks/mutation/user-action-mutation';
 import { useEventById } from '../../hooks/query/events-query';
 import { useGetTagsAndReminder } from '../../hooks/query/user-query';
 import { useProfileStore } from '../../store/profile-store';
+import { mapUrl } from '../../utils/helper';
 
 export const Event = ({ route }) => {
   const { data: EventData, isLoading } = useEventById(route.params.id);
@@ -25,6 +35,17 @@ export const Event = ({ route }) => {
 
   const { data: ReminderAndTagData, isLoading: ReminderAndTagLoading } =
     useGetTagsAndReminder(email, route.params.id);
+
+  const { mutateAsync: coordinates } = useGetCoordinatesMutation();
+
+  const handleVenueClick = async () => {
+    coordinates({ venue: EventData?.data.venue as string }).then(res => {
+      if (res.success) {
+        const url = mapUrl(res.data.latitude, res.data.longitude);
+        return Linking.openURL(url as string);
+      }
+    });
+  };
 
   const { mutateAsync: setReminder } = useSetReminderMutation();
 
@@ -90,14 +111,15 @@ export const Event = ({ route }) => {
             onValueChange={handleTag}
             buttons={['interested', 'going', 'not going']}
           />
-
-          <View style={{ flexDirection: 'row' }}>
-            <Text style={styles.heading2}>Venue : </Text>
-            <Text
-              style={[styles.heading2, { fontFamily: 'Montserrat-Medium' }]}>
-              {EventData?.data.venue}
-            </Text>
-          </View>
+          <TouchableOpacity onPress={handleVenueClick}>
+            <View style={{ flexDirection: 'row' }}>
+              <Text style={styles.heading2}>Venue : </Text>
+              <Text
+                style={[styles.heading2, { fontFamily: 'Montserrat-Medium' }]}>
+                {EventData?.data.venue}
+              </Text>
+            </View>
+          </TouchableOpacity>
 
           <View style={{ flexDirection: 'row' }}>
             <Text style={styles.heading2}>Event On : </Text>

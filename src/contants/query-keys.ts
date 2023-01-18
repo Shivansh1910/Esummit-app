@@ -15,3 +15,4 @@ export const ESUMMIT_DISTRIBUTE_KIT = 'distributeKit';
 export const ESUMMIT_EVENT_NAME = 'eventsName';
 export const ESUMMIT_TAG_OF_EVENT = 'tagOfEvent';
 export const ESUMMIT_EVENT_MARK_ATTENDANCE = 'eventAttendance';
+export const ESUMMIT_VENUE_COORDINATES = 'venueCoordinates';
