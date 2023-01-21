@@ -38,7 +38,7 @@ export const EventAttendance = (props: IEventAttendanceProps) => {
         <ActivityIndicator animating={true} color="#4E8FB4" size="large" />
       ) : (
         <>
-          {qrCode?.success ? (
+          {qrCode?.success && qrCode?.data.tag !== 'not going' ? (
             <>
               <Avatar.Icon
                 size={100}
@@ -63,8 +63,7 @@ export const EventAttendance = (props: IEventAttendanceProps) => {
           <Text style={{ color: '#FFFFFF', fontSize: 20 }}>{props.email}</Text>
           {qrCode?.success && (
             <Text style={{ color: '#FFFFFF', fontSize: 20 }}>
-              {/* {qrCode?.data.pass_name}  */}
-              Pass
+              Tag: {qrCode?.data.tag}
             </Text>
           )}
 
@@ -75,7 +74,7 @@ export const EventAttendance = (props: IEventAttendanceProps) => {
 
             {qrCode?.success && (
               <Button mode="contained" onPress={handleClick}>
-                Done
+                Allow
               </Button>
             )}
           </View>

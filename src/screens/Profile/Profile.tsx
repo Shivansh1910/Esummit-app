@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Button, Divider, List, Modal, Portal } from 'react-native-paper';
 import { ProfileSection } from '../../components/profile';
@@ -95,7 +95,7 @@ export const Profile = () => {
       </TouchableOpacity>
       <Divider style={styles.divider} />
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>Linking.openURL('https://ecell.in/esummit/pass')}>
         <View style={[styles.section, { justifyContent: 'space-between' }]}>
           <Text style={styles.text}>Upgrade your Pass </Text>
           <List.Icon icon="chevron-right" color="#FFF" />

@@ -213,12 +213,14 @@ export const Home = () => {
                       <Highlight
                         url={item.image}
                         alt={item.name}
+                        id={item.id}
                         index={index}
                         length={EventData?.data.highlights.length}
                         isLive={
                           new Date(item.startTime) < new Date() &&
                           new Date(item.endTime) > new Date()
                         }
+                        navigation={navigation}
                       />
                     </View>
                   ))}

@@ -23,7 +23,7 @@ import {
 
 export const useGetTagsAndReminder = (email: string, id: string) =>
   useQuery<IGetTagsAndReminder, Error, IGetTagsAndReminder>({
-    queryKey: [ESUMMIT_GET_TAGS_AND_REMINDERS],
+    queryKey: [ESUMMIT_GET_TAGS_AND_REMINDERS, id],
     queryFn: () => getTagsAndReminders(email, id),
   });
 
