@@ -63,7 +63,6 @@ export const getCoordinates = async (venue: string) => {
       },
     });
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (err) {
     return {

@@ -21,6 +21,7 @@ interface IEventBoxProps {
 }
 
 export const EventBox = (props: IEventBoxProps) => {
+  
   return (
     <TouchableOpacity
       style={styles.container}

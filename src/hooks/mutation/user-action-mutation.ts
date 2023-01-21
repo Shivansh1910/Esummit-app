@@ -2,17 +2,19 @@ import { useMutation, UseMutationResult } from 'react-query';
 import {
   createOtp,
   distributeKit,
+  giveHospitalityKit,
   markEventAttendance,
   setReminder,
   setTag,
   userDetail,
   verifyOtp,
 } from '../../api/user';
-import {getCoordinates} from '../../api/events';
+import { getCoordinates } from '../../api/events';
 import {
   ESUMMIT_CREATE_OTP,
   ESUMMIT_DISTRIBUTE_KIT,
   ESUMMIT_EVENT_MARK_ATTENDANCE,
+  ESUMMIT_HOSPI_KIT,
   ESUMMIT_SET_REMINDER,
   ESUMMIT_SET_TAG,
   ESUMMIT_USER_DETAIL,
@@ -27,7 +29,10 @@ import {
   ISetTagResponse,
   IVerifyOtpResponse,
 } from '../../types/api/action.types';
-import { IGetCoordinatesResponse } from '../../types/api/events.types';
+import {
+  IGetCoordinatesResponse,
+  IGiveHospitalityKitResponse,
+} from '../../types/api/events.types';
 
 export const useSetReminderMutation = (): UseMutationResult<
   ISetReminderResponse,
@@ -138,4 +143,19 @@ export const useGetCoordinatesMutation = (): UseMutationResult<
       mutationFn: async ({ venue }) => getCoordinates(venue),
     },
   );
+};
+
+export const useGiveHospitalityKitMutation = (): UseMutationResult<
+  IGiveHospitalityKitResponse,
+  ErrorResponse,
+  { email: string }
+> => {
+  return useMutation<
+    IGiveHospitalityKitResponse,
+    ErrorResponse,
+    { email: string }
+  >({
+    mutationKey: [ESUMMIT_HOSPI_KIT],
+    mutationFn: async ({ email }) => giveHospitalityKit(email),
+  });
 };

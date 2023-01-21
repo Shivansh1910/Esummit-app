@@ -197,19 +197,79 @@ export const tagOfEvent = async (email: string, event: string) => {
 
 export const markEventAttendance = async (email: string, event: string) => {
   try {
-    const response = await fetch(
-      `${PRODUCTION_BASE_URL}/eventAttendance/`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          event: event,
-        }),
+    const response = await fetch(`${PRODUCTION_BASE_URL}/eventAttendance/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
-    );
+      body: JSON.stringify({
+        email: email,
+        event: event,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return {
+      success: false,
+      error: err,
+    };
+  }
+};
+
+export const getTimetable = async (email: string) => {
+  try {
+    const response = await fetch(`${PRODUCTION_BASE_URL}/timetable/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return {
+      success: false,
+      error: err,
+    };
+  }
+};
+
+export const checkAccomodation = async (email: string) => {
+  try {
+    const response = await fetch(`${PRODUCTION_BASE_URL}/checkAccomodation/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return {
+      success: false,
+      error: err,
+    };
+  }
+};
+
+export const giveHospitalityKit = async (email: string) => {
+  try {
+    const response = await fetch(`${PRODUCTION_BASE_URL}/giveHospitalityKit/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    });
     const data = await response.json();
     return data;
   } catch (err) {

@@ -14,6 +14,10 @@ export interface IGetCoordinatesResponse {
   data: { latitude: string, longitude:string };
 }
 
+export interface IGiveHospitalityKitResponse {
+  success: boolean;
+}
+
 export interface IEventByIdResponse {
   success: boolean;
   data: IEventData;

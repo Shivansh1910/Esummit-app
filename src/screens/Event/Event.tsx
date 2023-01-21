@@ -78,9 +78,17 @@ export const Event = ({ route }) => {
   };
 
   const handleTag = async (val: string) => {
-    setValue(val);
     setTag({ id: route.params.id, email: email, tag: val }).then(data => {
-      console.log('Tagged', data);
+      if (data.success) {
+        toast.show('Response has been recorded', {
+          type: 'success',
+        });
+        setValue(val);
+      } else {
+        toast.show('All Seats are full', {
+          type: 'danger',
+        });
+      }
     });
   };
 

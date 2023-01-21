@@ -51,28 +51,30 @@ export const SignInScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <LinearGradient
-        colors={['#223139', '#161616']}
-        useAngle={true}
-        angle={-88.84}
-        style={{ height: 214, alignItems: 'center', paddingTop: 100 }}>
-        <Logo width={287} height={60} />
-      </LinearGradient>
+    <ScrollView>
+      <View style={styles.container}>
+        <LinearGradient
+          colors={['#223139', '#161616']}
+          useAngle={true}
+          angle={-88.84}
+          style={{ height: 214, alignItems: 'center', paddingTop: 100 }}>
+          <Logo width={287} height={60} />
+        </LinearGradient>
 
-      <View style={styles.section}>
-        <Text style={styles.heading}>Sign In</Text>
-        <Text style={styles.subheading}>Enter your E-mail ID to proceed</Text>
+        <View style={styles.section}>
+          <Text style={styles.heading}>Sign In</Text>
+          <Text style={styles.subheading}>Enter your E-mail ID to proceed</Text>
 
-        <TextInput
-          label="Email Id"
-          value={email}
-          onChangeText={setEmail}
-          validator={Validator.email}
-          onSubmit={handleSubmit}
-        />
+          <TextInput
+            label="Email Id"
+            value={email}
+            onChangeText={setEmail}
+            validator={Validator.email}
+            onSubmit={handleSubmit}
+          />
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
