@@ -1,6 +1,6 @@
 {
   "name": "Esummit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -8,6 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "link": "npx react-native-asset",
+    "versioning": "npx react-native-version",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
@@ -41,6 +42,7 @@
     "react-native-timetable": "^1.0.6",
     "react-native-toast-notifications": "^3.3.1",
     "react-native-vector-icons": "^9.2.0",
+    "react-native-version": "^4.0.0",
     "react-native-vision-camera": "^2.15.2",
     "react-query": "^3.39.2",
     "vision-camera-code-scanner": "^0.2.0",
