@@ -20,7 +20,7 @@ import {
   BarcodeFormat,
   Barcode,
 } from 'vision-camera-code-scanner';
-import { EventAttendance, ScanResult } from '../../components/profile';
+import { AccomodationResult, EventAttendance, ScanResult } from '../../components/profile';
 import { Validator } from '../../contants';
 import { useEventByName } from '../../hooks/query/events-query';
 
@@ -92,6 +92,15 @@ export const QRCode = () => {
                     <Text style={styles.itemText}>{'Entry Attendance'}</Text>
                   </View>
                 </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    setEvent('Accomodation');
+                  }}>
+                  <View style={styles.itemList}>
+                    <RadioButton value={'Accomodation'} />
+                    <Text style={styles.itemText}>{'Accomodation'}</Text>
+                  </View>
+                </TouchableOpacity>
                 {EventName?.data.map((item, index) => {
                   return (
                     <TouchableOpacity
@@ -158,9 +167,16 @@ export const QRCode = () => {
             Please Scan the QR Code
           </Text>
         )}
+
         {attendee &&
         Validator.email.test(attendee) &&
-        event !== 'Entry Attendance' ? (
+        event === 'Accomodation' ? (
+          <AccomodationResult email={attendee} close={onClose} />
+        ) : null}
+
+        {attendee &&
+        Validator.email.test(attendee) &&
+        event !== 'Entry Attendance' && event !== 'Accomodation' ? (
           <EventAttendance email={attendee} event={event} close={onClose} />
         ) : null}
       </View>

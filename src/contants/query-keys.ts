@@ -16,3 +16,6 @@ export const ESUMMIT_EVENT_NAME = 'eventsName';
 export const ESUMMIT_TAG_OF_EVENT = 'tagOfEvent';
 export const ESUMMIT_EVENT_MARK_ATTENDANCE = 'eventAttendance';
 export const ESUMMIT_VENUE_COORDINATES = 'venueCoordinates';
+export const ESUMMIT_TIMETABLE = 'timetable';
+export const ESUMMIT_ACCOMODATION = 'accomodation';
+export const ESUMMIT_HOSPI_KIT = 'accomodationKit';

@@ -25,6 +25,23 @@ export interface ITagOfEventResponse {
     tag: string;
   };
 }
+export interface ITimetableResponse {
+  success: boolean;
+  data: {
+    email: string;
+    event: IEventData;
+    tag: string;
+  }[];
+}
+
+export interface ICheckAccomodationResponse {
+  success: boolean;
+  data: {
+    room: string;
+    isHospitalityKitCollected: boolean;
+    isAccomodationBooked: boolean;
+  };
+}
 
 export interface IGetTagsAndReminder {
   success: boolean;
