@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   View,
   Text,
@@ -21,17 +21,21 @@ interface IEventBoxProps {
 }
 
 export const EventBox = (props: IEventBoxProps) => {
-  
+  const ImageComponent = useMemo(() => {
+    return (
+      <Image
+        source={{ uri: props.url }}
+        resizeMode={'cover'}
+        style={styles.image}
+      />
+    );
+  }, [props.url]);
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={() => props.navigation.navigate('Event', { id: props.id })}>
       <View style={styles.container}>
-        <Image
-          source={{ uri: props.url }}
-          resizeMode={'contain'}
-          style={styles.image}
-        />
+        {ImageComponent}
         <View style={styles.flag}>
           <Text style={styles.flagText}>
             {getTime(props.startTime)} - {getTime(props.endTime)}
@@ -49,7 +53,8 @@ export const EventBox = (props: IEventBoxProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical:5
+    paddingVertical: 5,
+    margin: 2,
   },
   flag: {
     width: 80,
@@ -58,7 +63,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 6,
     borderRadius: 4,
     position: 'absolute',
-    right: 0,
+    right: -3,
     top: 19,
   },
   flagText: {
@@ -71,6 +76,7 @@ const styles = StyleSheet.create({
   image: {
     height: Dimensions.get('window').width / 2 - 40,
     width: Dimensions.get('window').width / 2 - 40,
+    borderRadius: 14,
   },
   content: {
     position: 'absolute',

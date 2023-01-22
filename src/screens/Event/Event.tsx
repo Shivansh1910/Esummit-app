@@ -9,6 +9,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Linking,
+  Dimensions,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { ActivityIndicator, FAB, SegmentedButtons } from 'react-native-paper';
@@ -24,6 +25,7 @@ import { useEventById } from '../../hooks/query/events-query';
 import { useGetTagsAndReminder } from '../../hooks/query/user-query';
 import { useProfileStore } from '../../store/profile-store';
 import { mapUrl } from '../../utils/helper';
+import PushNotification from 'react-native-push-notification';
 
 export const Event = ({ route }) => {
   const { data: EventData, isLoading } = useEventById(route.params.id);
@@ -63,12 +65,36 @@ export const Event = ({ route }) => {
     }
   }, [ReminderAndTagLoading]);
 
+  const handleScheduleNotification = async () => {
+    const description =
+      EventData?.data.name +
+      ' is starting in 15 minutes at ' +
+      EventData?.data.venue +
+      '.';
+    PushNotification.localNotificationSchedule({
+      channelId: 'fcm_fallback_notification_channel',
+      title: EventData?.data.name,
+      message: description,
+      date: new Date(
+        new Date(EventData?.data.startTime as string).getTime() +
+          15 * 50 * 1000,
+      ),
+      allowWhileIdle: true,
+      picture: EventData?.data.image,
+      playSound: true,
+      soundName: 'default',
+      id: EventData?.data.id,
+    });
+  };
+
   const handleNotify = async () => {
     setReminder({ id: route.params.id, email: email }).then(data => {
       if (data.success) {
+        handleScheduleNotification();
         toast.show('We will notify 15 minutes before the event', {
           type: 'success',
         });
+        isNotified ? setIsNotified(false) : setIsNotified(true);
       } else {
         toast.show('Some Error has occured. Please try again later.', {
           type: 'danger',
@@ -80,6 +106,9 @@ export const Event = ({ route }) => {
   const handleTag = async (val: string) => {
     setTag({ id: route.params.id, email: email, tag: val }).then(data => {
       if (data.success) {
+        if (val !== 'not going') {
+          handleScheduleNotification();
+        }
         toast.show('Response has been recorded', {
           type: 'success',
         });
@@ -110,8 +139,12 @@ export const Event = ({ route }) => {
           <Text style={styles.name}>{EventData?.data.name}</Text>
           <Image
             source={{ uri: EventData?.data.image }}
-            resizeMode={'contain'}
-            style={{ width: 200, height: 200, alignSelf: 'center' }}
+            resizeMode={'cover'}
+            style={{
+              width: Dimensions.get('window').width,
+              height: 200,
+              alignSelf: 'center',
+            }}
           />
 
           <SegmentButton
