@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Text, ScrollView } from 'react-native';
+import { View, StyleSheet, Text, ScrollView, Dimensions } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useToast } from 'react-native-toast-notifications';
 import { OtpBox } from '../../components/form';
@@ -42,34 +42,36 @@ export const OTPScreen = () => {
   }, [timer]);
 
   return (
-    <View style={styles.container}>
-      <LinearGradient
-        colors={['#223139', '#161616']}
-        useAngle={true}
-        angle={-88.84}
-        style={{ height: 214, alignItems: 'center', paddingTop: 100 }}>
-        <Logo width={287} height={60} />
-      </LinearGradient>
+    <ScrollView>
+      <View style={styles.container}>
+        <LinearGradient
+          colors={['#223139', '#161616']}
+          useAngle={true}
+          angle={-88.84}
+          style={{ height: 214, alignItems: 'center', paddingTop: 100 }}>
+          <Logo width={287} height={60} />
+        </LinearGradient>
 
-      <View style={styles.section}>
-        <Text style={styles.heading}>VERIFY DETAILS</Text>
-        <Text style={styles.subheading}>OTP sent to {email}</Text>
+        <View style={styles.section}>
+          <Text style={styles.heading}>VERIFY DETAILS</Text>
+          <Text style={styles.subheading}>OTP sent to {email}</Text>
 
-        {timer > 0 ? (
-          <Text style={styles.subheading}>
-            This OTP will expire in {timer} seconds
-          </Text>
-        ) : (
-          <Text style={styles.subheading}>
-            The OTP is expired. Please request a Resend OTP
-          </Text>
-        )}
+          {timer > 0 ? (
+            <Text style={styles.subheading}>
+              This OTP will expire in {timer} seconds
+            </Text>
+          ) : (
+            <Text style={styles.subheading}>
+              The OTP is expired. Please request a Resend OTP
+            </Text>
+          )}
 
-        <Text style={styles.subheading2}>Enter OTP</Text>
+          <Text style={styles.subheading2}>Enter OTP</Text>
 
-        <OtpBox length={4} handleResend={handleResend} />
+          <OtpBox length={4} handleResend={handleResend} />
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -77,7 +79,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFFFF',
     width: '100%',
-    height: '100%',
+    height: Dimensions.get('window').height,
   },
   section: {
     padding: 20,
