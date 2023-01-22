@@ -9,17 +9,20 @@
 /* Begin PBXBuildFile section */
 		00B12DA3E1BF4BD893EA33D9 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 89162BE18B8844908F343095 /* fb.png */; };
 		00E356F31AD99517003FC87E /* EsummitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* EsummitTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-Esummit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Esummit.a */; };
 		122FC72E92CC42CF9D520D79 /* yt.png in Resources */ = {isa = PBXBuildFile; fileRef = E53AAC7F367C46BD99ADC0CA /* yt.png */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		198C52CB38094E95B200E3AB /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B73342851E43F68E2CFCD3 /* profile.png */; };
+		1BFC819D983E62540A00A9ED /* libPods-Esummit-EsummitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5673F3F0F9F2612ECC66D832 /* libPods-Esummit-EsummitTests.a */; };
+		22844BD9297D8969000091F5 /* esummit.png in Resources */ = {isa = PBXBuildFile; fileRef = 22844BD8297D8969000091F5 /* esummit.png */; };
+		22844BDF297D8C1A000091F5 /* ecell_from.png in Resources */ = {isa = PBXBuildFile; fileRef = 22844BDE297D8C1A000091F5 /* ecell_from.png */; };
+		22844BE1297D8CE4000091F5 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 22844BE0297D8CE4000091F5 /* bg.png */; };
 		3FA544004701408EA50E0DE4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731590B94AE34ED3A2A546C0 /* Montserrat-Regular.ttf */; };
-		7699B88040F8A987B510C191 /* libPods-Esummit-EsummitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Esummit-EsummitTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B8881F9901C6424F9A576F60 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DA401FB5B6487E8F407308 /* logo.png */; };
 		CD7EE29B18824876BA6CA3CF /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = 177515CC61884C45A62C28CE /* linkedin.png */; };
+		DB3D5DE0342AC46AB0898692 /* libPods-Esummit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8ED724DC937E618D6411537 /* libPods-Esummit.a */; };
 		E7079908A24D4F33B08AF70C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B6495716A46A69C9A5D1C /* Montserrat-Bold.ttf */; };
 		EDE8F1D95852478F90BF8E30 /* insta.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BCCF1D8AD04E3BB84368C5 /* insta.png */; };
 		F5B150183D5E4551B96AD0E7 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F618372BE7474A9A54CBB7 /* twitter.png */; };
@@ -48,23 +51,27 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Esummit/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Esummit/main.m; sourceTree = "<group>"; };
 		177515CC61884C45A62C28CE /* linkedin.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = linkedin.png; path = ../src/assets/images/linkedin.png; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Esummit-EsummitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Esummit-EsummitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		227B6C36297D7D9000B5F4B5 /* Esummit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Esummit.entitlements; path = Esummit/Esummit.entitlements; sourceTree = "<group>"; };
+		22844BD8297D8969000091F5 /* esummit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = esummit.png; sourceTree = "<group>"; };
+		22844BDE297D8C1A000091F5 /* ecell_from.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ecell_from.png; sourceTree = "<group>"; };
+		22844BE0297D8CE4000091F5 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		367B6495716A46A69C9A5D1C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-Esummit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit.debug.xcconfig"; path = "Target Support Files/Pods-Esummit/Pods-Esummit.debug.xcconfig"; sourceTree = "<group>"; };
 		41CC1EF1610443269B0DA41B /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../src/assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		518759E703954405A07BA997 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = ../src/assets/fonts/FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-Esummit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit.release.xcconfig"; path = "Target Support Files/Pods-Esummit/Pods-Esummit.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-Esummit-EsummitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit-EsummitTests.debug.xcconfig"; path = "Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-Esummit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Esummit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5365E2C7D521965E98AE15F5 /* Pods-Esummit-EsummitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit-EsummitTests.release.xcconfig"; path = "Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests.release.xcconfig"; sourceTree = "<group>"; };
+		5673F3F0F9F2612ECC66D832 /* libPods-Esummit-EsummitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Esummit-EsummitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60BB4FC8EF50478EB066E0F3 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = ../src/assets/fonts/Ionicons.ttf; sourceTree = "<group>"; };
+		6C5D877E38EB84528AE3B721 /* Pods-Esummit-EsummitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit-EsummitTests.debug.xcconfig"; path = "Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		731590B94AE34ED3A2A546C0 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Esummit/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83EECAE6865C5095696C49D6 /* Pods-Esummit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit.release.xcconfig"; path = "Target Support Files/Pods-Esummit/Pods-Esummit.release.xcconfig"; sourceTree = "<group>"; };
 		87351CE313AC4694ABA88E5A /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = ../src/assets/fonts/SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		89162BE18B8844908F343095 /* fb.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = fb.png; path = ../src/assets/images/fb.png; sourceTree = "<group>"; };
 		894E8121103E40BC83927F6B /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = ../src/assets/fonts/AntDesign.ttf; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-Esummit-EsummitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit-EsummitTests.release.xcconfig"; path = "Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests.release.xcconfig"; sourceTree = "<group>"; };
 		904EA6CA0CC340E38BEDD503 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = ../src/assets/fonts/FontAwesome.ttf; sourceTree = "<group>"; };
+		A8ED724DC937E618D6411537 /* libPods-Esummit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Esummit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BCCF1D8AD04E3BB84368C5 /* insta.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = insta.png; path = ../src/assets/images/insta.png; sourceTree = "<group>"; };
+		C7E71C1344500C80DFF60F1A /* Pods-Esummit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit.debug.xcconfig"; path = "Target Support Files/Pods-Esummit/Pods-Esummit.debug.xcconfig"; sourceTree = "<group>"; };
 		C7FF9134596746E19DE72320 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = ../src/assets/fonts/FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
 		CB51A2E50A0748B99C50CFDE /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = ../src/assets/fonts/Entypo.ttf; sourceTree = "<group>"; };
 		DA709D5E151F44C89BB591FD /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = ../src/assets/fonts/Octicons.ttf; sourceTree = "<group>"; };
@@ -80,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-Esummit-EsummitTests.a in Frameworks */,
+				1BFC819D983E62540A00A9ED /* libPods-Esummit-EsummitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-Esummit.a in Frameworks */,
+				DB3D5DE0342AC46AB0898692 /* libPods-Esummit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +122,7 @@
 		13B07FAE1A68108700A75B9A /* Esummit */ = {
 			isa = PBXGroup;
 			children = (
+				227B6C36297D7D9000B5F4B5 /* Esummit.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -129,7 +137,10 @@
 			isa = PBXGroup;
 			children = (
 				367B6495716A46A69C9A5D1C /* Montserrat-Bold.ttf */,
+				22844BDE297D8C1A000091F5 /* ecell_from.png */,
+				22844BE0297D8CE4000091F5 /* bg.png */,
 				41CC1EF1610443269B0DA41B /* Montserrat-Medium.ttf */,
+				22844BD8297D8969000091F5 /* esummit.png */,
 				731590B94AE34ED3A2A546C0 /* Montserrat-Regular.ttf */,
 				F7DA401FB5B6487E8F407308 /* logo.png */,
 				00B73342851E43F68E2CFCD3 /* profile.png */,
@@ -155,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-Esummit.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-Esummit-EsummitTests.a */,
+				A8ED724DC937E618D6411537 /* libPods-Esummit.a */,
+				5673F3F0F9F2612ECC66D832 /* libPods-Esummit-EsummitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -196,10 +207,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-Esummit.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-Esummit.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-Esummit-EsummitTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-Esummit-EsummitTests.release.xcconfig */,
+				C7E71C1344500C80DFF60F1A /* Pods-Esummit.debug.xcconfig */,
+				83EECAE6865C5095696C49D6 /* Pods-Esummit.release.xcconfig */,
+				6C5D877E38EB84528AE3B721 /* Pods-Esummit-EsummitTests.debug.xcconfig */,
+				5365E2C7D521965E98AE15F5 /* Pods-Esummit-EsummitTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -211,12 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EsummitTests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				04057302B066EA11FEF828CD /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				EB923B0DC9FEB89A4AD73A78 /* [CP] Embed Pods Frameworks */,
+				37A0591E55BACA72C13E250E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,14 +243,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Esummit" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				D9E2F42EC044BDCC4F40BE29 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				2279A9C8F00124A48DFDCB5D /* [CP] Embed Pods Frameworks */,
+				7C5E864480A3887DF3000806 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,7 +309,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22844BDF297D8C1A000091F5 /* ecell_from.png in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				22844BE1297D8CE4000091F5 /* bg.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E7079908A24D4F33B08AF70C /* Montserrat-Bold.ttf in Resources */,
 				FC735CDEBE764E4296EA7448 /* Montserrat-Medium.ttf in Resources */,
@@ -307,6 +320,7 @@
 				198C52CB38094E95B200E3AB /* profile.png in Resources */,
 				00B12DA3E1BF4BD893EA33D9 /* fb.png in Resources */,
 				EDE8F1D95852478F90BF8E30 /* insta.png in Resources */,
+				22844BD9297D8969000091F5 /* esummit.png in Resources */,
 				CD7EE29B18824876BA6CA3CF /* linkedin.png in Resources */,
 				F5B150183D5E4551B96AD0E7 /* twitter.png in Resources */,
 				122FC72E92CC42CF9D520D79 /* yt.png in Resources */,
@@ -332,24 +346,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+		04057302B066EA11FEF828CD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -371,7 +368,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		2279A9C8F00124A48DFDCB5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37A0591E55BACA72C13E250E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C5E864480A3887DF3000806 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9E2F42EC044BDCC4F40BE29 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -393,7 +441,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+		EB923B0DC9FEB89A4AD73A78 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -408,40 +456,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -496,7 +510,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-Esummit-EsummitTests.debug.xcconfig */;
+			baseConfigurationReference = 6C5D877E38EB84528AE3B721 /* Pods-Esummit-EsummitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -523,7 +537,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-Esummit-EsummitTests.release.xcconfig */;
+			baseConfigurationReference = 5365E2C7D521965E98AE15F5 /* Pods-Esummit-EsummitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -547,10 +561,12 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-Esummit.debug.xcconfig */;
+			baseConfigurationReference = C7E71C1344500C80DFF60F1A /* Pods-Esummit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Esummit/Esummit.entitlements;
 				CURRENT_PROJECT_VERSION = 4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Esummit/Info.plist;
@@ -565,18 +581,24 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Esummit;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-Esummit.release.xcconfig */;
+			baseConfigurationReference = 83EECAE6865C5095696C49D6 /* Pods-Esummit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Esummit/Esummit.entitlements;
 				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = Esummit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -590,7 +612,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Esummit;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
