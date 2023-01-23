@@ -1,4 +1,4 @@
-package com.esummit.newarchitecture.modules;
+package com.ecell.esummit.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

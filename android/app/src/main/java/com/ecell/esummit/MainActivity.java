@@ -1,4 +1,4 @@
-package com.esummit;
+package com.ecell.esummit;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
@@ -16,7 +16,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Esummit";
+    return "E-Summit";
   }
 
   @Override

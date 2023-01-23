@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00B12DA3E1BF4BD893EA33D9 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 89162BE18B8844908F343095 /* fb.png */; };
-		00E356F31AD99517003FC87E /* EsummitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* EsummitTests.m */; };
+		00E356F31AD99517003FC87E /* ESummitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ESummitTests.m */; };
 		122FC72E92CC42CF9D520D79 /* yt.png in Resources */ = {isa = PBXBuildFile; fileRef = E53AAC7F367C46BD99ADC0CA /* yt.png */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		198C52CB38094E95B200E3AB /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B73342851E43F68E2CFCD3 /* profile.png */; };
-		1BFC819D983E62540A00A9ED /* libPods-Esummit-EsummitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5673F3F0F9F2612ECC66D832 /* libPods-Esummit-EsummitTests.a */; };
+		1BFC819D983E62540A00A9ED /* libPods-ESummit-ESummitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5673F3F0F9F2612ECC66D832 /* libPods-ESummit-ESummitTests.a */; };
 		22844BD9297D8969000091F5 /* esummit.png in Resources */ = {isa = PBXBuildFile; fileRef = 22844BD8297D8969000091F5 /* esummit.png */; };
 		22844BDF297D8C1A000091F5 /* ecell_from.png in Resources */ = {isa = PBXBuildFile; fileRef = 22844BDE297D8C1A000091F5 /* ecell_from.png */; };
 		22844BE1297D8CE4000091F5 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 22844BE0297D8CE4000091F5 /* bg.png */; };
@@ -24,7 +24,7 @@
 		4C766D8D297EE7130099E966 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C766D8C297EE7130099E966 /* Launch Screen.storyboard */; };
 		B8881F9901C6424F9A576F60 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F7DA401FB5B6487E8F407308 /* logo.png */; };
 		CD7EE29B18824876BA6CA3CF /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = 177515CC61884C45A62C28CE /* linkedin.png */; };
-		DB3D5DE0342AC46AB0898692 /* libPods-Esummit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8ED724DC937E618D6411537 /* libPods-Esummit.a */; };
+		DB3D5DE0342AC46AB0898692 /* libPods-ESummit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8ED724DC937E618D6411537 /* libPods-ESummit.a */; };
 		E7079908A24D4F33B08AF70C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B6495716A46A69C9A5D1C /* Montserrat-Bold.ttf */; };
 		EDE8F1D95852478F90BF8E30 /* insta.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BCCF1D8AD04E3BB84368C5 /* insta.png */; };
 		F5B150183D5E4551B96AD0E7 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F618372BE7474A9A54CBB7 /* twitter.png */; };
@@ -37,23 +37,23 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Esummit;
+			remoteInfo = "ESummit";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		00B73342851E43F68E2CFCD3 /* profile.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = profile.png; path = ../src/assets/images/profile.png; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* EsummitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EsummitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* ESummitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ESummitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* EsummitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EsummitTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Esummit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Esummit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Esummit/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Esummit/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Esummit/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Esummit/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Esummit/main.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* ESummitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ESummitTests.m"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* ESummit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ESummit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "ESummit/AppDelegate.h"; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = "ESummit/AppDelegate.mm"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "ESummit/Images.xcassets"; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "ESummit/Info.plist"; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "ESummit/main.m"; sourceTree = "<group>"; };
 		177515CC61884C45A62C28CE /* linkedin.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = linkedin.png; path = ../src/assets/images/linkedin.png; sourceTree = "<group>"; };
-		227B6C36297D7D9000B5F4B5 /* Esummit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Esummit.entitlements; path = Esummit/Esummit.entitlements; sourceTree = "<group>"; };
+		227B6C36297D7D9000B5F4B5 /* ESummit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ESummit.entitlements; path = ESummit/ESummit.entitlements; sourceTree = "<group>"; };
 		22844BD8297D8969000091F5 /* esummit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = esummit.png; sourceTree = "<group>"; };
 		22844BDE297D8C1A000091F5 /* ecell_from.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ecell_from.png; sourceTree = "<group>"; };
 		22844BE0297D8CE4000091F5 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -62,15 +62,15 @@
 		4C766D88297EE4FD0099E966 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = Fonts/MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
 		4C766D89297EE4FE0099E966 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = Fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
 		4C766D8C297EE7130099E966 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		5365E2C7D521965E98AE15F5 /* Pods-Esummit-EsummitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit-EsummitTests.release.xcconfig"; path = "Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests.release.xcconfig"; sourceTree = "<group>"; };
-		5673F3F0F9F2612ECC66D832 /* libPods-Esummit-EsummitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Esummit-EsummitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C5D877E38EB84528AE3B721 /* Pods-Esummit-EsummitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit-EsummitTests.debug.xcconfig"; path = "Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5365E2C7D521965E98AE15F5 /* Pods-ESummit-ESummitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESummit-ESummitTests.release.xcconfig"; path = "Target Support Files/Pods-ESummit-ESummitTests/Pods-ESummit-ESummitTests.release.xcconfig"; sourceTree = "<group>"; };
+		5673F3F0F9F2612ECC66D832 /* libPods-ESummit-ESummitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ESummit-ESummitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C5D877E38EB84528AE3B721 /* Pods-ESummit-ESummitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESummit-ESummitTests.debug.xcconfig"; path = "Target Support Files/Pods-ESummit-ESummitTests/Pods-ESummit-ESummitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		731590B94AE34ED3A2A546C0 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		83EECAE6865C5095696C49D6 /* Pods-Esummit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit.release.xcconfig"; path = "Target Support Files/Pods-Esummit/Pods-Esummit.release.xcconfig"; sourceTree = "<group>"; };
+		83EECAE6865C5095696C49D6 /* Pods-ESummit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESummit.release.xcconfig"; path = "Target Support Files/Pods-ESummit/Pods-ESummit.release.xcconfig"; sourceTree = "<group>"; };
 		89162BE18B8844908F343095 /* fb.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = fb.png; path = ../src/assets/images/fb.png; sourceTree = "<group>"; };
-		A8ED724DC937E618D6411537 /* libPods-Esummit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Esummit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8ED724DC937E618D6411537 /* libPods-ESummit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ESummit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BCCF1D8AD04E3BB84368C5 /* insta.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = insta.png; path = ../src/assets/images/insta.png; sourceTree = "<group>"; };
-		C7E71C1344500C80DFF60F1A /* Pods-Esummit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esummit.debug.xcconfig"; path = "Target Support Files/Pods-Esummit/Pods-Esummit.debug.xcconfig"; sourceTree = "<group>"; };
+		C7E71C1344500C80DFF60F1A /* Pods-ESummit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESummit.debug.xcconfig"; path = "Target Support Files/Pods-ESummit/Pods-ESummit.debug.xcconfig"; sourceTree = "<group>"; };
 		E53AAC7F367C46BD99ADC0CA /* yt.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = yt.png; path = ../src/assets/images/yt.png; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F3F618372BE7474A9A54CBB7 /* twitter.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = twitter.png; path = ../src/assets/images/twitter.png; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BFC819D983E62540A00A9ED /* libPods-Esummit-EsummitTests.a in Frameworks */,
+				1BFC819D983E62540A00A9ED /* libPods-ESummit-ESummitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,20 +90,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3D5DE0342AC46AB0898692 /* libPods-Esummit.a in Frameworks */,
+				DB3D5DE0342AC46AB0898692 /* libPods-ESummit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* EsummitTests */ = {
+		00E356EF1AD99517003FC87E /* ESummitTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* EsummitTests.m */,
+				00E356F21AD99517003FC87E /* ESummitTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = EsummitTests;
+			path = "ESummitTests";
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -114,10 +114,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Esummit */ = {
+		13B07FAE1A68108700A75B9A /* ESummit */ = {
 			isa = PBXGroup;
 			children = (
-				227B6C36297D7D9000B5F4B5 /* Esummit.entitlements */,
+				227B6C36297D7D9000B5F4B5 /* ESummit.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -125,7 +125,7 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				4C766D8C297EE7130099E966 /* Launch Screen.storyboard */,
 			);
-			name = Esummit;
+			name = "ESummit";
 			sourceTree = "<group>";
 		};
 		1451C958714A427AAFFA6FD5 /* Resources */ = {
@@ -152,8 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				A8ED724DC937E618D6411537 /* libPods-Esummit.a */,
-				5673F3F0F9F2612ECC66D832 /* libPods-Esummit-EsummitTests.a */,
+				A8ED724DC937E618D6411537 /* libPods-ESummit.a */,
+				5673F3F0F9F2612ECC66D832 /* libPods-ESummit-ESummitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,9 +170,9 @@
 			children = (
 				4C766D88297EE4FD0099E966 /* MaterialCommunityIcons.ttf */,
 				4C766D89297EE4FE0099E966 /* MaterialIcons.ttf */,
-				13B07FAE1A68108700A75B9A /* Esummit */,
+				13B07FAE1A68108700A75B9A /* ESummit */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* EsummitTests */,
+				00E356EF1AD99517003FC87E /* ESummitTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -186,8 +186,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Esummit.app */,
-				00E356EE1AD99517003FC87E /* EsummitTests.xctest */,
+				13B07F961A680F5B00A75B9A /* ESummit.app */,
+				00E356EE1AD99517003FC87E /* ESummitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,10 +195,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C7E71C1344500C80DFF60F1A /* Pods-Esummit.debug.xcconfig */,
-				83EECAE6865C5095696C49D6 /* Pods-Esummit.release.xcconfig */,
-				6C5D877E38EB84528AE3B721 /* Pods-Esummit-EsummitTests.debug.xcconfig */,
-				5365E2C7D521965E98AE15F5 /* Pods-Esummit-EsummitTests.release.xcconfig */,
+				C7E71C1344500C80DFF60F1A /* Pods-ESummit.debug.xcconfig */,
+				83EECAE6865C5095696C49D6 /* Pods-ESummit.release.xcconfig */,
+				6C5D877E38EB84528AE3B721 /* Pods-ESummit-ESummitTests.debug.xcconfig */,
+				5365E2C7D521965E98AE15F5 /* Pods-ESummit-ESummitTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -206,9 +206,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* EsummitTests */ = {
+		00E356ED1AD99517003FC87E /* ESummitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EsummitTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ESummitTests" */;
 			buildPhases = (
 				04057302B066EA11FEF828CD /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -222,14 +222,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = EsummitTests;
-			productName = EsummitTests;
-			productReference = 00E356EE1AD99517003FC87E /* EsummitTests.xctest */;
+			name = ESummitTests;
+			productName = ESummitTests;
+			productReference = 00E356EE1AD99517003FC87E /* ESummitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Esummit */ = {
+		13B07F861A680F5B00A75B9A /* ESummit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Esummit" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ESummit" */;
 			buildPhases = (
 				D9E2F42EC044BDCC4F40BE29 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -244,9 +244,9 @@
 			);
 			dependencies = (
 			);
-			name = Esummit;
-			productName = Esummit;
-			productReference = 13B07F961A680F5B00A75B9A /* Esummit.app */;
+			name = "ESummit";
+			productName = "ESummit";
+			productReference = 13B07F961A680F5B00A75B9A /* ESummit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -266,7 +266,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Esummit" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ESummit" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -279,8 +279,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Esummit */,
-				00E356ED1AD99517003FC87E /* EsummitTests */,
+				13B07F861A680F5B00A75B9A /* ESummit */,
+				00E356ED1AD99517003FC87E /* ESummitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -351,7 +351,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Esummit-EsummitTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ESummit-ESummitTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -364,15 +364,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ESummit/Pods-ESummit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ESummit/Pods-ESummit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ESummit/Pods-ESummit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		37A0591E55BACA72C13E250E /* [CP] Copy Pods Resources */ = {
@@ -381,15 +381,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ESummit-ESummitTests/Pods-ESummit-ESummitTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ESummit-ESummitTests/Pods-ESummit-ESummitTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ESummit-ESummitTests/Pods-ESummit-ESummitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7C5E864480A3887DF3000806 /* [CP] Copy Pods Resources */ = {
@@ -398,15 +398,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ESummit/Pods-ESummit-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ESummit/Pods-ESummit-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit/Pods-Esummit-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ESummit/Pods-ESummit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D9E2F42EC044BDCC4F40BE29 /* [CP] Check Pods Manifest.lock */ = {
@@ -424,7 +424,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Esummit-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ESummit-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -437,15 +437,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ESummit-ESummitTests/Pods-ESummit-ESummitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ESummit-ESummitTests/Pods-ESummit-ESummitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esummit-EsummitTests/Pods-Esummit-EsummitTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ESummit-ESummitTests/Pods-ESummit-ESummitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -474,7 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* EsummitTests.m in Sources */,
+				00E356F31AD99517003FC87E /* ESummitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +492,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Esummit */;
+			target = 13B07F861A680F5B00A75B9A /* ESummit */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -500,14 +500,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C5D877E38EB84528AE3B721 /* Pods-Esummit-EsummitTests.debug.xcconfig */;
+			baseConfigurationReference = 6C5D877E38EB84528AE3B721 /* Pods-ESummit-ESummitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = EsummitTests/Info.plist;
+				INFOPLIST_FILE = "ESummitTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,19 +519,19 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ecell.esummit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Esummit.app/Esummit";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ESummit.app/ESummit";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5365E2C7D521965E98AE15F5 /* Pods-Esummit-EsummitTests.release.xcconfig */;
+			baseConfigurationReference = 5365E2C7D521965E98AE15F5 /* Pods-ESummit-ESummitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = EsummitTests/Info.plist;
+				INFOPLIST_FILE = "ESummitTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -543,24 +543,25 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ecell.esummit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Esummit.app/Esummit";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ESummit.app/ESummit";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7E71C1344500C80DFF60F1A /* Pods-Esummit.debug.xcconfig */;
+			baseConfigurationReference = C7E71C1344500C80DFF60F1A /* Pods-ESummit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Esummit/Esummit.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ESummit/ESummit.entitlements;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = H3R6YQUZ52;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Esummit/Info.plist;
+				INFOPLIST_FILE = "ESummit/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "E-Summit";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,9 +571,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ecell.esummit";
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.;
-				PRODUCT_NAME = Esummit;
+				PRODUCT_NAME = "ESummit";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -585,15 +586,16 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83EECAE6865C5095696C49D6 /* Pods-Esummit.release.xcconfig */;
+			baseConfigurationReference = 83EECAE6865C5095696C49D6 /* Pods-ESummit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Esummit/Esummit.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ESummit/ESummit.entitlements;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = H3R6YQUZ52;
-				INFOPLIST_FILE = Esummit/Info.plist;
+				INFOPLIST_FILE = "ESummit/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "E-Summit";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -603,9 +605,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ecell.esummit";
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.;
-				PRODUCT_NAME = Esummit;
+				PRODUCT_NAME = "ESummit";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -755,7 +757,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EsummitTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ESummitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -764,7 +766,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Esummit" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ESummit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -773,7 +775,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Esummit" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ESummit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

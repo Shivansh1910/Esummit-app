@@ -1,4 +1,4 @@
-package com.esummit.newarchitecture.components;
+package com.ecell.esummit.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
