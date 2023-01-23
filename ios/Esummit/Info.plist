@@ -6,8 +6,6 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>Esummit</string>
-	<key>CodePushDeploymentKey</key>
-	<string>LS2rxNgIAX5o47203w2myiPH-HgmUvTuD3ef1</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -24,6 +22,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>4</string>
+	<key>CodePushDeploymentKey</key>
+	<string>LS2rxNgIAX5o47203w2myiPH-HgmUvTuD3ef1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

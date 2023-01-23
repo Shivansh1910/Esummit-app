@@ -558,6 +558,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Esummit/Esummit.entitlements;
 				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = H3R6YQUZ52;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Esummit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -570,6 +571,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.;
 				PRODUCT_NAME = Esummit;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -590,6 +592,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Esummit/Esummit.entitlements;
 				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = H3R6YQUZ52;
 				INFOPLIST_FILE = Esummit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -601,6 +604,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.;
 				PRODUCT_NAME = Esummit;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
