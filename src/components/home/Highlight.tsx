@@ -14,7 +14,7 @@ interface IHighlightBoxProps {
   url: string;
   alt: string;
   index: number;
-  length: number;
+  length: number | undefined;
   isLive?: boolean;
   navigation: any;
 }

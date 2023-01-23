@@ -4,7 +4,7 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import EventMenuSvg from '../svgs/events';
 import MapsMenuSvg from '../svgs/maps';
 import MoreMenuSvg from '../svgs/more';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 
 export const Footer = ({ navigation }) => {
   const route = useRoute();

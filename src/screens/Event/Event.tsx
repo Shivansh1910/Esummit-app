@@ -43,7 +43,7 @@ export const Event = ({ route }) => {
   const handleVenueClick = async () => {
     coordinates({ venue: EventData?.data.venue as string }).then(res => {
       if (res.success) {
-        const url = mapUrl(res.data.latitude, res.data.longitude);
+        const url = mapUrl(res.data.latitude, res.data.longitude, EventData?.data.venue as string);
         return Linking.openURL(url as string);
       }
     });

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Esummit</string>
     <string name="esummit">esummit</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">qLFkddOIrzdLM75oKNoomVs8rDKMYx09G5bS4</string>
 </resources>

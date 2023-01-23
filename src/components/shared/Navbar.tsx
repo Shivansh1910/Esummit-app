@@ -29,9 +29,13 @@ export const Navbar = ({ navigation }) => {
         <EcellSvg height={54} width={51.35} />
       </TouchableOpacity>
       <TouchableOpacity onPress={handleClick}>
-        {route.name === 'Profile' ? <CrossSvg /> : <UserSvg />}
+        {route.name === 'Profile' ? (
+          <CrossSvg style={{ marginRight: 8 }} />
+        ) : (
+          <UserSvg />
+        )}
       </TouchableOpacity>
-   </LinearGradient> 
+    </LinearGradient>
   );
 };
 

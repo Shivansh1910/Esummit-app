@@ -14,8 +14,8 @@ interface IEventBoxProps {
   url: string;
   event: string;
   venue: string;
-  startTime: Date | undefined;
-  endTime: Date | undefined;
+  startTime: Date | undefined | string;
+  endTime: Date | undefined | string;
   description: string;
   navigation: any;
 }
@@ -38,7 +38,7 @@ export const EventBox = (props: IEventBoxProps) => {
         {ImageComponent}
         <View style={styles.flag}>
           <Text style={styles.flagText}>
-            {getTime(props.startTime)} - {getTime(props.endTime)}
+            {getTime(props.startTime as Date)} - {getTime(props.endTime as Date)}
           </Text>
         </View>
 

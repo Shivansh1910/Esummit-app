@@ -41,10 +41,10 @@ export const filterData = (
     });
 };
 
-export const mapUrl = (latitude: string, longitude: string) => {
+export const mapUrl = (latitude: string, longitude: string, name:string) => {
   const scheme = Platform.select({ ios: 'maps:0,0?q=', android: 'geo:0,0?q=' });
   const latLng = `${latitude},${longitude}`;
-  const label = 'Esummit';
+  const label = name;
   const url = Platform.select({
     ios: `${scheme}${label}@${latLng}`,
     android: `${scheme}${latLng}(${label})`,

@@ -1,7 +1,16 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Image, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Dimensions,
+  Image,
+  Linking,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Button, Divider, List, Modal, Portal } from 'react-native-paper';
 import { ProfileSection } from '../../components/profile';
@@ -84,75 +93,77 @@ export const Profile = () => {
           </LinearGradient>
         </Modal>
       </Portal>
+      <ScrollView style={{ height: Dimensions.get('window').height }}>
+        <ProfileSection name={name} email={email} image={image as string} />
 
-      <ProfileSection name={name} email={email} image={image as string} />
+        <TouchableOpacity>
+          <View style={styles.section}>
+            <Text style={styles.text}>Your Pass - </Text>
+            <Text style={styles.boldText}>{pass}</Text>
+          </View>
+        </TouchableOpacity>
+        <Divider style={styles.divider} />
 
-      <TouchableOpacity>
-        <View style={styles.section}>
-          <Text style={styles.text}>Your Pass - </Text>
-          <Text style={styles.boldText}>{pass}</Text>
-        </View>
-      </TouchableOpacity>
-      <Divider style={styles.divider} />
+        <TouchableOpacity
+          onPress={() => Linking.openURL('https://ecell.in/esummit/pass')}>
+          <View style={[styles.section, { justifyContent: 'space-between' }]}>
+            <Text style={styles.text}>Upgrade your Pass </Text>
+            <List.Icon icon="chevron-right" color="#FFF" />
+          </View>
+        </TouchableOpacity>
+        <Divider style={styles.divider} />
 
-      <TouchableOpacity onPress={()=>Linking.openURL('https://ecell.in/esummit/pass')}>
-        <View style={[styles.section, { justifyContent: 'space-between' }]}>
-          <Text style={styles.text}>Upgrade your Pass </Text>
-          <List.Icon icon="chevron-right" color="#FFF" />
-        </View>
-      </TouchableOpacity>
-      <Divider style={styles.divider} />
+        <TouchableOpacity
+          onPress={() => navigation.navigate('TimeTable' as never)}>
+          <View style={[styles.section, { justifyContent: 'space-between' }]}>
+            <Text style={styles.text}>My Schedule </Text>
+            <List.Icon icon="chevron-right" color="#FFF" />
+          </View>
+        </TouchableOpacity>
+        <Divider style={styles.divider} />
 
-      <TouchableOpacity
-        onPress={() => navigation.navigate('TimeTable' as never)}>
-        <View style={[styles.section, { justifyContent: 'space-between' }]}>
-          <Text style={styles.text}>My Schedule </Text>
-          <List.Icon icon="chevron-right" color="#FFF" />
-        </View>
-      </TouchableOpacity>
-      <Divider style={styles.divider} />
+        <TouchableOpacity
+          onPress={() => {
+            setVisible(true);
+          }}>
+          <View style={styles.section}>
+            <Icon
+              name="qr-code"
+              size={20}
+              style={{ paddingRight: 10 }}
+              color="#FFF"
+            />
+            <Text style={styles.text}>Show QR Code </Text>
+          </View>
+        </TouchableOpacity>
+        <Divider style={styles.divider} />
 
-      <TouchableOpacity
-        onPress={() => {
-          setVisible(true);
-        }}>
-        <View style={styles.section}>
-          <Icon
-            name="qr-code"
-            size={20}
-            style={{ paddingRight: 10 }}
-            color="#FFF"
-          />
-          <Text style={styles.text}>Show QR Code </Text>
-        </View>
-      </TouchableOpacity>
-      <Divider style={styles.divider} />
+        {isAdmin ? (
+          <>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('QRCode' as never)}>
+              <View style={styles.section}>
+                <Icon
+                  name="qr-code"
+                  size={20}
+                  style={{ paddingRight: 10 }}
+                  color="#900"
+                />
+                <Text style={styles.text}>Scan QR Code </Text>
+              </View>
+            </TouchableOpacity>
+            <Divider style={styles.divider} />
+          </>
+        ) : null}
 
-      {isAdmin ? (
-        <>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('QRCode' as never)}>
-            <View style={styles.section}>
-              <Icon
-                name="qr-code"
-                size={20}
-                style={{ paddingRight: 10 }}
-                color="#900"
-              />
-              <Text style={styles.text}>Scan QR Code </Text>
-            </View>
-          </TouchableOpacity>
-          <Divider style={styles.divider} />
-        </>
-      ) : null}
-
-      <Button
-        onPress={handleLogout}
-        mode={'outlined'}
-        textColor={'#000000'}
-        style={styles.logout}>
-        <Text style={styles.text}>Logout</Text>
-      </Button>
+        <Button
+          onPress={handleLogout}
+          mode={'outlined'}
+          textColor={'#000000'}
+          style={styles.logout}>
+          <Text style={styles.text}>Logout</Text>
+        </Button>
+      </ScrollView>
     </LinearGradient>
   );
 };

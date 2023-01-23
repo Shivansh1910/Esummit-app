@@ -11,6 +11,7 @@ import 'react-native-gesture-handler';
 import React, { useEffect } from 'react';
 import PushNotification, { Importance } from 'react-native-push-notification';
 import AppNavigation from './src/navigation/App';
+import codepush from 'react-native-code-push';
 
 const App = () => {
   const createChannel = () => {
@@ -39,4 +40,8 @@ const App = () => {
   return <AppNavigation />;
 };
 
-export default App;
+const codepushOptions = {
+  checkFrequency: codepush.CheckFrequency.ON_APP_RESUME,
+}
+
+export default codepush(codepushOptions)(App);

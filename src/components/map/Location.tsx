@@ -12,7 +12,7 @@ interface ILocationProps {
 }
 
 export const Location = (props: ILocationProps) => {
-  const url = mapUrl(props.latitude, props.longitude);
+  const url = mapUrl(props.latitude, props.longitude, props.name);
   return (
     <>
       <TouchableOpacity onPress={() => Linking.openURL(url as string)}>
