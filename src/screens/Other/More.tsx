@@ -6,6 +6,7 @@ import {
   View,
   TouchableOpacity,
   Dimensions,
+  Linking,
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
@@ -84,7 +85,9 @@ export const More = () => {
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 paddingRight: 16,
-              }}>
+              }}
+              onPress={()=> Linking.openURL('https://ecell.in/esummit')}
+              >
               <Text style={styles.follow}>About Us</Text>
               <List.Icon icon="chevron-right" color="#FFFFFF" />
             </TouchableOpacity>

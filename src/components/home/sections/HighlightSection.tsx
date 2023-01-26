@@ -62,5 +62,6 @@ const styles = StyleSheet.create({
   },
   pagerView: {
     height: 180,
+    marginTop: 10
   },
 });

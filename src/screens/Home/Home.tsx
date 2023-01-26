@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   RefreshControl,
   Dimensions,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
@@ -33,11 +34,16 @@ import { filterData } from '../../utils/helper';
 
 export const Home = () => {
   const { data: EventData, isLoading, refetch } = useEvent();
+  const { data: Venues } = useVenues();
 
   const [visible, setVisible] = useState(false);
 
   const hideModal = () => setVisible(false);
-  const showModal = () => setVisible(true);
+
+  const showModal = () => {
+    handleResetModal();
+    setVisible(true);
+  };
 
   const navigation = useNavigation();
 
@@ -47,14 +53,14 @@ export const Home = () => {
     'networking',
     'competitions',
     'informals',
-    'highlights',
   ];
   const [venues, setVenues] = useState<string[]>([]);
-  const { data: Venues } = useVenues();
 
   const [filterCategory, setFilterCategory] = useState('');
-  const [filterDay, setFilterDay] = useState<string[]>(['1', '2']);
   const [filterVenue, setFilterVenue] = useState('');
+  const [filterDay, setFilterDay] = useState(
+    new Date('2023-01-28').getTime() - Date.now() > 0 ? '1' : '2',
+  );
 
   const onGoingEvents = useEventStore(state => state.onGoing);
   const upcommingEvents = useEventStore(state => state.upcoming);
@@ -79,25 +85,27 @@ export const Home = () => {
     });
 
     Venues?.map(item => {
-      setVenues(prevState => [...prevState, item.name]);
+      setVenues(prevVal => [...prevVal.filter(i => i != item.name), item.name]);
     });
   }, [EventData, Venues]);
 
+  const applyFilter = async (filterOf: string, item: string) => {
+    if (filterOf === 'category') {
+      setFilterVenue('');
+      setFilterCategory(item);
+    } else {
+      setFilterCategory('');
+      setFilterVenue(item);
+    }
+  };
+
   const handleResetModal = async () => {
     setFilterCategory('');
-    setFilterDay(['1', '2']);
     setFilterVenue('');
   };
 
   const handleDayFilter = (day: string) => {
-    if (filterDay.includes(day)) {
-      setFilterDay(filterDay.filter(item => item !== day));
-      if (filterDay.length === 1) {
-        setFilterDay(['1', '2']);
-      }
-    } else {
-      setFilterDay([...filterDay, day]);
-    }
+    setFilterDay(day);
   };
 
   return (
@@ -139,7 +147,7 @@ export const Home = () => {
                               if (filterCategory === item) {
                                 setFilterCategory('');
                               } else {
-                                setFilterCategory(item);
+                                applyFilter('category', item);
                               }
                             }}>
                             <View style={styles.itemList}>
@@ -171,7 +179,7 @@ export const Home = () => {
                               if (filterVenue === item) {
                                 setFilterVenue('');
                               } else {
-                                setFilterVenue(item);
+                                applyFilter('venue', item);
                               }
                             }}>
                             <View style={styles.itemList}>
@@ -206,6 +214,35 @@ export const Home = () => {
             <>
               <View>
                 <HighlightSection highlights={EventData?.data?.highlights} />
+
+                {filterData(
+                  onGoingEvents,
+                  filterCategory,
+                  filterDay,
+                  filterVenue,
+                ).length === 0 &&
+                  filterData(
+                    upcommingEvents,
+                    filterCategory,
+                    filterDay,
+                    filterVenue,
+                  ).length === 0 &&
+                  filterData(
+                    completedEvents,
+                    filterCategory,
+                    filterDay,
+                    filterVenue,
+                  ) && (
+                    <View style={{ alignItems: 'center', marginTop: 20 }}>
+                      <Text>No Events Found</Text>
+                      <Button
+                        mode="contained"
+                        style={{ marginTop: 5 }}
+                        onPress={handleResetModal}>
+                        Reset
+                      </Button>
+                    </View>
+                  )}
 
                 <OngoingSection
                   onGoingEvents={filterData(
@@ -333,6 +370,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Medium',
     fontSize: 14,
     textTransform: 'uppercase',
+    color: '#141415',
   },
   fab: {
     position: 'absolute',

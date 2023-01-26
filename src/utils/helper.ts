@@ -12,7 +12,7 @@ export const getTime = (time: Date | undefined) => {
 export const filterData = (
   data: any,
   filterCategory: string,
-  filterDay: string[],
+  filterDay: string,
   filterVenue: string,
 ) => {
   return data
@@ -23,15 +23,7 @@ export const filterData = (
         return item;
       }
     })
-    .filter(item => {
-      if (filterDay.length === 0) {
-        return item;
-      } else {
-        if (filterDay.includes(item.day)) {
-          return item;
-        }
-      }
-    })
+    .filter(item => filterDay == item.day)
     .filter(item => {
       if (filterVenue === '') {
         return item;

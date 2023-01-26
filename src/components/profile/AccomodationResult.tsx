@@ -74,6 +74,11 @@ export const AccomodationResult = (props: IAccomodationResultProps) => {
           </Text>
         )}
       </Text>
+      {qrCode?.data.room && (
+        <Text style={{ color: '#FFFFFF', fontSize: 20 }}>
+          Room Number: {qrCode?.data.room}
+        </Text>
+      )}
 
       <View style={{ flexDirection: 'row', marginTop: 10 }}>
         <Button mode="contained" onPress={props.close}>

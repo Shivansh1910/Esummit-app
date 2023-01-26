@@ -17,11 +17,13 @@ export const Day2 = () => {
   } = useGetTimetableQuery(email);
   const timetable = useTimetableStore(state => state.timetable);
   const setTimetable = useTimetableStore(state => state.setTimetable);
+  const reset = useTimetableStore(state => state.reset);
 
   const date = new Date('2023-01-29');
 
 
   useEffect(() => {
+    reset()
     timetableData?.data.forEach(element => {
       if (element.tag != 'not going') {
         setTimetable(element.event, element.tag);
@@ -52,6 +54,7 @@ export const Day2 = () => {
             items={timetable}
             renderItem={props => <ScheduleComponent {...props} />}
             date={date}
+            style={{ timeContainer: { backgroundColor: '#141414' } }}
           />
         )}
       </ScrollView>

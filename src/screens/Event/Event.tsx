@@ -43,7 +43,11 @@ export const Event = ({ route }) => {
   const handleVenueClick = async () => {
     coordinates({ venue: EventData?.data.venue as string }).then(res => {
       if (res.success) {
-        const url = mapUrl(res.data.latitude, res.data.longitude, EventData?.data.venue as string);
+        const url = mapUrl(
+          res.data.latitude,
+          res.data.longitude,
+          EventData?.data.venue as string,
+        );
         return Linking.openURL(url as string);
       }
     });
@@ -150,13 +154,26 @@ export const Event = ({ route }) => {
           <SegmentButton
             value={value}
             onValueChange={handleTag}
-            buttons={['interested', 'going', 'not going']}
+            buttons={['going', 'not going']}
           />
           <TouchableOpacity onPress={handleVenueClick}>
             <View style={{ flexDirection: 'row' }}>
-              <Text style={styles.heading2}>Venue : </Text>
               <Text
-                style={[styles.heading2, { fontFamily: 'Montserrat-Medium' }]}>
+                style={[
+                  styles.heading2,
+                  { borderBottomWidth: 1, borderBottomColor: '#fff' },
+                ]}>
+                Venue :{' '}
+              </Text>
+              <Text
+                style={[
+                  styles.heading2,
+                  {
+                    fontFamily: 'Montserrat-Medium',
+                    borderBottomWidth: 1,
+                    borderBottomColor: '#fff',
+                  },
+                ]}>
                 {EventData?.data.venue}
               </Text>
             </View>

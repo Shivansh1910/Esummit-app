@@ -41,27 +41,6 @@ export const InputBox = (props: IInputBoxProps) => {
         isDisabled={!isValid || !props.value}
         onPress={props.onSubmit}
       />
-      <Text
-        style={{
-          color: '#FFFFFF',
-          textAlign: 'center',
-          fontSize: 15,
-          padding: 20,
-        }}>
-        OR
-      </Text>
-      <TouchableOpacity
-        onPress={() => Linking.openURL('https://ecell.in/esummit/reg/')}>
-        <Text
-          style={{
-            color: '#46B1EE',
-            textAlign: 'center',
-            fontSize: 15,
-            fontWeight: 'bold',
-          }}>
-          Register
-        </Text>
-      </TouchableOpacity>
     </View>
   );
 };

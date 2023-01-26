@@ -20,7 +20,11 @@ import {
   BarcodeFormat,
   Barcode,
 } from 'vision-camera-code-scanner';
-import { AccomodationResult, EventAttendance, ScanResult } from '../../components/profile';
+import {
+  AccomodationResult,
+  EventAttendance,
+  ScanResult,
+} from '../../components/profile';
 import { Validator } from '../../contants';
 import { useEventByName } from '../../hooks/query/events-query';
 
@@ -162,11 +166,7 @@ export const QRCode = () => {
         Validator.email.test(attendee) &&
         event === 'Entry Attendance' ? (
           <ScanResult email={attendee} close={onClose} />
-        ) : (
-          <Text style={{ color: 'red', fontSize: 25, textAlign: 'center' }}>
-            Please Scan the QR Code
-          </Text>
-        )}
+        ) : null}
 
         {attendee &&
         Validator.email.test(attendee) &&
@@ -176,8 +176,15 @@ export const QRCode = () => {
 
         {attendee &&
         Validator.email.test(attendee) &&
-        event !== 'Entry Attendance' && event !== 'Accomodation' ? (
+        event !== 'Entry Attendance' &&
+        event !== 'Accomodation' ? (
           <EventAttendance email={attendee} event={event} close={onClose} />
+        ) : null}
+
+        {!attendee || !Validator.email.test(attendee) ? (
+          <Text style={{ color: 'red', fontSize: 25, textAlign: 'center' }}>
+            Please Scan the QR Code
+          </Text>
         ) : null}
       </View>
     </LinearGradient>
@@ -232,5 +239,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Medium',
     fontSize: 14,
     textTransform: 'uppercase',
+    color: '#141415',
   },
 });

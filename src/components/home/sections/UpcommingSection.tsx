@@ -27,6 +27,7 @@ export const UpcommingSection = (props: IUpcommingSectionProps) => {
               venue={item.venue}
               startTime={item.startTime}
               endTime={item.endTime}
+              category={item.category}
               navigation={navigation}
             />
           ))}
@@ -49,7 +50,7 @@ export const UpcommingSection = (props: IUpcommingSectionProps) => {
               <FilterSvg />
             </TouchableOpacity>
           </View>
-          <View style={{ alignItems: 'center' }}>{upcomingEvents}</View>
+          <View style={{ alignItems: 'flex-start' }}>{upcomingEvents}</View>
         </>
       )}
     </View>
@@ -71,6 +72,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     paddingTop: 10,
-    justifyContent: 'center',
   },
 });

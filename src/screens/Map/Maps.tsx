@@ -68,6 +68,7 @@ export const Maps = () => {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
+    paddingBottom: 70,
   },
   title: {
     fontFamily: 'Montserrat-Bold',

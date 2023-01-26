@@ -18,6 +18,7 @@ interface IEventBoxProps {
   endTime: Date | undefined | string;
   description: string;
   navigation: any;
+  category: string
 }
 
 export const EventBox = (props: IEventBoxProps) => {
@@ -44,6 +45,7 @@ export const EventBox = (props: IEventBoxProps) => {
 
         <View style={styles.content}>
           <Text style={styles.event}>{props.event}</Text>
+          <Text style={styles.venue}>{props.category}</Text>
           <Text style={styles.venue}>Venue : {props.venue}</Text>
         </View>
       </View>
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
     margin: 2,
   },
   flag: {
-    width: 80,
+    width: 105,
     backgroundColor: '#5EBCF1',
     paddingVertical: 4,
     paddingHorizontal: 6,
@@ -68,8 +70,8 @@ const styles = StyleSheet.create({
   },
   flagText: {
     textAlign: 'center',
-    fontSize: 7,
-    lineHeight: 9,
+    fontSize: 10,
+    lineHeight: 11,
     fontFamily: 'Montserrat-Bold',
     color: '#fff',
   },
@@ -94,5 +96,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 8,
     lineHeight: 10,
+    textTransform: 'capitalize'
   },
 });

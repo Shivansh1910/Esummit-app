@@ -27,6 +27,7 @@ export const OngoingSection = (props: IOngoingSectionProps) => {
               venue={item.venue}
               startTime={item.startTime}
               endTime={item.endTime}
+              category={item.category}
               navigation={navigation}
             />
           ))}
@@ -51,7 +52,7 @@ export const OngoingSection = (props: IOngoingSectionProps) => {
               <FilterSvg />
             </TouchableOpacity>
           </View>
-          <View style={{ alignItems: 'center' }}>{onGoingEvents}</View>
+          <View style={{ alignItems: 'flex-start' }}>{onGoingEvents}</View>
         </>
       )}
     </View>
@@ -73,6 +74,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     paddingTop: 10,
-    justifyContent: 'center',
   },
 });

@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
     paddingTop: 20,
-    paddingBottom: 45,
+    paddingBottom: 50,
   },
   section: {
     flexDirection: 'row',

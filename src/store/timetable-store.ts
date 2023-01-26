@@ -1,20 +1,8 @@
 import create, { StateCreator } from 'zustand';
 import { IEventData } from '../types/api/events.types';
 
-type TTags = 'interested' | 'going' | 'notgoing' | '';
-
-interface ITimetable {
-  id: string;
-  title: string;
-  venue: string;
-  startDate: Date;
-  endDate: Date;
-  category: string;
-  tag: string;
-}
-
 interface ITimetableStates {
-  timetable: ITimetable[];
+  timetable: Partial<IEventData>[];
 }
 
 interface ITimetableMethods {
